@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
+  ArrowUpRight,
   ArrowRight
 } from 'lucide-react';
 
@@ -54,9 +55,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
   }, []);
 
   return (
-    <section className="relative w-full min-h-[92dvh] sm:min-h-screen flex flex-col justify-end overflow-hidden bg-neutral-950 text-white p-5 sm:p-8 lg:p-12 rounded-none my-0 z-20">
-      {/* 1. Fullscreen Edge-to-Edge Car Background Stage */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+    <section className="relative w-full min-h-[92dvh] lg:min-h-screen flex flex-col justify-between overflow-hidden bg-neutral-950 text-white p-6 sm:p-10 lg:p-14 rounded-none my-0 z-20">
+      {/* 1. Fullscreen Unrounded Edge-to-Edge Car Background Stage */}
+      <div className="absolute inset-0 z-0 overflow-hidden rounded-none">
         {heroCars.map((car, idx) => (
           <div
             key={car.title}
@@ -73,7 +74,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
                 fill
                 priority={idx === 0}
                 sizes="100vw"
-                className="object-cover object-center w-full h-full scale-105 transition-transform duration-1000"
+                className="object-cover object-center w-full h-full scale-105 transition-transform duration-1000 rounded-none"
               />
             </div>
           </div>
@@ -84,20 +85,76 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
         <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
       </div>
 
-      {/* 2. Bottom Hero Headline & Large Circle Arrow Action Buttons */}
-      <div className="relative z-20 w-full max-w-2xl space-y-6 pb-4 sm:pb-8">
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight flex flex-col gap-[20px]">
+      {/* 2. Top Navigation Bar (KIA Logo + Contact Us Pill) */}
+      <div className="relative z-20 flex items-center justify-between w-full pt-2">
+        <Link href="/" className="text-2xl sm:text-3xl font-black tracking-tighter text-white uppercase">
+          KIA
+        </Link>
+
+        <Link
+          href="/kontak"
+          className="bg-white hover:bg-gray-100 text-gray-950 px-5 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-xl transition-all transform active:scale-95"
+        >
+          Contact Us
+        </Link>
+      </div>
+
+      {/* 3. Middle Floating Glass Menu Card (Desktop & Tablet) */}
+      <div className="relative z-20 flex justify-end w-full my-auto py-4">
+        <div className="w-full max-w-[260px] sm:max-w-[290px] bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[28px] p-5 sm:p-6 shadow-2xl text-white space-y-2">
+          <Link 
+            href="/katalog"
+            className="flex items-center justify-between text-lg sm:text-xl font-bold text-white border-b border-white/15 pb-3 group"
+          >
+            <span>Katalog Unit</span>
+            <ArrowUpRight className="w-5 h-5 text-white/80 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
+
+          <Link 
+            href="/bengkel"
+            className="block text-sm sm:text-base font-normal text-white/80 hover:text-white border-b border-white/15 py-2.5 transition-colors"
+          >
+            Layanan Bengkel
+          </Link>
+
+          <Link 
+            href="/#promo"
+            className="block text-sm sm:text-base font-normal text-white/80 hover:text-white border-b border-white/15 py-2.5 transition-colors"
+          >
+            Promo Bulan Ini
+          </Link>
+
+          <div className="block text-sm sm:text-base font-normal text-white/80 border-b border-white/15 py-2.5">
+            Authorized Dealer
+          </div>
+
+          <Link 
+            href="/kontak"
+            className="block text-sm sm:text-base font-normal text-white/80 hover:text-white pt-2 transition-colors"
+          >
+            Kontak & Lokasi
+          </Link>
+        </div>
+      </div>
+
+      {/* 4. Bottom Row (Headline + Horizontal Action Pill Buttons on Desktop) */}
+      <div className="relative z-20 flex flex-col lg:flex-row lg:items-end justify-between gap-6 w-full pt-4 pb-2">
+        
+        {/* Headline with 20px gap */}
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight flex flex-col gap-[20px] max-w-2xl">
           <span>Temukan Mobil</span>
           <span>KIA Impian Anda</span>
         </h1>
 
-        <div className="space-y-4 pt-2 max-w-md">
+        {/* Action Buttons: Side-by-Side on Desktop, Stacked on Mobile */}
+        <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full lg:w-auto shrink-0">
+          
           {/* Button 1: Glass Pill with Enlarged Circle Arrow Icon */}
           <Link
             href="/katalog"
-            className="w-full bg-white/15 hover:bg-white/25 backdrop-blur-xl border border-white/30 text-white font-semibold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-lg transition-all group active:scale-[0.98]"
+            className="bg-white/15 hover:bg-white/25 backdrop-blur-xl border border-white/30 text-white font-semibold text-base sm:text-lg py-2.5 pl-6 pr-2.5 rounded-full flex items-center justify-between gap-4 shadow-lg transition-all group active:scale-[0.98]"
           >
-            <span className="font-semibold tracking-tight">Lihat Semua Mobil</span>
+            <span className="font-semibold tracking-tight whitespace-nowrap">Lihat Semua Mobil</span>
             <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-gray-900 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
               <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-gray-900" />
             </span>
@@ -106,14 +163,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
           {/* Button 2: Solid White Pill with Enlarged Circle Arrow Icon */}
           <button
             onClick={() => onOpenTestDrive?.()}
-            className="w-full bg-white hover:bg-gray-100 text-gray-950 font-bold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-2xl transition-all group active:scale-[0.98] text-left"
+            className="bg-white hover:bg-gray-100 text-gray-950 font-bold text-base sm:text-lg py-2.5 pl-6 pr-2.5 rounded-full flex items-center justify-between gap-4 shadow-2xl transition-all group active:scale-[0.98] text-left"
           >
-            <span className="font-bold tracking-tight">Booking Test Drive</span>
+            <span className="font-bold tracking-tight whitespace-nowrap">Booking Test Drive</span>
             <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
               <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
             </span>
           </button>
         </div>
+
       </div>
 
     </section>
