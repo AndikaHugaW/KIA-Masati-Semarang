@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
   }, []);
 
   return (
-    <section className="relative w-full min-h-[92dvh] lg:min-h-screen flex flex-col justify-between overflow-hidden bg-neutral-950 text-white p-6 sm:p-10 lg:p-14 rounded-none my-0 z-20">
+    <section className="relative w-full min-h-[92dvh] lg:min-h-screen flex flex-col justify-start overflow-hidden bg-neutral-950 text-white p-6 sm:p-10 lg:p-14 rounded-none my-0 z-20">
       {/* 1. Fullscreen Unrounded Edge-to-Edge Car Background Stage */}
       <div className="absolute inset-0 z-0 overflow-hidden rounded-none">
         {heroCars.map((car, idx) => (
@@ -85,9 +85,40 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
         <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
       </div>
 
+      {/* 2. Top-Left Hero Headline & Action Pill Buttons (Matching Reference Layout) */}
+      <div className="relative z-20 w-full max-w-xl space-y-6 pt-4 sm:pt-6 pb-4">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight flex flex-col gap-[20px]">
+          <span>Temukan Mobil</span>
+          <span>KIA Impian Anda</span>
+        </h1>
 
-      {/* 3. Middle Floating Glass Menu Card (Visible on Tablet & Desktop Only, Hidden on Mobile) */}
-      <div className="relative z-20 hidden sm:flex justify-end w-full my-auto py-4">
+        <div className="space-y-4 pt-2 max-w-md">
+          {/* Button 1: Glass Pill with Enlarged Circle Arrow Icon */}
+          <Link
+            href="/katalog"
+            className="w-full bg-white/15 hover:bg-white/25 backdrop-blur-xl border border-white/30 text-white font-semibold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-lg transition-all group active:scale-[0.98]"
+          >
+            <span className="font-semibold tracking-tight">Lihat Semua Mobil</span>
+            <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-gray-900 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
+              <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-gray-900" />
+            </span>
+          </Link>
+
+          {/* Button 2: Solid White Pill with Enlarged Circle Arrow Icon */}
+          <button
+            onClick={() => onOpenTestDrive?.()}
+            className="w-full bg-white hover:bg-gray-100 text-gray-950 font-bold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-2xl transition-all group active:scale-[0.98] text-left"
+          >
+            <span className="font-bold tracking-tight">Booking Test Drive</span>
+            <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
+              <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+            </span>
+          </button>
+        </div>
+      </div>
+
+      {/* 3. Floating Glass Menu Card (Absolute Right on Desktop & Tablet) */}
+      <div className="absolute top-10 right-10 sm:top-14 sm:right-14 z-20 hidden sm:flex">
         <div className="w-full max-w-[260px] sm:max-w-[290px] bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[28px] p-5 sm:p-6 shadow-2xl text-white space-y-2">
           <Link 
             href="/katalog"
@@ -121,38 +152,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
           >
             Kontak & Lokasi
           </Link>
-        </div>
-      </div>
-
-      {/* 4. Bottom Hero Headline & Action Pill Buttons (Vertical Stacked Layout) */}
-      <div className="relative z-20 w-full max-w-xl space-y-6 pt-4 pb-2">
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight flex flex-col gap-[20px]">
-          <span>Temukan Mobil</span>
-          <span>KIA Impian Anda</span>
-        </h1>
-
-        <div className="space-y-4 pt-2 max-w-md">
-          {/* Button 1: Glass Pill with Enlarged Circle Arrow Icon */}
-          <Link
-            href="/katalog"
-            className="w-full bg-white/15 hover:bg-white/25 backdrop-blur-xl border border-white/30 text-white font-semibold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-lg transition-all group active:scale-[0.98]"
-          >
-            <span className="font-semibold tracking-tight">Lihat Semua Mobil</span>
-            <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-gray-900 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
-              <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-gray-900" />
-            </span>
-          </Link>
-
-          {/* Button 2: Solid White Pill with Enlarged Circle Arrow Icon */}
-          <button
-            onClick={() => onOpenTestDrive?.()}
-            className="w-full bg-white hover:bg-gray-100 text-gray-950 font-bold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-2xl transition-all group active:scale-[0.98] text-left"
-          >
-            <span className="font-bold tracking-tight">Booking Test Drive</span>
-            <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
-              <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-            </span>
-          </button>
         </div>
       </div>
 
