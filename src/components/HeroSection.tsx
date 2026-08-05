@@ -85,8 +85,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
       </div>
 
       {/* 2. Bottom Hero Headline & Large Circle Arrow Action Buttons */}
-      <div className="relative z-20 w-full max-w-xl space-y-6 pb-4 sm:pb-8">
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08]">
+      <div className="relative z-20 w-full max-w-2xl space-y-6 pb-4 sm:pb-8">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.05]">
           Temukan Mobil <br />
           KIA Impian Anda
         </h1>
