@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
   }, []);
 
   return (
-    <section className="relative w-full min-h-[92dvh] lg:min-h-screen flex flex-col justify-between overflow-hidden bg-neutral-950 text-white p-6 sm:p-10 lg:p-14 rounded-none my-0 z-20">
+    <section className="relative w-full min-h-[92dvh] md:min-h-screen flex flex-col justify-end md:justify-between overflow-hidden bg-neutral-950 text-white p-6 sm:p-10 lg:p-14 rounded-none my-0 z-20">
       {/* 1. Fullscreen Unrounded Edge-to-Edge Car Background Stage */}
       <div className="absolute inset-0 z-0 overflow-hidden rounded-none">
         {heroCars.map((car, idx) => (
@@ -80,13 +80,52 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
           </div>
         ))}
 
-        {/* Ambient Dark Gradient Overlays matching high-end showroom look */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/50 z-10 pointer-events-none" />
+        {/* Ambient Dark Gradient Overlay from bottom to top for maximum text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/30 z-10 pointer-events-none" />
         <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
       </div>
 
-      {/* 2. Floating Glass Menu Card (Desktop & Tablet Only - Hidden on Mobile) */}
-      <div className="relative z-20 hidden sm:flex justify-end w-full my-auto py-4">
+      {/* 2. MOBILE HERO CONTENT (<= 768px Only - Bottom Aligned Editorial Layout) */}
+      <div className="relative z-20 w-full max-w-xl space-y-5 px-0 pb-8 sm:pb-10 pt-4 md:hidden mt-auto">
+        {/* Headline */}
+        <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight flex flex-col gap-2">
+          <span>Temukan Mobil</span>
+          <span>KIA Impian Anda</span>
+        </h1>
+
+        {/* Description */}
+        <p className="text-sm sm:text-base font-medium text-white/80 tracking-wide pb-1">
+          Dealer resmi KIA Semarang
+        </p>
+
+        {/* Action Buttons (Stacked Vertically) */}
+        <div className="space-y-3.5 pt-1 max-w-md">
+          {/* Primary CTA: Glass Pill */}
+          <Link
+            href="/katalog"
+            className="w-full bg-white/15 hover:bg-white/25 backdrop-blur-xl border border-white/30 text-white font-semibold text-base py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-lg transition-all group active:scale-[0.98]"
+          >
+            <span className="font-semibold tracking-tight">Lihat Semua Mobil</span>
+            <span className="w-11 h-11 rounded-full bg-white text-gray-900 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
+              <ArrowRight className="w-5 h-5 text-gray-900" />
+            </span>
+          </Link>
+
+          {/* Secondary CTA: Solid White Pill */}
+          <button
+            onClick={() => onOpenTestDrive?.()}
+            className="w-full bg-white hover:bg-gray-100 text-gray-950 font-bold text-base py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-2xl transition-all group active:scale-[0.98] text-left"
+          >
+            <span className="font-bold tracking-tight">Booking Test Drive</span>
+            <span className="w-11 h-11 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
+              <ArrowRight className="w-5 h-5 text-white" />
+            </span>
+          </button>
+        </div>
+      </div>
+
+      {/* 3. DESKTOP/TABLET FLOATING GLASS MENU CARD (Middle-Right - >= 768px Only) */}
+      <div className="relative z-20 hidden md:flex justify-end w-full my-auto py-4">
         <div className="w-full max-w-[260px] sm:max-w-[290px] bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[28px] p-5 sm:p-6 shadow-2xl text-white space-y-2">
           <Link 
             href="/katalog"
@@ -123,19 +162,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
         </div>
       </div>
 
-      {/* 3. Bottom Row: Original Website Layout on Desktop (Side-by-Side Buttons) & Stacked Buttons on Mobile */}
-      <div className="relative z-20 flex flex-col lg:flex-row lg:items-end justify-between gap-6 w-full pt-4 pb-2">
+      {/* 4. DESKTOP/TABLET BOTTOM ROW (Headline + Action Pill Buttons - >= 768px Only) */}
+      <div className="relative z-20 hidden md:flex flex-col lg:flex-row lg:items-end justify-between gap-6 w-full pt-4 pb-2">
         
         {/* Headline with 20px gap */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight flex flex-col gap-[20px] max-w-2xl">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight flex flex-col gap-[20px] max-w-2xl">
           <span>Temukan Mobil</span>
           <span>KIA Impian Anda</span>
         </h1>
 
-        {/* Action Buttons: Stacked vertically on Mobile, Side-by-Side horizontally on Desktop */}
+        {/* Action Buttons: Side-by-Side horizontally on Desktop */}
         <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full lg:w-auto shrink-0">
           
-          {/* Button 1: Glass Pill with Enlarged Circle Arrow Icon */}
+          {/* Button 1: Glass Pill */}
           <Link
             href="/katalog"
             className="w-full sm:w-auto bg-white/15 hover:bg-white/25 backdrop-blur-xl border border-white/30 text-white font-semibold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between gap-4 shadow-lg transition-all group active:scale-[0.98]"
@@ -146,7 +185,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
             </span>
           </Link>
 
-          {/* Button 2: Solid White Pill with Enlarged Circle Arrow Icon */}
+          {/* Button 2: Solid White Pill */}
           <button
             onClick={() => onOpenTestDrive?.()}
             className="w-full sm:w-auto bg-white hover:bg-gray-100 text-gray-950 font-bold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between gap-4 shadow-2xl transition-all group active:scale-[0.98] text-left"
