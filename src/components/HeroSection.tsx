@@ -30,7 +30,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
       {heroImages.map((src, index) => (
         <div
           key={src}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out scale-105 ${
+          className={`absolute inset-0 bg-contain bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
             index === currentImageIndex ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
