@@ -315,17 +315,13 @@ export const KatalogGridSection: React.FC<KatalogGridSectionProps> = ({ onOpenTe
             /* Cars 3-Column Grid */
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {cars.map((car) => {
-                const isActive = activeCardId === car.id;
                 return (
                   <div
                     key={car.id}
                     onClick={() => {
-                      setActiveCardId(car.id);
                       router.push(`/katalog/${car.id}`);
                     }}
-                    className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl flex flex-col justify-between cursor-pointer ${
-                      isActive ? 'border-2 border-blue-500 ring-2 ring-blue-500/20' : 'border-gray-200'
-                    }`}
+                    className="bg-white rounded-2xl border border-gray-200/90 transition-all duration-300 ease-out overflow-hidden shadow-sm hover:shadow-[0_20px_35px_-10px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:scale-[1.015] hover:border-gray-300 active:scale-[0.98] active:translate-y-0 active:shadow-md flex flex-col justify-between cursor-pointer group"
                   >
                     {/* Top Image Showcase (Full Width) */}
                     <div className="relative aspect-[16/10] bg-[#F2F4F7] w-full overflow-hidden group">

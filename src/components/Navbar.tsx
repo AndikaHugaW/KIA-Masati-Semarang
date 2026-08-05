@@ -50,16 +50,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTestDrive }) => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative py-1 transition-colors ${
+                className={`relative py-1 transition-colors group ${
                   isActive
                     ? 'text-black font-bold'
                     : 'text-gray-600 hover:text-black'
                 }`}
               >
                 {link.name}
-                {isActive && (
-                  <span className="absolute bottom-[-24px] left-0 right-0 h-[2.5px] bg-black rounded-full" />
-                )}
+                <span
+                  className={`absolute bottom-[-6px] left-0 right-0 h-[2px] bg-black rounded-full transition-all duration-300 ${
+                    isActive
+                      ? 'opacity-100 scale-x-100'
+                      : 'opacity-0 scale-x-0 group-hover:opacity-40 group-hover:scale-x-75'
+                  }`}
+                />
               </Link>
             );
           })}

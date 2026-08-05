@@ -79,7 +79,7 @@ export const FeaturedUnitsSection: React.FC<FeaturedUnitsSectionProps> = ({ onOp
             return (
               <div
                 key={unit.id}
-                className="bg-white rounded-3xl border border-gray-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="bg-white rounded-3xl border border-gray-200/90 overflow-hidden shadow-sm hover:shadow-[0_20px_35px_-10px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:scale-[1.015] hover:border-gray-300 active:scale-[0.98] active:translate-y-0 active:shadow-md transition-all duration-300 ease-out flex flex-col justify-between cursor-pointer group"
               >
                 {/* Image Box */}
                 <div className="relative aspect-[16/10] w-full bg-[#F2F4F7] overflow-hidden group flex items-center justify-center">
