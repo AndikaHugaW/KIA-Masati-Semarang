@@ -2,143 +2,120 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
+import { 
+  ArrowRight
+} from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenTestDrive?: (carId?: string) => void;
 }
 
-const heroImages = [
-  '/images/landing page/hero 1.webp',
-  '/images/katalog unit/hero2.webp',
-  '/images/katalog unit/hero3.webp',
-  '/images/katalog unit/kia all new carens.webp',
-  '/images/katalog unit/kia ev9.webp',
+const heroCars = [
+  {
+    id: 'ev9',
+    title: 'KIA EV9 GT-Line',
+    tagline: 'Electric SUV Premium',
+    promoPrice: 'Rp 1,98 M',
+    image: '/images/katalog unit/kia ev9.webp',
+  },
+  {
+    id: 'seltos',
+    title: 'KIA All New Seltos',
+    tagline: 'Compact SUV Dynamic',
+    promoPrice: 'Rp 399 Juta',
+    image: '/images/katalog unit/all new seltos.webp',
+  },
+  {
+    id: 'carnival',
+    title: 'KIA New Carnival',
+    tagline: 'Luxury Grand MPV',
+    promoPrice: 'Rp 960 Juta',
+    image: '/images/katalog unit/kia carnival.webp',
+  },
+  {
+    id: 'sonet',
+    title: 'KIA Sonet',
+    tagline: 'Smart Urban SUV',
+    promoPrice: 'Rp 240 Juta',
+    image: '/images/katalog unit/kia sonet.webp',
+  },
 ];
 
-
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentCarIndex, setCurrentCarIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 4000);
+      setCurrentCarIndex((prev) => (prev + 1) % heroCars.length);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden bg-neutral-900">
-      {/* Background Image Showcase with Crossfade Transition */}
-      {heroImages.map((src, index) => (
-        <div
-          key={src}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out scale-105 ${
-            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <Image
-            src={src}
-            alt="KIA Dealer Showcase"
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </div>
-      ))}
-
-      
-      {/* Overlay to match lighting & text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 pointer-events-none" />
-      <div className="absolute inset-0 bg-black/20 pointer-events-none" />
-
-      <div className="max-w-[1728px] mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-24 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-          
-          {/* Left Column: Main Copy */}
-          <div className="lg:col-span-8 space-y-6 text-left">
-            {/* Pill Badge */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 border border-white/40 text-white text-xs font-semibold uppercase tracking-wider backdrop-blur-md shadow-sm">
-                <CheckCircle2 className="w-4 h-4 text-white" />
-                AUTHORIZED KIA DEALER
-              </div>
-            </div>
-
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
-              Temukan Mobil KIA <br />
-              Impian Anda
-            </h1>
-
-            {/* Description */}
-            <p className="text-white/90 text-sm sm:text-base max-w-xl leading-relaxed font-normal">
-              Dealer resmi KIA di Semarang dengan pilihan SUV, MPV, dan EV terbaru. Nikmati promo terbaik, test drive gratis, serta layanan purna jual terpercaya.
-            </p>
-
-            {/* Action CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-2">
-              <button
-                onClick={() => onOpenTestDrive?.()}
-                className="bg-black hover:bg-neutral-900 text-white text-sm sm:text-base font-semibold px-8 py-3.5 rounded-lg shadow-lg transition-all active:scale-95"
-              >
-                Lihat Semua Mobil
-              </button>
-
-              <button
-                onClick={() => onOpenTestDrive?.()}
-                className="bg-white/30 hover:bg-white/40 border border-white/50 text-white text-sm sm:text-base font-semibold px-8 py-3.5 rounded-lg backdrop-blur-md transition-all active:scale-95 shadow-lg"
-              >
-                Booking Test Drive
-              </button>
-            </div>
-
-            {/* 4 Feature Checkpoints */}
-            <div className="grid grid-cols-2 gap-y-3 gap-x-8 pt-4 text-xs sm:text-sm font-medium text-white/90 max-w-md">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
-                <span>Dealer Resmi</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
-                <span>Garansi Resmi</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
-                <span>Service Center</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
-                <span>Kredit Mudah</span>
-              </div>
+    <section className="relative w-full min-h-[92dvh] sm:min-h-screen flex flex-col justify-end overflow-hidden bg-neutral-950 text-white p-5 sm:p-8 lg:p-12 rounded-none my-0 z-20">
+      {/* 1. Fullscreen Edge-to-Edge Car Background Stage */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {heroCars.map((car, idx) => (
+          <div
+            key={car.title}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === currentCarIndex
+                ? 'opacity-100 z-10'
+                : 'opacity-0 pointer-events-none z-0'
+            }`}
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src={car.image}
+                alt={car.title}
+                fill
+                priority={idx === 0}
+                sizes="100vw"
+                className="object-cover object-center w-full h-full scale-105 transition-transform duration-1000"
+              />
             </div>
           </div>
+        ))}
 
-          {/* Right Column: Floating Price & Promo Card */}
-          <div className="lg:col-span-4 flex justify-start lg:justify-end pb-4 lg:pb-8">
-            <div className="bg-black/40 backdrop-blur-md border border-white/20 p-6 rounded-2xl w-full max-w-xs sm:max-w-sm text-white shadow-2xl space-y-4">
-              <div className="flex items-center gap-2">
-                <span className="bg-black text-white text-xs font-bold px-3 py-1 rounded-full">
-                  Promo Agustus
-                </span>
-                <span className="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  Ready Stock
-                </span>
-              </div>
-              <div>
-                <p className="text-xs text-white/80 font-medium">Mulai Dari</p>
-                <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
-                  Rp 399 jt
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* Ambient Dark Gradient Overlays matching high-end showroom look */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/50 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
+      </div>
 
+      {/* 2. Bottom Hero Headline & Large Circle Arrow Action Buttons */}
+      <div className="relative z-20 w-full max-w-xl space-y-6 pb-4 sm:pb-8">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08]">
+          Temukan Mobil <br />
+          KIA Impian Anda
+        </h1>
+
+        <div className="space-y-4 pt-2 max-w-md">
+          {/* Button 1: Glass Pill with Enlarged Circle Arrow Icon */}
+          <Link
+            href="/katalog"
+            className="w-full bg-white/15 hover:bg-white/25 backdrop-blur-xl border border-white/30 text-white font-semibold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-lg transition-all group active:scale-[0.98]"
+          >
+            <span className="font-semibold tracking-tight">Lihat Semua Mobil</span>
+            <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-gray-900 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
+              <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-gray-900" />
+            </span>
+          </Link>
+
+          {/* Button 2: Solid White Pill with Enlarged Circle Arrow Icon */}
+          <button
+            onClick={() => onOpenTestDrive?.()}
+            className="w-full bg-white hover:bg-gray-100 text-gray-950 font-bold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-2xl transition-all group active:scale-[0.98] text-left"
+          >
+            <span className="font-bold tracking-tight">Booking Test Drive</span>
+            <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
+              <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+            </span>
+          </button>
         </div>
       </div>
+
     </section>
   );
 };
-

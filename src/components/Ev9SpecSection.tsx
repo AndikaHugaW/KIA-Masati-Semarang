@@ -183,7 +183,7 @@ export const Ev9SpecSection: React.FC = () => {
 
   return (
     <section 
-      className="relative w-full min-h-[calc(100vh-80px)] bg-neutral-950 overflow-hidden flex flex-col justify-between py-8 sm:py-12 px-4 sm:px-6 lg:px-12 text-white group"
+      className="relative w-full min-h-[460px] sm:min-h-[560px] lg:min-h-[calc(100vh-80px)] bg-neutral-950 overflow-hidden flex flex-col justify-between py-4 sm:py-8 lg:py-12 px-3 sm:px-6 lg:px-12 text-white group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -201,29 +201,29 @@ export const Ev9SpecSection: React.FC = () => {
       ))}
 
       {/* Gradient & Dark Vignette for Crisp Text Contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/80 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80 pointer-events-none z-0" />
 
       {/* Top Section: Title & Model Selector Tabs */}
-      <div className="relative z-10 text-center pt-2 sm:pt-4 space-y-3">
+      <div className="relative z-10 text-center pt-1 sm:pt-4 space-y-2 sm:space-y-3">
         {/* Category Badge */}
         <div className="inline-block">
-          <span className="bg-white/10 backdrop-blur-md text-white/90 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full border border-white/20 tracking-widest uppercase">
+          <span className="bg-white/10 backdrop-blur-md text-white/90 text-[9px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-white/20 tracking-widest uppercase">
             {activeCar.badge}
           </span>
         </div>
 
         {/* Dynamic Title */}
-        <h2 className="text-xl sm:text-3xl md:text-5xl font-black tracking-tight text-white drop-shadow-lg uppercase transition-all duration-500">
+        <h2 className="text-lg sm:text-3xl md:text-5xl font-black tracking-tight text-white drop-shadow-lg uppercase transition-all duration-500">
           Specification ({activeCar.name})
         </h2>
 
         {/* Model Tabs Selector */}
-        <div className="flex items-center justify-center gap-1.5 sm:gap-2 pt-2 flex-wrap">
+        <div className="flex items-center justify-center gap-1 sm:gap-2 pt-1 flex-wrap">
           {SPEC_CARS.map((car, idx) => (
             <button
               key={car.id}
               onClick={() => setActiveIndex(idx)}
-              className={`px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold transition-all duration-300 ${
+              className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[9px] sm:text-xs font-bold transition-all duration-300 ${
                 idx === activeIndex
                   ? 'bg-white text-black shadow-lg scale-105'
                   : 'bg-black/40 hover:bg-black/60 text-white/70 hover:text-white border border-white/15'
@@ -239,29 +239,29 @@ export const Ev9SpecSection: React.FC = () => {
       <button 
         onClick={handlePrev}
         aria-label="Previous Unit"
-        className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-black/40 hover:bg-black/70 border border-white/20 text-white backdrop-blur-md transition-all opacity-80 hover:opacity-100 hover:scale-110"
+        className="absolute left-1.5 sm:left-6 top-1/2 -translate-y-1/2 z-20 p-1.5 sm:p-3 rounded-full bg-black/40 hover:bg-black/70 border border-white/20 text-white backdrop-blur-md transition-all opacity-80 hover:opacity-100 hover:scale-110"
       >
-        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+        <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       <button 
         onClick={handleNext}
         aria-label="Next Unit"
-        className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-black/40 hover:bg-black/70 border border-white/20 text-white backdrop-blur-md transition-all opacity-80 hover:opacity-100 hover:scale-110"
+        className="absolute right-1.5 sm:right-6 top-1/2 -translate-y-1/2 z-20 p-1.5 sm:p-3 rounded-full bg-black/40 hover:bg-black/70 border border-white/20 text-white backdrop-blur-md transition-all opacity-80 hover:opacity-100 hover:scale-110"
       >
-        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+        <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       {/* Middle Grid: 4 Columns with Sub-sections Aligned with Battery Capacity & Weight */}
-      <div className="relative z-10 max-w-[1600px] mx-auto w-full px-4 sm:px-8 lg:px-16 grid grid-cols-4 gap-2 sm:gap-4 md:gap-8 mt-4 sm:mt-6 md:mt-8 mb-auto py-2 sm:py-4">
+      <div className="relative z-10 max-w-[1600px] mx-auto w-full px-2 sm:px-8 lg:px-16 grid grid-cols-4 gap-1.5 sm:gap-4 md:gap-8 mt-2 sm:mt-6 md:mt-8 mb-auto py-1 sm:py-4">
         
         {/* Col 1: Left Specs (DIMENSION - Pulled slightly inward) */}
-        <div className="col-span-1 space-y-2 sm:space-y-4 max-w-[260px]">
-          <h3 className="text-[10px] sm:text-xs md:text-sm font-extrabold tracking-widest text-white/90 uppercase border-b border-white/20 pb-1 inline-block">
+        <div className="col-span-1 space-y-1 sm:space-y-4 max-w-[260px]">
+          <h3 className="text-[9px] sm:text-xs md:text-sm font-extrabold tracking-widest text-white/90 uppercase border-b border-white/20 pb-0.5 inline-block">
             DIMENSION
           </h3>
           
-          <div key={`dim-${activeCar.id}`} className="space-y-1.5 sm:space-y-2.5 text-[9px] sm:text-xs md:text-sm font-semibold tracking-wider transition-opacity duration-500">
+          <div key={`dim-${activeCar.id}`} className="space-y-1 sm:space-y-2.5 text-[8px] sm:text-xs md:text-sm font-semibold tracking-wider transition-opacity duration-500">
             <div className="flex items-center justify-between gap-1 sm:gap-4 md:gap-6">
               <span className="text-white/80 uppercase">LENGTH</span>
               <span className="text-white font-extrabold">{activeCar.dimensions.length}</span>
@@ -281,12 +281,12 @@ export const Ev9SpecSection: React.FC = () => {
         <div className="col-span-2 pointer-events-none" />
 
         {/* Col 4: Right Specs (PERFORMANCE - Pulled slightly inward with ml-auto) */}
-        <div className="col-span-1 space-y-2 sm:space-y-4 max-w-[260px] ml-auto">
-          <h3 className="text-[10px] sm:text-xs md:text-sm font-extrabold tracking-widest text-white/90 uppercase border-b border-white/20 pb-1 inline-block">
+        <div className="col-span-1 space-y-1 sm:space-y-4 max-w-[260px] ml-auto">
+          <h3 className="text-[9px] sm:text-xs md:text-sm font-extrabold tracking-widest text-white/90 uppercase border-b border-white/20 pb-0.5 inline-block">
             PERFORMANCE
           </h3>
           
-          <div key={`perf-${activeCar.id}`} className="space-y-1.5 sm:space-y-2.5 text-[9px] sm:text-xs md:text-sm font-semibold tracking-wider transition-opacity duration-500">
+          <div key={`perf-${activeCar.id}`} className="space-y-1 sm:space-y-2.5 text-[8px] sm:text-xs md:text-sm font-semibold tracking-wider transition-opacity duration-500">
             <div className="flex items-center justify-between gap-1 sm:gap-4 md:gap-6">
               <span className="text-white/80 uppercase">POWER</span>
               <span className="text-white font-extrabold">{activeCar.performance.power}</span>
@@ -301,41 +301,41 @@ export const Ev9SpecSection: React.FC = () => {
       </div>
 
       {/* Bottom Bar: Horizontal Quick Stats (Aligned with 4 Columns) */}
-      <div className="relative z-10 max-w-[1600px] mx-auto w-full px-4 sm:px-8 lg:px-16 pt-4 sm:pt-6 pb-2 border-t border-white/10">
-        <div key={`stats-${activeCar.id}`} className="grid grid-cols-4 gap-2 sm:gap-6 text-center transition-opacity duration-500">
+      <div className="relative z-10 max-w-[1600px] mx-auto w-full px-2 sm:px-8 lg:px-16 pt-2 sm:pt-6 pb-1 border-t border-white/10">
+        <div key={`stats-${activeCar.id}`} className="grid grid-cols-4 gap-1 sm:gap-6 text-center transition-opacity duration-500">
           
           <div>
-            <span className="block text-[9px] sm:text-xs font-bold tracking-widest text-white/80 uppercase">
+            <span className="block text-[8px] sm:text-xs font-bold tracking-widest text-white/80 uppercase">
               {activeCar.quickStats.stat1Label}
             </span>
-            <span className="block text-xs sm:text-xl md:text-2xl font-black text-white mt-0.5 sm:mt-1 tracking-tight">
+            <span className="block text-[11px] sm:text-xl md:text-2xl font-black text-white mt-0.5 sm:mt-1 tracking-tight">
               {activeCar.quickStats.stat1Value}
             </span>
           </div>
 
           <div>
-            <span className="block text-[9px] sm:text-xs font-bold tracking-widest text-white/80 uppercase">
+            <span className="block text-[8px] sm:text-xs font-bold tracking-widest text-white/80 uppercase">
               {activeCar.quickStats.stat2Label}
             </span>
-            <span className="block text-xs sm:text-xl md:text-2xl font-black text-white mt-0.5 sm:mt-1 tracking-tight">
+            <span className="block text-[11px] sm:text-xl md:text-2xl font-black text-white mt-0.5 sm:mt-1 tracking-tight">
               {activeCar.quickStats.stat2Value}
             </span>
           </div>
 
           <div>
-            <span className="block text-[9px] sm:text-xs font-bold tracking-widest text-white/80 uppercase">
+            <span className="block text-[8px] sm:text-xs font-bold tracking-widest text-white/80 uppercase">
               {activeCar.quickStats.stat3Label}
             </span>
-            <span className="block text-xs sm:text-xl md:text-2xl font-black text-white mt-0.5 sm:mt-1 tracking-tight">
+            <span className="block text-[11px] sm:text-xl md:text-2xl font-black text-white mt-0.5 sm:mt-1 tracking-tight">
               {activeCar.quickStats.stat3Value}
             </span>
           </div>
 
           <div>
-            <span className="block text-[9px] sm:text-xs font-bold tracking-widest text-white/80 uppercase">
+            <span className="block text-[8px] sm:text-xs font-bold tracking-widest text-white/80 uppercase">
               {activeCar.quickStats.stat4Label}
             </span>
-            <span className="block text-xs sm:text-xl md:text-2xl font-black text-white mt-0.5 sm:mt-1 tracking-tight">
+            <span className="block text-[11px] sm:text-xl md:text-2xl font-black text-white mt-0.5 sm:mt-1 tracking-tight">
               {activeCar.quickStats.stat4Value}
             </span>
           </div>
