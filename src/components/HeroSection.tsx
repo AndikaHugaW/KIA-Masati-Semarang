@@ -86,8 +86,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
       </div>
 
 
-      {/* 3. Middle Floating Glass Menu Card (Desktop & Tablet) */}
-      <div className="relative z-20 flex justify-end w-full my-auto py-4">
+      {/* 3. Middle Floating Glass Menu Card (Visible on Tablet & Desktop Only, Hidden on Mobile) */}
+      <div className="relative z-20 hidden sm:flex justify-end w-full my-auto py-4">
         <div className="w-full max-w-[260px] sm:max-w-[290px] bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[28px] p-5 sm:p-6 shadow-2xl text-white space-y-2">
           <Link 
             href="/katalog"
