@@ -85,19 +85,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
         <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
       </div>
 
-      {/* 2. Top Navigation Bar (KIA Logo + Contact Us Pill) */}
-      <div className="relative z-20 flex items-center justify-between w-full pt-2">
-        <Link href="/" className="text-2xl sm:text-3xl font-black tracking-tighter text-white uppercase">
-          KIA
-        </Link>
-
-        <Link
-          href="/kontak"
-          className="bg-white hover:bg-gray-100 text-gray-950 px-5 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-xl transition-all transform active:scale-95"
-        >
-          Contact Us
-        </Link>
-      </div>
 
       {/* 3. Middle Floating Glass Menu Card (Desktop & Tablet) */}
       <div className="relative z-20 flex justify-end w-full my-auto py-4">
