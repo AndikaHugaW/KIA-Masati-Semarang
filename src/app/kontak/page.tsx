@@ -2,12 +2,15 @@
 
 import React from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
-import { KontakTimProfesionalSection } from '@/components/KontakTimProfesionalSection';
-import { KontakInquireSection } from '@/components/KontakInquireSection';
+
+const KontakTimProfesionalSection = dynamic(() => import('@/components/KontakTimProfesionalSection').then(mod => mod.KontakTimProfesionalSection));
+const KontakInquireSection = dynamic(() => import('@/components/KontakInquireSection').then(mod => mod.KontakInquireSection));
+const Footer = dynamic(() => import('@/components/Footer').then(mod => mod.Footer));
 
 export default function KontakPage() {
+
   const whatsappUrl =
     'https://wa.me/6281234567890?text=Halo%20KIA%20Semarang,%20saya%20butuh%20informasi%20mengenai%20unit,%20harga,%20dan%20promo';
   const mapsUrl =

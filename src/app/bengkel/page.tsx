@@ -2,12 +2,15 @@
 
 import React from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
-import { BengkelLayananUnggulanSection } from '@/components/BengkelLayananUnggulanSection';
-import { BengkelJadwalServisSection } from '@/components/BengkelJadwalServisSection';
+
+const BengkelLayananUnggulanSection = dynamic(() => import('@/components/BengkelLayananUnggulanSection').then(mod => mod.BengkelLayananUnggulanSection));
+const BengkelJadwalServisSection = dynamic(() => import('@/components/BengkelJadwalServisSection').then(mod => mod.BengkelJadwalServisSection));
+const Footer = dynamic(() => import('@/components/Footer').then(mod => mod.Footer));
 
 export default function BengkelPage() {
+
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900 font-sans flex flex-col justify-between">
       {/* Section 1: Navbar */}

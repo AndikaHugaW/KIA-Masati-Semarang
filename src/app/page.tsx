@@ -1,16 +1,20 @@
 'use client';
 
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
-import { StatsSection } from '@/components/StatsSection';
-import { Ev9SpecSection } from '@/components/Ev9SpecSection';
-import { FeaturedUnitsSection } from '@/components/FeaturedUnitsSection';
-import { TestDriveAdrenalineSection } from '@/components/TestDriveAdrenalineSection';
-import { TestimonialsSection } from '@/components/TestimonialsSection';
-import { BengkelComingSoonSection } from '@/components/BengkelComingSoonSection';
-import { Footer } from '@/components/Footer';
-import { TestDriveModal } from '@/components/TestDriveModal';
+
+const StatsSection = dynamic(() => import('@/components/StatsSection').then(mod => mod.StatsSection), {
+  loading: () => <div className="h-28 bg-[#090B10] animate-pulse" />
+});
+const Ev9SpecSection = dynamic(() => import('@/components/Ev9SpecSection').then(mod => mod.Ev9SpecSection));
+const FeaturedUnitsSection = dynamic(() => import('@/components/FeaturedUnitsSection').then(mod => mod.FeaturedUnitsSection));
+const TestDriveAdrenalineSection = dynamic(() => import('@/components/TestDriveAdrenalineSection').then(mod => mod.TestDriveAdrenalineSection));
+const TestimonialsSection = dynamic(() => import('@/components/TestimonialsSection').then(mod => mod.TestimonialsSection));
+const BengkelComingSoonSection = dynamic(() => import('@/components/BengkelComingSoonSection').then(mod => mod.BengkelComingSoonSection));
+const Footer = dynamic(() => import('@/components/Footer').then(mod => mod.Footer));
+const TestDriveModal = dynamic(() => import('@/components/TestDriveModal').then(mod => mod.TestDriveModal), { ssr: false });
 
 export default function Home() {
   const [testDriveOpen, setTestDriveOpen] = useState(false);
@@ -57,5 +61,6 @@ export default function Home() {
     </main>
   );
 }
+
 
 

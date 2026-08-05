@@ -161,7 +161,7 @@ export const KontakInquireSection: React.FC = () => {
           {/* Top Card: Showroom Location & Map Frame */}
           <div className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm space-y-0 flex-1 flex flex-col justify-between">
             
-            {/* Map Frame */}
+            {/* Map Frame with Dynamic Lazy Loading */}
             <div className="w-full h-52 relative border-b border-gray-100 bg-gray-100">
               <iframe
                 title="Lokasi Dealer KIA Semarang"
@@ -174,6 +174,7 @@ export const KontakInquireSection: React.FC = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
+
 
             {/* Content Details */}
             <div className="p-6 sm:p-8 space-y-5">

@@ -2,10 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
-import { KatalogGridSection } from '@/components/KatalogGridSection';
-import { TestDriveModal } from '@/components/TestDriveModal';
+
+const KatalogGridSection = dynamic(() => import('@/components/KatalogGridSection').then(mod => mod.KatalogGridSection));
+const Footer = dynamic(() => import('@/components/Footer').then(mod => mod.Footer));
+const TestDriveModal = dynamic(() => import('@/components/TestDriveModal').then(mod => mod.TestDriveModal), { ssr: false });
 
 const heroSlides = [
   {
@@ -78,12 +80,13 @@ export default function KatalogPage() {
               src={slide.image}
               alt="KIA Hero Banner"
               fill
-              unoptimized
+              sizes="100vw"
               className="w-full h-full object-cover object-center"
               priority={index === 0}
             />
           </div>
         ))}
+
 
         {/* Soft Dark Vignette Overlay for Crisp Text Contrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 pointer-events-none" />

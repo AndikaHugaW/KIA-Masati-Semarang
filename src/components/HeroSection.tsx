@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -8,11 +9,11 @@ interface HeroSectionProps {
 }
 
 const heroImages = [
-  '/images/landing%20page/hero%201.png',
-  '/images/katalog%20unit/hero2.png',
-  '/images/katalog%20unit/hero3.png',
-  '/images/katalog%20unit/kia%20all%20new%20carens.png',
-  '/images/katalog%20unit/kia%20ev9.png',
+  '/images/landing page/hero 1.png',
+  '/images/katalog unit/hero2.png',
+  '/images/katalog unit/hero3.png',
+  '/images/katalog unit/kia all new carens.png',
+  '/images/katalog unit/kia ev9.png',
 ];
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => {
@@ -32,14 +33,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
       {heroImages.map((src, index) => (
         <div
           key={src}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out scale-105 ${
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out scale-105 ${
             index === currentImageIndex ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{
-            backgroundImage: `url('${src}')`,
-          }}
-        />
+        >
+          <Image
+            src={src}
+            alt="KIA Dealer Showcase"
+            fill
+            priority={index === 0}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
       ))}
+
       
       {/* Overlay to match lighting & text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 pointer-events-none" />
