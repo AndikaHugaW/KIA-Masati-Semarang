@@ -23,6 +23,11 @@ const heroSlides = [
     subtitle: 'World Class Design.',
     title: 'Drive now',
   },
+  {
+    image: '/images/katalog unit/kia all new carens.png',
+    subtitle: 'World Class Design.',
+    title: 'Drive now',
+  },
 ];
 
 export default function KatalogPage() {

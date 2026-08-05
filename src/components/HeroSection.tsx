@@ -11,6 +11,7 @@ const heroImages = [
   '/images/landing%20page/hero%201.png',
   '/images/katalog%20unit/hero2.png',
   '/images/katalog%20unit/hero3.png',
+  '/images/katalog%20unit/kia%20all%20new%20carens.png',
 ];
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => {
