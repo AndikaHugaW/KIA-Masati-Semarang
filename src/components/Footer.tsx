@@ -9,26 +9,26 @@ const socialLinks = [
   {
     name: 'Instagram',
     href: 'https://instagram.com',
-    icon: '/images/medsos/instagram.svg',
-    hoverBg: 'hover:bg-pink-50 hover:border-pink-200 hover:scale-110',
+    defaultIcon: '/images/medsos/default/icon 1.svg',
+    hoverIcon: '/images/medsos/hover/icon 1.svg',
   },
   {
     name: 'Facebook',
     href: 'https://facebook.com',
-    icon: '/images/medsos/facebook.svg',
-    hoverBg: 'hover:bg-blue-50 hover:border-blue-200 hover:scale-110',
+    defaultIcon: '/images/medsos/default/icon 2.svg',
+    hoverIcon: '/images/medsos/hover/icon 2.svg',
   },
   {
     name: 'WhatsApp',
     href: 'https://wa.me/6281234567890',
-    icon: '/images/medsos/whatsapp.svg',
-    hoverBg: 'hover:bg-emerald-50 hover:border-emerald-200 hover:scale-110',
+    defaultIcon: '/images/medsos/default/icon 3.svg',
+    hoverIcon: '/images/medsos/hover/icon 3.svg',
   },
   {
     name: 'TikTok',
     href: 'https://tiktok.com',
-    icon: '/images/medsos/tiktok.svg',
-    hoverBg: 'hover:bg-neutral-900 hover:border-neutral-900 hover:scale-110 group-hover:invert',
+    defaultIcon: '/images/medsos/default/icon 4.svg',
+    hoverIcon: '/images/medsos/hover/icon 4.svg',
   },
 ];
 
@@ -64,8 +64,8 @@ export const Footer: React.FC<FooterProps> = () => {
               Dealer resmi KIA melayani penjualan, perawatan, dan suku cadang dengan standar global.
             </p>
 
-            {/* Social Media Links from /images/medsos/ Folder */}
-            <div className="flex items-center gap-3 text-gray-600 pt-2">
+            {/* Social Media Links from /images/medsos/ default and hover folders */}
+            <div className="flex items-center gap-3 pt-2">
               {socialLinks.map((item) => (
                 <a
                   key={item.name}
@@ -73,14 +73,25 @@ export const Footer: React.FC<FooterProps> = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.name}
-                  className={`group p-2.5 rounded-xl bg-gray-100 border border-transparent transition-all duration-200 shadow-sm ${item.hoverBg}`}
+                  className="group relative w-10 h-10 flex items-center justify-center transition-transform duration-200 hover:scale-110"
                 >
+                  {/* Default State Icon */}
                   <Image
-                    src={item.icon}
+                    src={item.defaultIcon}
                     alt={`${item.name} Icon`}
-                    width={20}
-                    height={20}
-                    className="w-5 h-5 object-contain transition-transform"
+                    width={40}
+                    height={40}
+                    unoptimized
+                    className="w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"
+                  />
+                  {/* Hover State Icon */}
+                  <Image
+                    src={item.hoverIcon}
+                    alt={`${item.name} Hover Icon`}
+                    width={40}
+                    height={40}
+                    unoptimized
+                    className="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </a>
               ))}
