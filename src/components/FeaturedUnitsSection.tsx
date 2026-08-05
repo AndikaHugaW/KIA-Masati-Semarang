@@ -16,7 +16,7 @@ export const FeaturedUnitsSection: React.FC<FeaturedUnitsSectionProps> = ({ onOp
       name: 'KIA Sonet',
       categoryBadge: 'SUV',
       price: 'Mulai Rp 263.000.000',
-      image: '/images/katalog unit/kia sonet.png',
+      image: '/images/katalog unit/kia sonet.webp',
       specs: [
         { icon: Fuel, label: '1.5L Engine' },
         { icon: Gauge, label: '115 PS' },
@@ -28,7 +28,7 @@ export const FeaturedUnitsSection: React.FC<FeaturedUnitsSectionProps> = ({ onOp
       name: 'KIA EV9',
       categoryBadge: 'EV',
       price: 'Mulai Rp 1.985.000.000',
-      image: '/images/katalog unit/kia ev9.png',
+      image: '/images/katalog unit/kia ev9.webp',
       specs: [
         { icon: Zap, label: '497 km Range' },
         { icon: Gauge, label: '385 PS' },
@@ -48,6 +48,7 @@ export const FeaturedUnitsSection: React.FC<FeaturedUnitsSectionProps> = ({ onOp
       ],
     },
   ];
+
 
   return (
     <section className="bg-[#F8F9FA] py-16 sm:py-20 px-4 sm:px-8 lg:px-12 border-b border-gray-200/80">
@@ -92,8 +93,10 @@ export const FeaturedUnitsSection: React.FC<FeaturedUnitsSectionProps> = ({ onOp
                     src={unit.image}
                     alt={unit.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 500px"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
+
                 </div>
 
                 {/* Card Content */}

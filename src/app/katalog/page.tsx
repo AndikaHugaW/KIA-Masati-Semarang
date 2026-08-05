@@ -11,31 +11,32 @@ const TestDriveModal = dynamic(() => import('@/components/TestDriveModal').then(
 
 const heroSlides = [
   {
-    image: '/images/katalog unit/hero.png',
+    image: '/images/katalog unit/hero.webp',
     subtitle: 'World Class Design.',
     title: 'Drive now',
   },
   {
-    image: '/images/katalog unit/hero2.png',
+    image: '/images/katalog unit/hero2.webp',
     subtitle: 'World Class Design.',
     title: 'Drive now',
   },
   {
-    image: '/images/katalog unit/hero3.png',
+    image: '/images/katalog unit/hero3.webp',
     subtitle: 'World Class Design.',
     title: 'Drive now',
   },
   {
-    image: '/images/katalog unit/kia all new carens.png',
+    image: '/images/katalog unit/kia all new carens.webp',
     subtitle: 'World Class Design.',
     title: 'Drive now',
   },
   {
-    image: '/images/katalog unit/kia ev9.png',
+    image: '/images/katalog unit/kia ev9.webp',
     subtitle: 'World Class Design.',
     title: 'Drive now',
   },
 ];
+
 
 export default function KatalogPage() {
   const [testDriveOpen, setTestDriveOpen] = useState(false);

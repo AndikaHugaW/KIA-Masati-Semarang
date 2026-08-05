@@ -34,9 +34,10 @@ export const KontakTimProfesionalSection: React.FC = () => {
             {/* Avatar */}
             <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-md">
               <Image
-                src="/images/team/budi.png"
+                src="/images/team/budi.webp"
                 alt="Budi Santoso - Branch Manager KIA Semarang"
                 fill
+                sizes="144px"
                 className="object-cover object-top"
               />
             </div>
@@ -73,11 +74,13 @@ export const KontakTimProfesionalSection: React.FC = () => {
             {/* Avatar */}
             <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-md">
               <Image
-                src="/images/team/siska.png"
+                src="/images/team/siska.webp"
                 alt="Siska Wijaya - Senior Consultant KIA Semarang"
                 fill
+                sizes="128px"
                 className="object-cover object-top"
               />
+
             </div>
 
             {/* Details */}

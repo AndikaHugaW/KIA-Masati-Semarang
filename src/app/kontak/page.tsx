@@ -86,12 +86,13 @@ export default function KontakPage() {
           {/* Right Column: Showroom Exterior Image */}
           <div className="lg:col-span-6 relative w-full min-h-[380px] lg:min-h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg shadow-black/5 bg-gray-200">
             <Image
-              src="/images/landing page/hero 1.png"
+              src="/images/landing page/hero 1.webp"
               alt="KIA Semarang Showroom Exterior"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-center"
-              priority
             />
+
           </div>
 
         </div>

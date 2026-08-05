@@ -34,7 +34,7 @@ const SPEC_CARS: CarSpecData[] = [
     id: 'kia-ev9',
     name: 'KIA EV9',
     badge: 'ALL-ELECTRIC 6-SEATER',
-    bgImage: '/images/landing%20page/section%203.png',
+    bgImage: '/images/landing%20page/section%203.webp',
     dimensions: {
       length: '113.2 IN',
       width: '184.8 IN',
@@ -59,7 +59,7 @@ const SPEC_CARS: CarSpecData[] = [
     id: 'kia-sonet',
     name: 'KIA SONET',
     badge: 'COMPACT SUV TURBO',
-    bgImage: '/images/katalog%20unit/kia%20sonet.png',
+    bgImage: '/images/katalog%20unit/kia%20sonet.webp',
     dimensions: {
       length: '162.2 IN',
       width: '70.5 IN',
@@ -109,7 +109,7 @@ const SPEC_CARS: CarSpecData[] = [
     id: 'kia-seltos',
     name: 'KIA SELTOS',
     badge: 'BOLD & INTELLIGENT SUV',
-    bgImage: '/images/katalog%20unit/all%20new%20seltos.png',
+    bgImage: '/images/katalog%20unit/all%20new%20seltos.webp',
     dimensions: {
       length: '170.0 IN',
       width: '70.9 IN',
@@ -134,7 +134,7 @@ const SPEC_CARS: CarSpecData[] = [
     id: 'kia-carens',
     name: 'KIA CARENS',
     badge: 'PURE ELECTRIC CROSSOVER',
-    bgImage: '/images/katalog%20unit/kia%20all%20new%20carens.png',
+    bgImage: '/images/katalog%20unit/kia%20all%20new%20carens.webp',
     dimensions: {
       length: '181.5 IN',
       width: '70.8 IN',
@@ -156,6 +156,7 @@ const SPEC_CARS: CarSpecData[] = [
     },
   },
 ];
+
 
 export const Ev9SpecSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);

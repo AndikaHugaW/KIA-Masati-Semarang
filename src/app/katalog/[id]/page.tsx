@@ -39,7 +39,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'Trendy',
       trim: '1.5L IVT Trendy',
       price: 'Rp 263.000.000',
-      image: '/images/katalog unit/kia sonet/kia-sonet-trendy.png',
+      image: '/images/katalog unit/kia sonet/kia-sonet-trendy.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L',
       transmission: 'IVT Automatic',
@@ -59,7 +59,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'Motion',
       trim: '1.5L IVT Motion',
       price: 'Rp 288.000.000',
-      image: '/images/katalog unit/kia sonet/kia-sonet-motion.png',
+      image: '/images/katalog unit/kia sonet/kia-sonet-motion.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L',
       transmission: 'IVT Automatic',
@@ -79,7 +79,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'Signature',
       trim: '1.5L IVT Signature',
       price: 'Rp 313.000.000',
-      image: '/images/katalog unit/kia sonet/kia-sonet-signature.png',
+      image: '/images/katalog unit/kia sonet/kia-sonet-signature.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L',
       transmission: 'IVT Automatic',
@@ -101,7 +101,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'GT-Line',
       trim: 'EV9 GT-Line 99.8 kWh',
       price: 'Rp 1.985.000.000',
-      image: '/images/katalog unit/kia ev9/kia-ev9-gt-line.png',
+      image: '/images/katalog unit/kia ev9/kia-ev9-gt-line.webp',
       badge: 'PROMO',
       engine: 'Dual Motor 99.8 kWh',
       transmission: 'Single Speed',
@@ -174,7 +174,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'Seltos E 1.5',
       trim: '1.5L IVT E',
       price: 'Rp 395.000.000',
-      image: '/images/katalog unit/all new seltos.png',
+      image: '/images/katalog unit/all new seltos.webp',
       badge: 'READY STOCK',
       engine: '1.5L Gasoline MPI',
       transmission: 'IVT Automatic',
@@ -191,7 +191,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'Seltos EX 1.4 Turbo',
       trim: '1.4 Turbo EX',
       price: 'Rp 425.000.000',
-      image: '/images/katalog unit/all new seltos.png',
+      image: '/images/katalog unit/all new seltos.webp',
       badge: 'READY STOCK',
       engine: '1.4L Turbo GDI',
       transmission: '7-DCT Dual Clutch',
@@ -208,7 +208,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'Seltos GT-Line 1.4 Turbo',
       trim: '1.4 Turbo GT-Line',
       price: 'Rp 446.000.000',
-      image: '/images/katalog unit/all new seltos.png',
+      image: '/images/katalog unit/all new seltos.webp',
       badge: 'READY STOCK',
       engine: '1.4L Turbo GDI',
       transmission: '7-DCT Dual Clutch',
@@ -227,7 +227,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'Carens 1.5 MPI',
       trim: '1.5 MPI Premiere 7-Seater',
       price: 'Rp 407.000.000',
-      image: '/images/katalog unit/kia all new carens.png',
+      image: '/images/katalog unit/kia all new carens.webp',
       badge: 'FULL EV',
       engine: 'Smartstream 1.5L MPI',
       transmission: 'IVT Automatic',
@@ -244,7 +244,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'Carens 1.4 Turbo',
       trim: '1.4 Turbo Premiere 6-Seater',
       price: 'Rp 467.000.000',
-      image: '/images/katalog unit/kia all new carens.png',
+      image: '/images/katalog unit/kia all new carens.webp',
       badge: 'FULL EV',
       engine: '1.4L Turbo GDI',
       transmission: '7-DCT Dual Clutch',
@@ -261,7 +261,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'Carens GT-Line EV',
       trim: 'GT-Line AWD Electric',
       price: 'Rp 1.309.000.000',
-      image: '/images/katalog unit/kia all new carens.png',
+      image: '/images/katalog unit/kia all new carens.webp',
       badge: 'FULL EV',
       engine: 'Dual Motor AWD 77.4 kWh',
       transmission: 'Single Speed',
@@ -276,6 +276,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     }
   ]
 };
+
 
 export default function CarDetailPage() {
   const params = useParams();
@@ -380,6 +381,7 @@ export default function CarDetailPage() {
                     src={selectedImage || car.image}
                     alt={car.name}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-center transition-all duration-500"
                     priority
                   />
@@ -406,6 +408,7 @@ export default function CarDetailPage() {
                             src={imgUrl}
                             alt={`${car.name} thumb ${idx + 1}`}
                             fill
+                            sizes="(max-width: 768px) 33vw, 200px"
                             className="object-cover object-center"
                           />
                         </div>
@@ -553,9 +556,11 @@ export default function CarDetailPage() {
                       src={v.image}
                       alt={v.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
+
 
                   {/* Card Content Body */}
                   <div className="p-6 flex-1 flex flex-col justify-between space-y-4">

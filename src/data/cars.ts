@@ -65,12 +65,13 @@ export const CARS_DATA: Car[] = [
     transmissionDetail: '7-DCT',
     fuelType: 'Bensin',
     seats: 5,
-    image: '/images/katalog unit/kia sonet.png',
+    image: '/images/katalog unit/kia sonet.webp',
     gallery: [
-      '/images/katalog unit/kia sonet.png',
-      '/images/katalog unit/kia sonet/kia sonet2.png',
-      '/images/katalog unit/kia sonet/kia sonet.png'
+      '/images/katalog unit/kia sonet.webp',
+      '/images/katalog unit/kia sonet/kia sonet2.webp',
+      '/images/katalog unit/kia sonet/kia sonet.webp'
     ],
+
     badge: { text: 'READY STOCK', type: 'ready' },
     features: [
       'Bose Premium 7-Speaker System',
@@ -113,11 +114,11 @@ export const CARS_DATA: Car[] = [
     battery: '99.8 kWh',
     range: '497 km Range',
     driveType: 'AWD',
-    image: '/images/katalog unit/kia ev9.png',
+    image: '/images/katalog unit/kia ev9.webp',
     gallery: [
-      '/images/katalog unit/kia ev9.png',
-      '/images/katalog unit/kia ev9/kia-ev9-interior1.png',
-      '/images/katalog unit/kia ev9/kia-ev9-interior2.png'
+      '/images/katalog unit/kia ev9.webp',
+      '/images/katalog unit/kia ev9/kia-ev9-interior1.webp',
+      '/images/katalog unit/kia ev9/kia-ev9-interior2.webp'
     ],
     badge: { text: 'PROMO', type: 'promo' },
     features: [
@@ -166,8 +167,8 @@ export const CARS_DATA: Car[] = [
     image: '/images/katalog unit/kia carnival.webp',
     gallery: [
       '/images/katalog unit/kia carnival.webp',
-      '/images/katalog unit/kia ev9.png',
-      '/images/katalog unit/all new seltos.png'
+      '/images/katalog unit/kia ev9.webp',
+      '/images/katalog unit/all new seltos.webp'
     ],
     badge: { text: 'FULL EV', type: 'ev' },
     features: [
@@ -210,11 +211,11 @@ export const CARS_DATA: Car[] = [
     transmissionDetail: '7-DCT Dual Clutch',
     fuelType: 'Bensin',
     seats: 5,
-    image: '/images/katalog unit/all new seltos.png',
+    image: '/images/katalog unit/all new seltos.webp',
     gallery: [
-      '/images/katalog unit/all new seltos.png',
-      '/images/katalog unit/kia sonet.png',
-      '/images/katalog unit/kia all new carens.png'
+      '/images/katalog unit/all new seltos.webp',
+      '/images/katalog unit/kia sonet.webp',
+      '/images/katalog unit/kia all new carens.webp'
     ],
     badge: { text: 'READY STOCK', type: 'ready' },
     features: [
@@ -259,12 +260,13 @@ export const CARS_DATA: Car[] = [
     battery: '77.4 kWh',
     range: '506 km Range',
     driveType: 'AWD',
-    image: '/images/katalog unit/kia all new carens.png',
+    image: '/images/katalog unit/kia all new carens.webp',
     gallery: [
-      '/images/katalog unit/kia all new carens.png',
-      '/images/katalog unit/kia sonet.png',
-      '/images/katalog unit/kia ev9.png'
+      '/images/katalog unit/kia all new carens.webp',
+      '/images/katalog unit/kia sonet.webp',
+      '/images/katalog unit/kia ev9.webp'
     ],
+
     badge: { text: 'FULL EV', type: 'ev' },
     features: [
       'Dual 12.3" Curved Display',

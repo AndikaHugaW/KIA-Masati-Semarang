@@ -9,12 +9,13 @@ interface HeroSectionProps {
 }
 
 const heroImages = [
-  '/images/landing page/hero 1.png',
-  '/images/katalog unit/hero2.png',
-  '/images/katalog unit/hero3.png',
-  '/images/katalog unit/kia all new carens.png',
-  '/images/katalog unit/kia ev9.png',
+  '/images/landing page/hero 1.webp',
+  '/images/katalog unit/hero2.webp',
+  '/images/katalog unit/hero3.webp',
+  '/images/katalog unit/kia all new carens.webp',
+  '/images/katalog unit/kia ev9.webp',
 ];
+
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

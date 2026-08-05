@@ -8,9 +8,10 @@ export const BengkelComingSoonSection: React.FC = () => {
     <section className="relative w-full min-h-[480px] sm:min-h-[580px] lg:min-h-[640px] overflow-hidden flex items-center justify-center text-center bg-neutral-900">
       {/* Full Width & Height Background Image */}
       <Image
-        src="/images/layanan bengkel/hero bengkel.png"
-        alt="Layanan Bengkel Resmi KIA"
+        src="/images/layanan bengkel/hero bengkel.webp"
+        alt="Layanan Bengkel KIA Semarang"
         fill
+        sizes="100vw"
         className="object-cover object-center"
         priority
       />

@@ -62,15 +62,16 @@ export const TestDriveAdrenalineSection: React.FC<TestDriveAdrenalineSectionProp
             )}
           </div>
 
-          {/* Right Column: Car Cockpit Image using img5.png */}
+          {/* Right Column: Car Cockpit Image using img5.webp */}
           <div className="lg:col-span-6 relative min-h-[300px] sm:min-h-[380px] lg:min-h-[460px] bg-neutral-900 overflow-hidden">
             <Image
-              src="/images/landing page/img5.png"
+              src="/images/landing page/img5.webp"
               alt="KIA Experience the Adrenaline"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-center"
-              priority
             />
+
             {/* Soft inner glow gradient for seamless dark blending */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0E1522] via-transparent to-transparent hidden lg:block" />
           </div>
