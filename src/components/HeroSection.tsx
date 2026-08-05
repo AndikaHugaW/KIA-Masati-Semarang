@@ -1,26 +1,47 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenTestDrive?: (carId?: string) => void;
 }
 
+const heroImages = [
+  '/images/landing%20page/hero%201.png',
+  '/images/katalog%20unit/hero2.png',
+  '/images/katalog%20unit/hero3.png',
+];
+
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden bg-neutral-900">
-      {/* Background Image Showcase */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
-        style={{
-          backgroundImage: `url('/images/landing%20page/hero%201.png')`,
-        }}
-      />
+      {/* Background Image Showcase with Crossfade Transition */}
+      {heroImages.map((src, index) => (
+        <div
+          key={src}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out scale-105 ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: `url('${src}')`,
+          }}
+        />
+      ))}
       
       {/* Overlay to match lighting & text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
       <div className="max-w-[1728px] mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-24 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
