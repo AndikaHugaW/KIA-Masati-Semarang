@@ -10,6 +10,7 @@ import { TestDriveModal } from '@/components/TestDriveModal';
 const heroImages = [
   '/images/katalog unit/hero.png',
   '/images/katalog unit/hero2.png',
+  '/images/katalog unit/hero3.png',
 ];
 
 export default function KatalogPage() {
