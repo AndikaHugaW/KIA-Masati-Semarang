@@ -1,0 +1,91 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #090B10;
+    --foreground: #F3F4F6;
+    --kia-red: #E5121B;
+    --kia-red-dark: #B30C13;
+    --kia-silver: #C0C0C0;
+    --glass-bg: rgba(18, 22, 32, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+* {
+  font-family: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400; /* Regular for body / descriptions */
+  overflow-x: hidden;
+}
+
+/* Headings / Judul: Bold (700) */
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+/* Sub Judul / Subheadings: Medium (500) */
+h4, h5, h6, .subtitle, .sub-title {
+  font-weight: 500;
+}
+
+/* Deskripsi / Paragraphs: Regular (400) */
+p {
+  font-weight: 400;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090B10;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A303F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E5121B;
+}
+
+/* Glow Effects */
+.glow-kia-red {
+  box-shadow: 0 0 35px -5px rgba(229, 18, 27, 0.45);
+}
+
+.glow-kia-cyan {
+  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.35);
+}
+
+.glass-panel {
+  background: rgba(18, 24, 38, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(229, 18, 27, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
