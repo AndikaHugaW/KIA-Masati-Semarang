@@ -21,7 +21,7 @@ export default function KatalogPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -49,7 +49,8 @@ export default function KatalogPage() {
               src={src}
               alt="KIA Hero Banner"
               fill
-              className="w-full h-full object-contain object-center"
+              unoptimized
+              className="w-full h-full object-cover object-center"
               priority
             />
           </div>
