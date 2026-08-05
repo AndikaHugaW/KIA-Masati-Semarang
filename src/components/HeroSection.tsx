@@ -124,24 +124,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
         </div>
       </div>
 
-      {/* 4. Bottom Row (Headline + Horizontal Action Pill Buttons on Desktop) */}
-      <div className="relative z-20 flex flex-col lg:flex-row lg:items-end justify-between gap-6 w-full pt-4 pb-2">
-        
-        {/* Headline with 20px gap */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight flex flex-col gap-[20px] max-w-2xl">
+      {/* 4. Bottom Hero Headline & Action Pill Buttons (Vertical Stacked Layout) */}
+      <div className="relative z-20 w-full max-w-xl space-y-6 pt-4 pb-2">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight flex flex-col gap-[20px]">
           <span>Temukan Mobil</span>
           <span>KIA Impian Anda</span>
         </h1>
 
-        {/* Action Buttons: Side-by-Side on Desktop, Stacked on Mobile */}
-        <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full lg:w-auto shrink-0">
-          
+        <div className="space-y-4 pt-2 max-w-md">
           {/* Button 1: Glass Pill with Enlarged Circle Arrow Icon */}
           <Link
             href="/katalog"
-            className="bg-white/15 hover:bg-white/25 backdrop-blur-xl border border-white/30 text-white font-semibold text-base sm:text-lg py-2.5 pl-6 pr-2.5 rounded-full flex items-center justify-between gap-4 shadow-lg transition-all group active:scale-[0.98]"
+            className="w-full bg-white/15 hover:bg-white/25 backdrop-blur-xl border border-white/30 text-white font-semibold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-lg transition-all group active:scale-[0.98]"
           >
-            <span className="font-semibold tracking-tight whitespace-nowrap">Lihat Semua Mobil</span>
+            <span className="font-semibold tracking-tight">Lihat Semua Mobil</span>
             <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-gray-900 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
               <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-gray-900" />
             </span>
@@ -150,15 +146,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTestDrive }) => 
           {/* Button 2: Solid White Pill with Enlarged Circle Arrow Icon */}
           <button
             onClick={() => onOpenTestDrive?.()}
-            className="bg-white hover:bg-gray-100 text-gray-950 font-bold text-base sm:text-lg py-2.5 pl-6 pr-2.5 rounded-full flex items-center justify-between gap-4 shadow-2xl transition-all group active:scale-[0.98] text-left"
+            className="w-full bg-white hover:bg-gray-100 text-gray-950 font-bold text-base sm:text-lg py-2.5 sm:py-3 pl-6 pr-2.5 rounded-full flex items-center justify-between shadow-2xl transition-all group active:scale-[0.98] text-left"
           >
-            <span className="font-bold tracking-tight whitespace-nowrap">Booking Test Drive</span>
+            <span className="font-bold tracking-tight">Booking Test Drive</span>
             <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
               <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
             </span>
           </button>
         </div>
-
       </div>
 
     </section>
