@@ -120,7 +120,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Premiere',
       trim: '2.2 CRDi Premiere 7-Seater',
-      price: 'Rp 1.280.000.000',
+      price: 'Rp 1.039.000.000',
       image: '/images/katalog unit/kia carnival/kia-carnival.jpg',
       badge: 'READY STOCK',
       engine: '2.2L Turbo Diesel',
