@@ -207,13 +207,13 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
   ],
   'kia-ev6': [
     {
-      name: 'Carens 1.5 MPI',
-      trim: '1.5 MPI Premiere 7-Seater',
+      name: 'M/T',
+      trim: '1.5 MPI Premiere M/T 7-Seater',
       price: 'Rp 407.000.000',
       image: '/images/katalog unit/kia all new carens.webp',
-      badge: 'FULL EV',
+      badge: 'READY STOCK',
       engine: 'Smartstream 1.5L MPI',
-      transmission: 'IVT Automatic',
+      transmission: 'Manual 6-Speed',
       seats: 7,
       fuelType: 'Bensin',
       features: [
@@ -224,37 +224,37 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       ]
     },
     {
-      name: 'Carens 1.4 Turbo',
-      trim: '1.4 Turbo Premiere 6-Seater',
+      name: 'Trendy',
+      trim: '1.5 MPI Trendy 7-Seater',
       price: 'Rp 467.000.000',
       image: '/images/katalog unit/kia all new carens.webp',
-      badge: 'FULL EV',
-      engine: '1.4L Turbo GDI',
-      transmission: '7-DCT Dual Clutch',
-      seats: 6,
+      badge: 'READY STOCK',
+      engine: 'Smartstream 1.5L MPI',
+      transmission: 'IVT Automatic',
+      seats: 7,
       fuelType: 'Bensin',
       features: [
-        '1.4L Turbo Gasoline Engine',
+        'Smartstream 1.5L Gasoline Engine',
         'Ventilated Front Seats',
         'Wireless Phone Charger & Sunroof',
         'Drive Mode Select & TPMS'
       ]
     },
     {
-      name: 'Carens GT-Line EV',
-      trim: 'GT-Line AWD Electric',
+      name: 'Motion',
+      trim: '1.4 Turbo Motion 6-Seater',
       price: 'Rp 1.309.000.000',
       image: '/images/katalog unit/kia all new carens.webp',
-      badge: 'FULL EV',
-      engine: 'Dual Motor AWD 77.4 kWh',
-      transmission: 'Single Speed',
+      badge: 'READY STOCK',
+      engine: '1.4L Turbo GDI',
+      transmission: '7-DCT Dual Clutch',
       seats: 6,
-      fuelType: 'Listrik',
+      fuelType: 'Bensin',
       features: [
-        'Dual Motor AWD 325 PS / 605 Nm',
-        'Vehicle-to-Load (V2L) 3.6kW',
+        '1.4L Turbo Gasoline Engine 140 PS',
+        'Captain Seat 2nd Row with Cooling',
         'Augmented Reality Head-Up Display',
-        'Dual 12.3" Curved Display'
+        'Dual 10.25" Curved Display'
       ]
     }
   ]
