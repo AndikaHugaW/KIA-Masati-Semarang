@@ -137,7 +137,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Hybrid',
       trim: '1.6 Turbo Hybrid 7-Seater',
-      price: 'Rp 1.388.000.000',
+      price: 'Rp 1.398.000.000',
       image: '/images/katalog unit/kia carnival/kia-carnival.jpg',
       badge: 'HYBRID',
       engine: '1.6L Turbo Hybrid',
@@ -413,7 +413,7 @@ export default function CarDetailPage() {
                     {car.name}
                   </h1>
                   <p className="text-sm font-bold text-gray-500 mt-1">
-                    {car.brand || 'KIA'} • {car.model} • {car.year || '2024'}
+                    Mulai dari
                   </p>
 
                   {/* Price Display */}
