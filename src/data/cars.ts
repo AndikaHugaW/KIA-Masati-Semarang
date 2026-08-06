@@ -258,8 +258,8 @@ export const CARS_DATA: Car[] = [
     image: '/images/katalog unit/kia all new carens.webp',
     gallery: [
       '/images/katalog unit/kia all new carens.webp',
-      '/images/katalog unit/kia sonet.webp',
-      '/images/katalog unit/kia ev9.webp'
+      '/images/katalog unit/kia all new carens/interior-2.webp',
+      '/images/katalog unit/kia all new carens/interior-3.webp'
     ],
 
     badge: { text: 'FULL EV', type: 'ev' },
