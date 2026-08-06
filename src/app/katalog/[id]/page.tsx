@@ -156,7 +156,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Trendy',
       trim: '1.5L IVT Trendy',
-      price: 'Rp 395.000.000',
+      price: 'Rp 359.000.000',
       image: '/images/katalog unit/kia seltos/kia-seltos.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L MPI',
@@ -173,7 +173,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Prestige+ ADAS',
       trim: '1.5L IVT Prestige+ ADAS',
-      price: 'Rp 425.000.000',
+      price: 'Rp 417.000.000',
       image: '/images/katalog unit/kia seltos/kia-seltos.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L MPI',
@@ -190,7 +190,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'GT Line',
       trim: '1.4 Turbo GT Line',
-      price: 'Rp 446.000.000',
+      price: 'Rp 469.000.000',
       image: '/images/katalog unit/kia seltos/kia-seltos.webp',
       badge: 'READY STOCK',
       engine: '1.4L Turbo GDI',
