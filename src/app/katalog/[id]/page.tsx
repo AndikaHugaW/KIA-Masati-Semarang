@@ -191,7 +191,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       name: 'GT Line',
       trim: '1.4 Turbo GT Line',
       price: 'Rp 469.000.000',
-      image: '/images/katalog unit/kia seltos/kia-seltos.webp',
+      image: '/images/katalog unit/kia seltos/kia-seltos-gtline.webp',
       badge: 'READY STOCK',
       engine: '1.4L Turbo GDI',
       transmission: '7-DCT Dual Clutch',
