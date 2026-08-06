@@ -206,11 +206,9 @@ export const CARS_DATA: Car[] = [
     transmissionDetail: '7-DCT Dual Clutch',
     fuelType: 'Bensin',
     seats: 5,
-    image: '/images/katalog unit/all new seltos.webp',
+    image: '/images/katalog unit/kia seltos/kia-seltos.webp',
     gallery: [
-      '/images/katalog unit/all new seltos.webp',
-      '/images/katalog unit/kia sonet.webp',
-      '/images/katalog unit/kia all new carens.webp'
+      '/images/katalog unit/kia seltos/kia-seltos.webp'
     ],
     badge: { text: 'READY STOCK', type: 'ready' },
     features: [
