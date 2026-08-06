@@ -163,7 +163,9 @@ export const CARS_DATA: Car[] = [
     seats: 7,
     image: '/images/katalog unit/kia carnival.webp',
     gallery: [
-      '/images/katalog unit/kia carnival.webp'
+      '/images/katalog unit/kia carnival.webp',
+      '/images/katalog unit/kia carnival/interior 1.webp',
+      '/images/katalog unit/kia carnival/interior 2.webp'
     ],
     badge: { text: 'PROMO', type: 'promo' },
     features: [
