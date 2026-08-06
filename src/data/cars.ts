@@ -141,36 +141,31 @@ export const CARS_DATA: Car[] = [
   {
     id: 'kia-carnival',
     name: 'KIA Carnival',
-    trim: 'GT-Line AWD',
+    trim: '1.6 Turbo Hybrid / 2.2 CRDi',
     model: 'Carnival',
     brand: 'KIA',
     year: '2024',
     color: 'Snow White Pearl',
-    description: 'KIA Carnival 2024 MPV mewah keluarga dengan konfigurasi tempat duduk 7-seater yang sangat nyaman, teknologi terdepan, dan efisiensi tinggi untuk perjalanan jarak jauh.',
+    description: 'KIA Carnival 2024 MPV mewah keluarga dengan konfigurasi tempat duduk 7-seater yang sangat nyaman, teknologi terdepan, serta pilihan mesin Premiere (Diesel) dan Hybrid untuk perjalanan jarak jauh.',
     kilometer: '0 km',
     status: 'Tersedia',
     tagline: 'Grand Utility Vehicle for Luxury Family Journeys',
     category: 'MPV',
     bodyType: 'MPV',
-    priceStarting: 'Rp 1.3 M',
-    formattedPrice: 'Rp 1.300.000.000',
-    rawPrice: 1300000000,
-    engine: 'Dual Motor 77.4 kWh',
-    power: '320 HP',
+    priceStarting: 'Rp 1.28 M',
+    formattedPrice: 'Rp 1.280.000.000',
+    rawPrice: 1280000000,
+    engine: '1.6L Turbo Hybrid / 2.2L Turbo Diesel',
+    power: '245 PS / 367 Nm',
     transmissionType: 'Automatic',
-    transmissionDetail: 'Automatic',
-    fuelType: 'Listrik',
+    transmissionDetail: '6-Speed / 8-Speed Automatic',
+    fuelType: 'Bensin',
     seats: 7,
-    battery: '77.4 kWh',
-    range: '506 km Range',
-    driveType: 'AWD',
     image: '/images/katalog unit/kia carnival.webp',
     gallery: [
-      '/images/katalog unit/kia carnival.webp',
-      '/images/katalog unit/kia ev9.webp',
-      '/images/katalog unit/all new seltos.webp'
+      '/images/katalog unit/kia carnival.webp'
     ],
-    badge: { text: 'FULL EV', type: 'ev' },
+    badge: { text: 'PROMO', type: 'promo' },
     features: [
       'Smart Power Sliding Doors & Power Tailgate',
       'Dual 12.3" Panoramic Display',
@@ -178,14 +173,12 @@ export const CARS_DATA: Car[] = [
       'Forward Collision-Avoidance Assist (FCA)',
       'Dual Sunroof & Mood Lamp Ambient Lighting',
       'Wireless Smartphone Charger',
-      'Rear Seat Entertainment Ready',
+      'Relaxation Captain Seats with Heating/Cooling',
       'Paddle Shifter & Drive Mode Select'
     ],
     specs: {
-      acceleration: '0-100 km/h: 5.2 sec',
-      range: '506 km',
-      driveType: 'All-Wheel Drive (AWD)',
-      warranty: '8 Tahun Baterai / 5 Tahun Garansi Unit'
+      driveType: 'Front-Wheel Drive (FWD)',
+      warranty: '5 Tahun / 150.000 km Garansi Resmi'
     }
   },
   {

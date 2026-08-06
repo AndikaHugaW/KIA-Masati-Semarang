@@ -118,28 +118,11 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
   ],
   'kia-carnival': [
     {
-      name: 'Dynamic 11-Seater',
-      trim: '2.2 CRDi Dynamic',
-      price: 'Rp 1.150.000.000',
-      image: '/images/katalog unit/kia carnival.webp',
-      badge: 'FULL EV',
-      engine: '2.2L Turbo Diesel',
-      transmission: '8-Speed Automatic',
-      seats: 11,
-      fuelType: 'Diesel',
-      features: [
-        'Smartstream 2.2L Turbo Diesel Engine',
-        'Smart Power Sliding Doors & Power Tailgate',
-        '12.3" Infotainment Display with Apple CarPlay',
-        'Safety Suite FCA, LKA, & BCA'
-      ]
-    },
-    {
-      name: 'Premiere 7-Seater',
-      trim: '2.2 CRDi Premiere',
+      name: 'Premiere',
+      trim: '2.2 CRDi Premiere 7-Seater',
       price: 'Rp 1.280.000.000',
       image: '/images/katalog unit/kia carnival.webp',
-      badge: 'FULL EV',
+      badge: 'READY STOCK',
       engine: '2.2L Turbo Diesel',
       transmission: '8-Speed Automatic',
       seats: 7,
@@ -152,20 +135,20 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       ]
     },
     {
-      name: 'GT-Line Luxury',
-      trim: 'GT-Line 7-Seater AWD',
-      price: 'Rp 1.300.000.000',
+      name: 'Hybrid',
+      trim: '1.6 Turbo Hybrid 7-Seater',
+      price: 'Rp 1.388.000.000',
       image: '/images/katalog unit/kia carnival.webp',
-      badge: 'FULL EV',
-      engine: 'Dual Motor 77.4 kWh',
-      transmission: 'Single Speed',
+      badge: 'HYBRID',
+      engine: '1.6L Turbo Hybrid',
+      transmission: '6-Speed Automatic',
       seats: 7,
-      fuelType: 'Listrik',
+      fuelType: 'Hybrid',
       features: [
-        'Full Electric EV Dual Motor 320 HP',
-        'GT-Line Sporty Bodykit & 20" Wheels',
-        'Bose Surround Sound System 12-Speaker',
-        'Dual Sunroof & Mood Ambient Lighting'
+        'Smartstream 1.6L Turbo Hybrid Engine',
+        'Relaxation Captain Seats with Heating/Cooling',
+        'Dual 12.3" Curved Panoramic Display',
+        'BOSE Premium 12-Speaker Sound System'
       ]
     }
   ],
