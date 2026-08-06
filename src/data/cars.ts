@@ -208,7 +208,9 @@ export const CARS_DATA: Car[] = [
     seats: 5,
     image: '/images/katalog unit/kia seltos/kia-seltos.webp',
     gallery: [
-      '/images/katalog unit/kia seltos/kia-seltos.webp'
+      '/images/katalog unit/kia seltos/kia-seltos.webp',
+      '/images/katalog unit/kia seltos/interior-1.webp',
+      '/images/katalog unit/kia seltos/interior-2.webp'
     ],
     badge: { text: 'READY STOCK', type: 'ready' },
     features: [
