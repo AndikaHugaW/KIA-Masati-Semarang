@@ -17,12 +17,13 @@ export default function BengkelPage() {
       <Navbar />
 
       {/* Section 1: Hero / Coming Soon */}
-      <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center text-center overflow-hidden bg-neutral-900">
-        {/* Background Image: /images/layanan bengkel/hero.png */}
+      <section className="relative w-full aspect-[16/9] min-h-[480px] sm:min-h-[580px] lg:min-h-[640px] max-h-[720px] flex items-center justify-center text-center overflow-hidden bg-neutral-900">
+        {/* Background Image: /images/layanan bengkel/hero bengkel.webp */}
         <Image
-          src="/images/layanan bengkel/hero bengkel.png"
+          src="/images/layanan bengkel/hero bengkel.webp"
           alt="Layanan Bengkel Resmi KIA"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
         />
