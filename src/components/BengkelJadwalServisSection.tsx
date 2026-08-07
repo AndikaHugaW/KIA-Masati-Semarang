@@ -33,7 +33,7 @@ export const BengkelJadwalServisSection: React.FC = () => {
           {/* Dealership Exterior / Cars Lineup Image */}
           <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-md bg-gray-200">
             <Image
-              src="/images/layanan bengkel/hero bengkel.webp"
+              src="/images/layanan bengkel/hero 2.png"
               alt="KIA Service Center & Lineup"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
