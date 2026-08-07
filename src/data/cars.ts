@@ -232,7 +232,7 @@ export const CARS_DATA: Car[] = [
   {
     id: 'kia-ev6',
     name: 'KIA All New Carens',
-    trim: 'GT-Line AWD',
+    trim: '1.5 MPI / 1.4 Turbo',
     model: 'All New Carens',
     brand: 'KIA',
     year: '2024',
@@ -240,21 +240,18 @@ export const CARS_DATA: Car[] = [
     description: 'KIA All New Carens 2024 MPV modern yang stylish dan fleksibel, menghadirkan kenyamanan kelas atas untuk seluruh anggota keluarga dengan teknologi terkini.',
     kilometer: '0 km',
     status: 'Tersedia',
-    tagline: 'Pure Electric Crossover Performance',
-    category: 'EV',
-    bodyType: 'EV',
-    priceStarting: 'Rp 1.3 M',
-    formattedPrice: 'Rp 1.309.000.000',
-    rawPrice: 1309000000,
-    engine: 'Dual Motor AWD 77.4 kWh',
-    power: '325 PS / 605 Nm',
+    tagline: 'Stylish & Versatile Family MPV',
+    category: 'MPV',
+    bodyType: 'MPV',
+    priceStarting: 'Rp 269 Jt',
+    formattedPrice: 'Rp 269.000.000',
+    rawPrice: 269000000,
+    engine: 'Smartstream 1.5L / 1.4L Turbo',
+    power: '115 PS / 144 Nm',
     transmissionType: 'Automatic',
-    transmissionDetail: 'Single Speed',
-    fuelType: 'Listrik',
-    seats: 6,
-    battery: '77.4 kWh',
-    range: '506 km Range',
-    driveType: 'AWD',
+    transmissionDetail: 'Manual / IVT / 7-DCT',
+    fuelType: 'Bensin',
+    seats: 7,
     image: '/images/katalog unit/kia all new carens.webp',
     gallery: [
       '/images/katalog unit/kia all new carens.webp',
@@ -262,22 +259,20 @@ export const CARS_DATA: Car[] = [
       '/images/katalog unit/kia all new carens/interior-3.webp'
     ],
 
-    badge: { text: 'FULL EV', type: 'ev' },
+    badge: { text: 'READY STOCK', type: 'ready' },
     features: [
-      'Dual 12.3" Curved Display',
-      'Vehicle-to-Load (V2L) Power Exporting 3.6kW',
-      'Augmented Reality Head-Up Display (AR-HUD)',
-      'Smart Cruise Control with Stop & Go',
-      'Ventilated Front Seats',
+      'Dual 10.25" Touchscreen Display',
+      'Bose Premium Sound System 8-Speaker',
+      'Ventilated Front Seats & Wireless Charger',
+      'Sunroof Electric with One-Touch',
       'Ambient Mood Lighting 64 Colors',
-      'Bose Premium Sound System',
-      'Wireless Apple CarPlay & Android Auto'
+      'Captain Seats 2nd Row',
+      'Drive & Traction Mode Select',
+      '6 Airbags & ABS, ESC, HAC'
     ],
     specs: {
-      acceleration: '0-100 km/h: 5.2 sec',
-      range: 'Hingga 506 km (WLTP)',
-      driveType: 'All-Wheel Drive (AWD)',
-      warranty: '8 Tahun / 160.000 km Baterai'
+      driveType: 'Front-Wheel Drive (FWD)',
+      warranty: '5 Tahun / 150.000 km Garansi Resmi'
     }
   }
 ];

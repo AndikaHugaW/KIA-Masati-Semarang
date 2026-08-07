@@ -209,7 +209,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'M/T',
       trim: '1.5 MPI Premiere M/T 7-Seater',
-      price: 'Rp 407.000.000',
+      price: 'Rp 269.000.000',
       image: '/images/katalog unit/kia all new carens.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L MPI',
@@ -226,7 +226,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Trendy',
       trim: '1.5 MPI Trendy 7-Seater',
-      price: 'Rp 467.000.000',
+      price: 'Rp 299.000.000',
       image: '/images/katalog unit/kia all new carens.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L MPI',
@@ -243,7 +243,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Motion',
       trim: '1.4 Turbo Motion 6-Seater',
-      price: 'Rp 1.309.000.000',
+      price: 'Rp 339.000.000',
       image: '/images/katalog unit/kia all new carens.webp',
       badge: 'READY STOCK',
       engine: '1.4L Turbo GDI',
