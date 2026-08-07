@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       'Dealer resmi KIA di Semarang dengan pilihan SUV, MPV, dan EV terbaru. Promo spesial, test drive gratis, dan kredit DP ringan.',
     images: [
       {
-        url: '/images/landing page/hero 1.webp',
+        url: '/images/layanan bengkel/hero 2.png',
         width: 1200,
         height: 630,
         alt: 'KIA Semarang Showroom Banner',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: 'KIA Semarang - Dealer Resmi Mobil KIA Jawa Tengah',
     description:
       'Website resmi Dealer KIA Semarang. Servis resmi, test drive gratis & simulasi kredit.',
-    images: ['/images/landing page/hero 1.webp'],
+    images: ['/images/layanan bengkel/hero 2.png'],
   },
 
   robots: {
