@@ -5,6 +5,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Navbar } from '@/components/Navbar';
 
+const BengkelKomitmenSection = dynamic(() => import('@/components/BengkelKomitmenSection').then(mod => mod.BengkelKomitmenSection));
 const BengkelLayananUnggulanSection = dynamic(() => import('@/components/BengkelLayananUnggulanSection').then(mod => mod.BengkelLayananUnggulanSection));
 const BengkelJadwalServisSection = dynamic(() => import('@/components/BengkelJadwalServisSection').then(mod => mod.BengkelJadwalServisSection));
 const Footer = dynamic(() => import('@/components/Footer').then(mod => mod.Footer));
@@ -49,10 +50,13 @@ export default function BengkelPage() {
         </div>
       </section>
 
-      {/* Section 2: Layanan Unggulan Kami (3 Cards Grid) */}
+      {/* Section 2: Komitmen Deskripsi */}
+      <BengkelKomitmenSection />
+
+      {/* Section 3: Layanan Unggulan Kami (3 Cards Grid) */}
       <BengkelLayananUnggulanSection />
 
-      {/* Section 3: Jadwalkan Servis Anda (Form & Dealership Image) */}
+      {/* Section 4: Jadwalkan Servis Anda (Form & Dealership Image) */}
       <BengkelJadwalServisSection />
 
       {/* Footer */}
