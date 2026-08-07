@@ -177,9 +177,9 @@ export const KontakInquireSection: React.FC = () => {
 
 
             {/* Content Details */}
-            <div className="p-6 sm:p-8 space-y-5">
+            <div className="p-6 sm:p-8 space-y-6">
               <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-red-600 shrink-0" />
+                <MapPin className="w-5 h-5 text-gray-900 shrink-0" />
                 <h4 className="font-bold text-gray-900 text-base sm:text-lg">
                   Kunjungi Showroom
                 </h4>
@@ -204,35 +204,35 @@ export const KontakInquireSection: React.FC = () => {
                 <Navigation className="w-4 h-4 text-gray-900" />
                 <span>Dapatkan Petunjuk Arah</span>
               </button>
+
+              {/* Jam Operasional (Light style integrated without dark card) */}
+              <div className="pt-6 border-t border-gray-100 space-y-4">
+                <div className="flex items-center gap-2.5">
+                  <Clock className="w-5 h-5 text-gray-900" />
+                  <h4 className="font-bold text-gray-900 text-base sm:text-lg">
+                    Jam Operasional
+                  </h4>
+                </div>
+
+                <div className="space-y-3 text-xs sm:text-sm">
+                  <div className="flex justify-between items-center pb-2.5 border-b border-gray-100">
+                    <span className="text-gray-600 font-medium">Senin - Jumat</span>
+                    <span className="font-bold text-gray-900">08:00 - 17:00</span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center pb-2.5 border-b border-gray-100">
+                    <span className="text-gray-600 font-medium">Sabtu</span>
+                    <span className="font-bold text-gray-900">08:00 - 15:00</span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 font-medium">Minggu / Libur</span>
+                    <span className="font-bold text-gray-900">Tutup</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-          </div>
-
-          {/* Bottom Card: Dark Jam Operasional */}
-          <div className="bg-[#0F172A] text-white p-6 sm:p-8 rounded-3xl shadow-md space-y-5">
-            <div className="flex items-center gap-2.5">
-              <Clock className="w-5 h-5 text-gray-300" />
-              <h4 className="font-bold text-gray-100 text-base sm:text-lg">
-                Jam Operasional
-              </h4>
-            </div>
-
-            <div className="space-y-3.5 text-xs sm:text-sm">
-              <div className="flex justify-between items-center pb-3 border-b border-gray-800">
-                <span className="text-gray-300">Senin - Jumat</span>
-                <span className="font-medium text-gray-100">08:00 - 17:00</span>
-              </div>
-              
-              <div className="flex justify-between items-center pb-3 border-b border-gray-800">
-                <span className="text-gray-300">Sabtu</span>
-                <span className="font-medium text-gray-100">08:00 - 15:00</span>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <span className="text-gray-300">Minggu / Libur</span>
-                <span className="font-medium text-gray-100">Tutup</span>
-              </div>
-            </div>
           </div>
 
         </div>
