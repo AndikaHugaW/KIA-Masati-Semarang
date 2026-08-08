@@ -21,7 +21,7 @@ export const BengkelJadwalServisSection: React.FC = () => {
 
   const handleWhatsAppRedirect = () => {
     const text = `Halo KIA Semarang, saya ingin konfirmasi booking servis:\nNama: ${formData.name}\nTelepon: ${formData.phone}\nModel: ${formData.carModel || '-'}\nLayanan: ${formData.serviceType || '-'}\nTanggal: ${formData.arrivalDate || '-'}`;
-    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/6281325456655?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
@@ -121,7 +121,7 @@ export const BengkelJadwalServisSection: React.FC = () => {
                     <input
                       type="tel"
                       required
-                      placeholder="0812 xxxx xxxx"
+                      placeholder="0813 xxxx xxxx"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-[#F3F4F6] border-none rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all"

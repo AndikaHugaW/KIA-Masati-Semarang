@@ -20,7 +20,7 @@ const socialLinks = [
   },
   {
     name: 'WhatsApp',
-    href: 'https://wa.me/6281234567890',
+    href: 'https://wa.me/6281325456655',
     defaultIcon: '/images/medsos/default/icon 3.svg',
     hoverIcon: '/images/medsos/hover/icon 3.svg',
   },
@@ -152,15 +152,20 @@ export const Footer: React.FC<FooterProps> = () => {
               HUBUNGI KAMI
             </h4>
             <div className="space-y-3 text-sm text-gray-600">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
+              <a
+                href="https://maps.app.goo.gl/LtEd1xDa1nDk8CQz5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 hover:text-black transition-colors group"
+              >
+                <MapPin className="w-5 h-5 text-gray-700 group-hover:text-black shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
-                  Jl. Pemuda No. 123, Semarang Tengah, Kota Semarang
+                  Jl. Dr. Cipto No. 136, Sarirejo, Semarang Timur, Kota Semarang 50124
                 </span>
-              </div>
+              </a>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-gray-700 shrink-0" />
-                <span>(024) 1234567</span>
+                <span>0813-2545-6655</span>
               </div>
             </div>
           </div>

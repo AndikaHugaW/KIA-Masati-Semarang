@@ -298,7 +298,7 @@ export default function CarDetailPage() {
 
   const handleWhatsAppContact = () => {
     if (!car) return;
-    const phone = '6281234567890';
+    const phone = '6281325456655';
     const text = encodeURIComponent(
       `Halo KIA Semarang, saya tertarik dengan unit ${car.name} (${car.trim}) - ${car.formattedPrice}. Bisa tanyakan informasi promo & simulasi kreditnya?`
     );

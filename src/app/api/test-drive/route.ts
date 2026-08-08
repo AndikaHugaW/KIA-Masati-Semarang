@@ -25,7 +25,7 @@ const bookingsStore: TestDriveBooking[] = [
     carId: 'kia-ev9',
     carName: 'KIA EV9 GT-Line',
     preferredDate: '2026-08-10',
-    location: 'Dealer KIA Semarang (Sudirman)',
+    location: 'Dealer KIA Semarang (Dr. Cipto)',
     notes: 'Ingin mencoba fitur Relaxation Swivel Seat',
     createdAt: new Date().toISOString(),
     status: 'CONFIRMED'

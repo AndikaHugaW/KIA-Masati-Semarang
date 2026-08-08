@@ -21,7 +21,7 @@ export const TestDriveModal: React.FC<TestDriveModalProps> = ({
     email: '',
     carId: preselectedCarId || 'kia-ev9',
     preferredDate: '',
-    location: 'Showroom KIA Semarang (Jl. Jend. Sudirman)',
+    location: 'Showroom KIA Semarang (Jl. Dr. Cipto)',
     notes: '',
   });
 
@@ -219,7 +219,7 @@ export const TestDriveModal: React.FC<TestDriveModalProps> = ({
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-sm"
                 >
-                  <option value="Showroom KIA Semarang (Jl. Jend. Sudirman)">
+                  <option value="Showroom KIA Semarang (Jl. Dr. Cipto)">
                     Showroom Official KIA Semarang
                   </option>
                   <option value="Home Test Drive (Rumah Pelanggan Area Semarang)">

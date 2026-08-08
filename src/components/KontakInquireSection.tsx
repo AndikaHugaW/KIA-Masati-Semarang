@@ -19,12 +19,12 @@ export const KontakInquireSection: React.FC = () => {
 
   const handleWhatsAppRedirect = () => {
     const text = `Halo KIA Semarang, saya ingin mengirimkan pertanyaan:\nNama: ${formData.name}\nTelepon: ${formData.phone}\nMinat: ${formData.interest}\nPesan: ${formData.message}`;
-    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/6281325456655?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   const handleDirection = () => {
     window.open(
-      'https://www.google.com/maps/search/?api=1&query=Jl.+Sudirman+No.+128,+Semarang,+Jawa+Tengah+50141',
+      'https://maps.app.goo.gl/LtEd1xDa1nDk8CQz5',
       '_blank'
     );
   };
@@ -97,7 +97,7 @@ export const KontakInquireSection: React.FC = () => {
                     <input
                       type="tel"
                       required
-                      placeholder="+62 812-3456-7890"
+                      placeholder="0813-2545-6655"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-[#F3F4F6] border-none rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all"
@@ -165,7 +165,7 @@ export const KontakInquireSection: React.FC = () => {
             <div className="w-full h-52 relative border-b border-gray-100 bg-gray-100">
               <iframe
                 title="Lokasi Dealer KIA Semarang"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.226068393529!2d110.3887!3d-6.9822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b52f1e1a1a1%3A0x123456789abcdef!2sJl.%20Jend.%20Sudirman%20No.128%2C%20Gisikdrono%2C%20Kec.%20Semarang%20Barat%2C%20Kota%20Semarang%2C%20Jawa%20Tengah%2050141!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2191547417633!2d110.4324854!3d-6.9834441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708d005111c565%3A0xec4b0fb5242743b2!2sKIA%20Semarang%20Masati!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -187,13 +187,13 @@ export const KontakInquireSection: React.FC = () => {
 
               <div className="space-y-1">
                 <p className="font-bold text-gray-900 text-sm sm:text-base">
-                  KIA Semarang Utama
+                  KIA Semarang Masati
                 </p>
                 <p className="text-gray-600 text-xs sm:text-sm">
-                  Jl. Sudirman No. 128
+                  Jl. Dr. Cipto No. 136, Sarirejo
                 </p>
                 <p className="text-gray-600 text-xs sm:text-sm">
-                  Semarang, Jawa Tengah 50141
+                  Kec. Semarang Timur, Kota Semarang 50124
                 </p>
               </div>
 

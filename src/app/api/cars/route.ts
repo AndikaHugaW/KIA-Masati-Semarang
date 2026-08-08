@@ -108,8 +108,8 @@ export async function GET(request: NextRequest) {
       status: 'success',
       total: filteredCars.length,
       dealer: 'KIA Official Dealer Semarang',
-      address: 'Jl. Jend. Sudirman No. 294, Semarang, Jawa Tengah',
-      contact: '+62 812-3456-7890',
+      address: 'Jalan Dokter Cipto No.136, Sarirejo, Kec. Semarang Timur, Kota Semarang, Jawa Tengah 50124',
+      contact: '0813-2545-6655',
       data: filteredCars
     });
   } catch (error) {

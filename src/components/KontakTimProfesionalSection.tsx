@@ -7,7 +7,7 @@ import { Mail } from 'lucide-react';
 export const KontakTimProfesionalSection: React.FC = () => {
   const handleContactManager = () => {
     window.open(
-      'https://wa.me/6281234567890?text=Halo%20Bapak%20Budi%20Santoso,%20saya%20ingin%20berkonsultasi%20mengenai%20unit%20KIA',
+      'https://wa.me/6281325456655?text=Halo%20Bapak%20Budi%20Santoso,%20saya%20ingin%20berkonsultasi%20mengenai%20unit%20KIA',
       '_blank'
     );
   };
