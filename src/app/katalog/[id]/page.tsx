@@ -193,15 +193,15 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       price: 'Rp 359.000.000',
       image: '/images/katalog unit/kia seltos/kia-seltos-1.webp',
       badge: 'READY STOCK',
-      engine: 'Smartstream 1.5L MPI',
-      transmission: 'IVT Automatic',
+      engine: 'Smartstream 1.5L Gamma II (115 PS)',
+      transmission: 'Intelligent VT',
       seats: 5,
       fuelType: 'Bensin',
       features: [
-        'Smartstream 1.5L MPI Engine',
-        '8" Touchscreen Display with CarPlay',
-        'Rear Parking Sensor & Camera',
-        '16" Alloy Wheels'
+        'Smartstream 1.5L Gamma II DOHC Dual CVVT',
+        '10.25" Infotainment Display with CarPlay & Android Auto',
+        'Electronic Parking Brake (EPB) with Auto Hold',
+        '17" Alloy Wheels (215/60 R17)'
       ]
     },
     {
@@ -210,32 +210,32 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       price: 'Rp 417.000.000',
       image: '/images/katalog unit/kia seltos/kia-seltos-1.webp',
       badge: 'READY STOCK',
-      engine: 'Smartstream 1.5L MPI',
-      transmission: 'IVT Automatic',
+      engine: 'Smartstream 1.5L Gamma II (115 PS)',
+      transmission: 'Intelligent VT',
       seats: 5,
       fuelType: 'Bensin',
       features: [
-        'Drive Wise ADAS Safety Suite',
-        'Sunroof Electric with One-Touch',
-        'Wireless Charger & Smart Cruise Control',
-        '17" Dual Tone Alloy Wheels'
+        '12.3" Infotainment Display with CarPlay & Android Auto',
+        'Drive Wise ADAS Safety Suite with Smart Cruise Control',
+        'Front Ventilated Seats & Power Driver Seat',
+        '17" Alloy Wheels & Dual Zone Auto Climate'
       ]
     },
     {
       name: 'GT Line',
-      trim: '1.4 Turbo GT Line',
+      trim: '1.5L IVT GT Line',
       price: 'Rp 469.000.000',
       image: '/images/katalog unit/kia seltos/kia-seltos-gtline.webp',
-      badge: 'READY STOCK',
-      engine: '1.4L Turbo GDI',
-      transmission: '7-DCT Dual Clutch',
+      badge: 'PROMO',
+      engine: 'Smartstream 1.5L Gamma II (115 PS)',
+      transmission: 'Intelligent VT',
       seats: 5,
       fuelType: 'Bensin',
       features: [
+        '12.3" Full Digital Cluster & 12.3" Infotainment Display',
         'BOSE Premium 8-Speaker Audio System',
-        'Head-Up Display & Red Stitched Interior',
-        'Drive & Traction Mode Select',
-        'Full LED Headlamps & DRL'
+        'Panoramic Sunroof & 18" Alloy Wheels',
+        'Blind-spot View Monitor (BVM) & Surround View Monitor'
       ]
     }
   ],
