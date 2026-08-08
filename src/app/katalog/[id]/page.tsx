@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Car } from '@/data/cars';
@@ -263,6 +263,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
 
 export default function CarDetailPage() {
   const params = useParams();
+  const router = useRouter();
   const carId = params?.id as string;
 
   const [car, setCar] = useState<Car | null>(null);
@@ -531,7 +532,7 @@ export default function CarDetailPage() {
               {currentVariants.map((v, index) => (
                 <div
                   key={index}
-                  onClick={handleWhatsAppContact}
+                  onClick={() => car && router.push(`/katalog/${car.id}/spesifikasi`)}
                   className="bg-white rounded-2xl border border-gray-200 hover:border-gray-400 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl flex flex-col justify-between cursor-pointer group"
                 >
                   {/* Top Image Showcase */}
