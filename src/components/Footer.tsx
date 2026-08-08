@@ -49,14 +49,14 @@ export const Footer: React.FC<FooterProps> = () => {
             <Link href="/" className="inline-flex items-center gap-3">
               <Image
                 src="/images/logo/logo.png"
-                alt="KIA Semarang Logo"
+                alt="Masati Semarang Logo"
                 width={140}
                 height={40}
                 style={{ width: 'auto', height: '40px' }}
                 className="h-10 w-auto object-contain"
               />
               <span className="font-semibold text-xl tracking-tight text-black uppercase">
-                KIA SEMARANG
+                MASATI SEMARANG
               </span>
             </Link>
 
@@ -174,7 +174,7 @@ export const Footer: React.FC<FooterProps> = () => {
 
         {/* Bottom Bar: Copyright & Policy */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 gap-4">
-          <p>© 2024 KIA Semarang. All rights reserved.</p>
+          <p>© 2024 Masati Semarang. All rights reserved.</p>
           <div className="flex items-center gap-6 font-medium text-gray-600">
             <Link href="/kontak" className="hover:text-black transition-colors">
               Privacy Policy

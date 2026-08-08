@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTestDrive }) => {
           <div className="relative h-14 w-auto max-w-[260px] flex items-center">
             <Image
               src="/images/logo/logo.png"
-              alt="KIA Semarang Logo"
+              alt="Masati Semarang Logo"
               width={220}
               height={60}
               style={{ width: 'auto', height: '56px' }}
@@ -38,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTestDrive }) => {
             />
           </div>
           <span className="font-semibold text-2xl tracking-tight text-black uppercase">
-            KIA SEMARANG
+            MASATI SEMARANG
           </span>
         </Link>
 
