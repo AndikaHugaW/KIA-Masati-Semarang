@@ -532,7 +532,7 @@ export default function CarDetailPage() {
               {currentVariants.map((v, index) => (
                 <div
                   key={index}
-                  onClick={() => car && router.push(`/katalog/${car.id}/spesifikasi`)}
+                  onClick={() => car && router.push(`/katalog/${car.id}/spesifikasi?variant=${encodeURIComponent(v.name)}`)}
                   className="bg-white rounded-2xl border border-gray-200 hover:border-gray-400 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl flex flex-col justify-between cursor-pointer group"
                 >
                   {/* Top Image Showcase */}
@@ -611,10 +611,10 @@ export default function CarDetailPage() {
                     {/* Footer Action */}
                     <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
                       <Link
-                        href={`/katalog/${car.id}/spesifikasi`}
+                        href={`/katalog/${car.id}/spesifikasi?variant=${encodeURIComponent(v.name)}`}
                         className="text-xs font-extrabold text-black group-hover:translate-x-1 transition-transform flex items-center gap-1 hover:underline"
                       >
-                        Spesifikasi &gt;
+                        Spesifikasi {v.name} &gt;
                       </Link>
                     </div>
 

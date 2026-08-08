@@ -1,28 +1,78 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
-import { ArrowLeft, ChevronRight, Search, CheckCircle2, Minus, PhoneCall, Sparkles, SlidersHorizontal, FileText } from 'lucide-react';
+import { useParams, useSearchParams } from 'next/navigation';
+import { ArrowLeft, ChevronRight, Search, Minus, PhoneCall, SlidersHorizontal, FileText, Star, Check } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CARS_DATA } from '@/data/cars';
-import { CAR_SPECIFICATIONS } from '@/data/specifications';
+import { CAR_SPECIFICATIONS, CarSpecification } from '@/data/specifications';
 import { TestDriveModal } from '@/components/TestDriveModal';
 
-export default function CarSpecificationPage() {
+function SpecificationContent() {
   const params = useParams();
+  const searchParams = useSearchParams();
   const carId = (params?.id as string) || 'kia-all-new-carens';
+  const variantParam = searchParams.get('variant');
+
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isTestDriveOpen, setIsTestDriveOpen] = useState(false);
+  const [focusedVariant, setFocusedVariant] = useState<string | null>(variantParam);
 
-  const car = CARS_DATA.find((c) => c.id === carId) || CARS_DATA.find((c) => c.id === 'kia-all-new-carens')!;
-  const specData = CAR_SPECIFICATIONS[carId] || CAR_SPECIFICATIONS['kia-all-new-carens'];
+  const car = CARS_DATA.find((c) => c.id.toLowerCase() === carId.toLowerCase()) || CARS_DATA[0];
+
+  // Dynamic Specification Lookup or Fallback
+  let specData: CarSpecification = CAR_SPECIFICATIONS[carId.toLowerCase()];
+
+  if (!specData) {
+    // Generate fallback spec dataset from CARS_DATA
+    specData = {
+      carId: car.id,
+      carName: car.name,
+      tagline: car.tagline || 'Informasi Spesifikasi Unit Resmi KIA',
+      variants: [car.trim || 'Standard'],
+      dimensionDiagram: {
+        lengthWidthHeight: '4.500 / 1.800 / 1.650 mm',
+        wheelbase: '2.700 mm',
+        tread: '1.560 / 1.570 mm',
+        overhang: '800 / 900 mm',
+        groundClearance: '190 mm',
+        cargoCapacity: '400 L'
+      },
+      categories: [
+        {
+          id: 'powertrain',
+          title: 'Power Train',
+          items: [
+            { name: 'Engine Type', values: { [car.trim || 'Standard']: car.engine } },
+            { name: 'Power / Torque', values: { [car.trim || 'Standard']: car.power } },
+            { name: 'Fuel Type', values: { [car.trim || 'Standard']: car.fuelType } }
+          ]
+        },
+        {
+          id: 'transmission',
+          title: 'Transmission',
+          items: [
+            { name: 'Transmission Type', values: { [car.trim || 'Standard']: car.transmissionDetail || car.transmissionType } }
+          ]
+        },
+        {
+          id: 'features',
+          title: 'Fitur Utama',
+          items: (car.features || []).map((f) => ({
+            name: f,
+            values: { [car.trim || 'Standard']: '●' }
+          }))
+        }
+      ]
+    };
+  }
 
   const categories = specData.categories || [];
-  const variants = specData.variants || ['M/T', 'Trendy', 'Motion', 'Signature'];
+  const variants = specData.variants || [car.trim || 'Standard'];
 
   const filteredCategories = categories.map((cat) => {
     if (!searchQuery.trim()) return cat;
@@ -49,7 +99,7 @@ export default function CarSpecificationPage() {
             <ChevronRight className="w-3 h-3 text-gray-600" />
             <Link href={`/katalog/${car.id}`} className="hover:text-white transition-colors">{car.name}</Link>
             <ChevronRight className="w-3 h-3 text-gray-600" />
-            <span className="text-white font-bold">Spesifikasi Form</span>
+            <span className="text-white font-bold">Form Spesifikasi</span>
           </nav>
 
           {/* Title & Actions */}
@@ -57,13 +107,13 @@ export default function CarSpecificationPage() {
             <div className="space-y-2 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-xs font-bold uppercase tracking-wider text-gray-300">
                 <FileText className="w-3.5 h-3.5 text-rose-400" />
-                <span>Lembar Spesifikasi Resmi</span>
+                <span>Lembar Spesifikasi Resmi {car.name}</span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
                 {car.name} <span className="font-normal text-gray-400">Specifications</span>
               </h1>
               <p className="text-gray-400 text-sm sm:text-base">
-                Form tabel komparasi detail seluruh varian resmi KIA Masati Semarang.
+                Data komparasi spesifikasi teknis lengkap untuk seluruh varian {car.name} di Dealer KIA Masati Semarang.
               </p>
             </div>
 
@@ -144,6 +194,47 @@ export default function CarSpecificationPage() {
           </div>
         )}
 
+        {/* Variant Focus Selector Banner */}
+        {variants.length > 1 && (
+          <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200 shadow-sm mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+              <span className="text-xs sm:text-sm font-extrabold text-gray-800">
+                Pilih / Highlight Varian Unit:
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+              <button
+                onClick={() => setFocusedVariant(null)}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  !focusedVariant
+                    ? 'bg-black text-white'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                Tampilkan Semua Varian
+              </button>
+              {variants.map((vName, idx) => {
+                const isSelected = focusedVariant?.toLowerCase() === vName.toLowerCase();
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => setFocusedVariant(vName)}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                      isSelected
+                        ? 'bg-emerald-600 text-white shadow-md ring-2 ring-emerald-600/30'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                    <span>{vName}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* Filter Navigation & Search Bar */}
         <div className="sticky top-20 z-30 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-gray-200 shadow-sm mb-8 space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -214,13 +305,30 @@ export default function CarSpecificationPage() {
                         <th className="py-3.5 px-6 border-r border-gray-200 w-1/3 sticky left-0 bg-[#F8F9FA] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                           Specification Item
                         </th>
-                        {variants.map((vName, idx) => (
-                          <th key={idx} className="py-3.5 px-6 border-r border-gray-200 text-center w-1/6 last:border-r-0">
-                            <span className="inline-block px-3 py-1 bg-black text-white text-xs font-black rounded-md">
-                              {vName}
-                            </span>
-                          </th>
-                        ))}
+                        {variants.map((vName, idx) => {
+                          const isHighlighted = focusedVariant && focusedVariant.toLowerCase() === vName.toLowerCase();
+                          return (
+                            <th
+                              key={idx}
+                              className={`py-3.5 px-6 border-r border-gray-200 text-center w-1/6 last:border-r-0 transition-colors ${
+                                isHighlighted ? 'bg-emerald-50/80 border-b-2 border-b-emerald-600' : ''
+                              }`}
+                            >
+                              <div className="flex flex-col items-center gap-1">
+                                {isHighlighted && (
+                                  <span className="text-[10px] font-black text-emerald-700 uppercase tracking-widest bg-emerald-100 px-2 py-0.5 rounded-full">
+                                    ★ Pilihan Anda
+                                  </span>
+                                )}
+                                <span className={`inline-block px-3 py-1 text-xs font-black rounded-md ${
+                                  isHighlighted ? 'bg-emerald-600 text-white' : 'bg-black text-white'
+                                }`}>
+                                  {vName}
+                                </span>
+                              </div>
+                            </th>
+                          );
+                        })}
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 text-xs sm:text-sm">
@@ -237,17 +345,27 @@ export default function CarSpecificationPage() {
                             const val = item.values[vName] || '-';
                             const isBullet = val === '●';
                             const isDash = val === '-';
+                            const isHighlighted = focusedVariant && focusedVariant.toLowerCase() === vName.toLowerCase();
 
                             return (
-                              <td key={vIdx} className="py-3.5 px-6 text-center align-middle border-r border-gray-200 last:border-r-0">
+                              <td
+                                key={vIdx}
+                                className={`py-3.5 px-6 text-center align-middle border-r border-gray-200 last:border-r-0 transition-colors ${
+                                  isHighlighted ? 'bg-emerald-50/40 font-bold' : ''
+                                }`}
+                              >
                                 {isBullet ? (
-                                  <span className="inline-flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-black text-xs mx-auto shadow-sm">
+                                  <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full font-black text-xs mx-auto shadow-sm ${
+                                    isHighlighted ? 'bg-emerald-600 text-white' : 'bg-black text-white'
+                                  }`}>
                                     ●
                                   </span>
                                 ) : isDash ? (
                                   <Minus className="w-4 h-4 text-gray-300 mx-auto" />
                                 ) : (
-                                  <span className="font-semibold text-gray-800 text-xs sm:text-sm leading-snug">
+                                  <span className={`font-semibold text-xs sm:text-sm leading-snug ${
+                                    isHighlighted ? 'text-emerald-950 font-black' : 'text-gray-800'
+                                  }`}>
                                     {val}
                                   </span>
                                 )}
@@ -282,7 +400,7 @@ export default function CarSpecificationPage() {
         <div className="mt-12 bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-xl font-black text-gray-900">
-              Butuh Informasi Simulasi Kredit atau Promo OTR Semarang?
+              Butuh Informasi Simulasi Kredit atau Promo OTR Semarang untuk {car.name}?
             </h3>
             <p className="text-gray-500 text-sm mt-1">
               Hubungi Sales Executive resmi KIA Masati Semarang untuk penawaran harga terbaik & test drive.
@@ -296,7 +414,7 @@ export default function CarSpecificationPage() {
               Booking Test Drive
             </button>
             <a
-              href="https://wa.me/6281325456655?text=Halo%20KIA%20Semarang,%20saya%20ingin%20tanya%20spesifikasi%20dan%20promo%20terbaru"
+              href={`https://wa.me/6281325456655?text=${encodeURIComponent(`Halo KIA Semarang, saya ingin tanyakan spesifikasi dan promo untuk ${car.name}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-md transition-all"
@@ -318,5 +436,17 @@ export default function CarSpecificationPage() {
       {/* Footer */}
       <Footer />
     </main>
+  );
+}
+
+export default function CarSpecificationPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#F5F6F8] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-black border-t-transparent"></div>
+      </div>
+    }>
+      <SpecificationContent />
+    </Suspense>
   );
 }
