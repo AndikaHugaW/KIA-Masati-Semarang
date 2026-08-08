@@ -432,7 +432,15 @@ export default function CarDetailPage() {
 
                 {/* Spesifikasi Section */}
                 <div className="space-y-4 pt-2">
-                  <h3 className="text-lg font-black text-gray-900">Spesifikasi</h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-black text-gray-900">Spesifikasi</h3>
+                    <Link
+                      href={`/katalog/${car.id}/spesifikasi`}
+                      className="text-xs font-bold text-black hover:underline flex items-center gap-1"
+                    >
+                      <span>Lihat Spesifikasi Lengkap &gt;</span>
+                    </Link>
+                  </div>
                   
                   <div className="grid grid-cols-2 gap-y-3.5 gap-x-6 text-xs sm:text-sm">
                     <div className="flex items-center justify-between border-b border-gray-200/60 pb-2.5">
@@ -601,9 +609,12 @@ export default function CarDetailPage() {
 
                     {/* Footer Action */}
                     <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
-                      <span className="text-xs font-extrabold text-black group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                      <Link
+                        href={`/katalog/${car.id}/spesifikasi`}
+                        className="text-xs font-extrabold text-black group-hover:translate-x-1 transition-transform flex items-center gap-1 hover:underline"
+                      >
                         Spesifikasi &gt;
-                      </span>
+                      </Link>
                     </div>
 
                   </div>
