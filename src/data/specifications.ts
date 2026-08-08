@@ -1,6 +1,7 @@
 export interface SpecItem {
   name: string;
-  values: Record<string, string>; // e.g. { "1.5 M/T": "Smartstream 1.5L MPI", "1.5 Trendy": "Smartstream 1.5L MPI", "1.4 Turbo Motion": "1.4L Turbo GDI" }
+  subName?: string;
+  values: Record<string, string>; // e.g. { "M/T": "...", "Trendy": "...", "Motion": "...", "Signature": "..." }
 }
 
 export interface SpecCategory {
@@ -13,19 +14,15 @@ export interface CarSpecification {
   carId: string;
   carName: string;
   tagline: string;
-  variants: string[]; // List of variant names for headers
+  variants: string[]; // List of variant names
   categories: SpecCategory[];
   dimensionDiagram?: {
-    length: string;
-    width: string;
-    height: string;
+    lengthWidthHeight: string;
     wheelbase: string;
+    tread: string;
+    overhang: string;
     groundClearance: string;
-  };
-  wheelSpec?: {
-    type: string;
-    description: string;
-    image?: string;
+    cargoCapacity: string;
   };
 }
 
@@ -34,535 +31,437 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
     carId: 'kia-all-new-carens',
     carName: 'KIA All New Carens',
     tagline: 'Lupakan yang Biasa, Hidupkan yang Luar Biasa',
-    variants: ['1.5 MPI Premiere M/T 7-Seater', '1.5 MPI Trendy 7-Seater', '1.4 Turbo Motion 6-Seater'],
+    variants: ['M/T', 'Trendy', 'Motion', 'Signature'],
     dimensionDiagram: {
-      length: '4,540 mm',
-      width: '1,800 mm',
-      height: '1,700 mm',
-      wheelbase: '2,780 mm',
-      groundClearance: '195 mm'
-    },
-    wheelSpec: {
-      type: '17" Crystal Cut Alloy',
-      description: 'R17 Crystal Cut Dual Tone Alloy Wheels dengan desain aerodinamis modern.'
+      lengthWidthHeight: '4.550 / 1.800 / 1.708 mm',
+      wheelbase: '2.780 mm',
+      tread: '1.563 / 1.587 mm',
+      overhang: '830 / 940 mm',
+      groundClearance: '205 mm',
+      cargoCapacity: '216 L'
     },
     categories: [
       {
         id: 'powertrain',
-        title: 'Mesin & Performa (Power Train)',
+        title: 'Power Train',
         items: [
           {
-            name: 'Tipe Mesin',
+            name: 'Engine Type',
             values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Smartstream Gamma II 1.5L MPI',
-              '1.5 MPI Trendy 7-Seater': 'Smartstream Gamma II 1.5L MPI',
-              '1.4 Turbo Motion 6-Seater': 'Kappa 1.4L Turbo GDI'
+              'M/T': 'Smartstream, Gamma II, DOHC, Dual CVVT',
+              'Trendy': 'Smartstream, Gamma II, DOHC, Dual CVVT',
+              'Motion': 'Smartstream, Gamma II, DOHC, Dual CVVT',
+              'Signature': 'Smartstream, Gamma II, DOHC, Dual CVVT'
             }
           },
           {
-            name: 'Kapasitas Mesin (cc)',
+            name: 'Displacement (cc)',
             values: {
-              '1.5 MPI Premiere M/T 7-Seater': '1,497 cc',
-              '1.5 MPI Trendy 7-Seater': '1,497 cc',
-              '1.4 Turbo Motion 6-Seater': '1,353 cc'
+              'M/T': '1.497',
+              'Trendy': '1.497',
+              'Motion': '1.497',
+              'Signature': '1.497'
             }
           },
           {
-            name: 'Daya Maksimum (PS / rpm)',
+            name: 'Maximum Power (PS/rpm)',
             values: {
-              '1.5 MPI Premiere M/T 7-Seater': '115 PS / 6,300 rpm',
-              '1.5 MPI Trendy 7-Seater': '115 PS / 6,300 rpm',
-              '1.4 Turbo Motion 6-Seater': '140 PS / 6,000 rpm'
+              'M/T': '115 / 6.300',
+              'Trendy': '115 / 6.300',
+              'Motion': '115 / 6.300',
+              'Signature': '115 / 6.300'
             }
           },
           {
-            name: 'Torsi Maksimum (Nm / rpm)',
+            name: 'Maximum Torque (Nm/rpm)',
             values: {
-              '1.5 MPI Premiere M/T 7-Seater': '144 Nm / 4,500 rpm',
-              '1.5 MPI Trendy 7-Seater': '144 Nm / 4,500 rpm',
-              '1.4 Turbo Motion 6-Seater': '242 Nm / 1,500 - 3,200 rpm'
+              'M/T': '144 / 4.500',
+              'Trendy': '144 / 4.500',
+              'Motion': '144 / 4.500',
+              'Signature': '144 / 4.500'
             }
           },
           {
-            name: 'Transmisi',
+            name: 'Emission',
             values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Manual 6-Speed',
-              '1.5 MPI Trendy 7-Seater': 'IVT (Intelligent Variable Transmission)',
-              '1.4 Turbo Motion 6-Seater': '7-Speed Dual Clutch Transmission (DCT)'
+              'M/T': 'Euro 4',
+              'Trendy': 'Euro 4',
+              'Motion': 'Euro 4',
+              'Signature': 'Euro 4'
             }
           },
           {
-            name: 'Kapasitas Tangki BBM',
+            name: 'Fuel Tank Capacity (L)',
             values: {
-              '1.5 MPI Premiere M/T 7-Seater': '45 Liter',
-              '1.5 MPI Trendy 7-Seater': '45 Liter',
-              '1.4 Turbo Motion 6-Seater': '45 Liter'
+              'M/T': '45',
+              'Trendy': '45',
+              'Motion': '45',
+              'Signature': '45'
             }
+          }
+        ]
+      },
+      {
+        id: 'transmission',
+        title: 'Transmission',
+        items: [
+          {
+            name: 'Transmission Type',
+            values: {
+              'M/T': 'M/T 6-Speed',
+              'Trendy': 'Intelligent VT',
+              'Motion': 'Intelligent VT',
+              'Signature': 'Intelligent VT'
+            }
+          },
+          {
+            name: 'Gear Ratio 1ST',
+            values: { 'M/T': '3.833', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
+          },
+          {
+            name: 'Gear Ratio 2ND',
+            values: { 'M/T': '2.143', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
+          },
+          {
+            name: 'Gear Ratio 3RD',
+            values: { 'M/T': '1.370', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
+          },
+          {
+            name: 'Gear Ratio 4TH',
+            values: { 'M/T': '1.036', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
+          },
+          {
+            name: 'Gear Ratio 5TH',
+            values: { 'M/T': '0.794', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
+          },
+          {
+            name: 'Gear Ratio 6TH',
+            values: { 'M/T': '0.667', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
+          },
+          {
+            name: 'Reverse Ratio',
+            values: { 'M/T': '3.700', 'Trendy': '2.822 - 1.822', 'Motion': '2.822 - 1.822', 'Signature': '2.822 - 1.822' }
+          },
+          {
+            name: 'Final Ratio',
+            values: { 'M/T': '4.882', 'Trendy': '6.483', 'Motion': '6.483', 'Signature': '6.483' }
+          }
+        ]
+      },
+      {
+        id: 'steering',
+        title: 'Steering',
+        items: [
+          {
+            name: 'Type',
+            values: { 'M/T': 'Rack & Pinion', 'Trendy': 'Rack & Pinion', 'Motion': 'Rack & Pinion', 'Signature': 'Rack & Pinion' }
+          },
+          {
+            name: 'Adjustable',
+            values: { 'M/T': 'Tilt & Telescopic', 'Trendy': 'Tilt & Telescopic', 'Motion': 'Tilt & Telescopic', 'Signature': 'Tilt & Telescopic' }
+          },
+          {
+            name: 'Power Steering',
+            values: { 'M/T': 'Motor Driven Power Steering (MDPS)', 'Trendy': 'Motor Driven Power Steering (MDPS)', 'Motion': 'Motor Driven Power Steering (MDPS)', 'Signature': 'Motor Driven Power Steering (MDPS)' }
+          }
+        ]
+      },
+      {
+        id: 'suspension',
+        title: 'Suspension',
+        items: [
+          {
+            name: 'Front Suspension',
+            values: { 'M/T': 'MacPherson Strut', 'Trendy': 'MacPherson Strut', 'Motion': 'MacPherson Strut', 'Signature': 'MacPherson Strut' }
+          },
+          {
+            name: 'Rear Suspension',
+            values: { 'M/T': 'Coupled Torsion Beam Axle', 'Trendy': 'Coupled Torsion Beam Axle', 'Motion': 'Coupled Torsion Beam Axle', 'Signature': 'Coupled Torsion Beam Axle' }
+          }
+        ]
+      },
+      {
+        id: 'brakes',
+        title: 'Brakes',
+        items: [
+          {
+            name: 'System',
+            values: {
+              'M/T': 'Anti-lock Brake System (ABS), Electronic Brakeforce Distribution (EBD), Brake Assist (BA)',
+              'Trendy': 'Anti-lock Brake System (ABS), Electronic Brakeforce Distribution (EBD), Brake Assist (BA)',
+              'Motion': 'Anti-lock Brake System (ABS), Electronic Brakeforce Distribution (EBD), Brake Assist (BA)',
+              'Signature': 'Anti-lock Brake System (ABS), Electronic Brakeforce Distribution (EBD), Brake Assist (BA)'
+            }
+          },
+          {
+            name: 'Electronic Stability Control (ESC)',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Hill Start-assist Control (HAC)',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Downhill Brake Control (DBC)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Front Brakes',
+            values: { 'M/T': 'Ventilated Disc', 'Trendy': 'Ventilated Disc', 'Motion': 'Ventilated Disc', 'Signature': 'Ventilated Disc' }
+          },
+          {
+            name: 'Rear Brakes',
+            values: { 'M/T': 'Disc', 'Trendy': 'Disc', 'Motion': 'Disc', 'Signature': 'Disc' }
+          },
+          {
+            name: 'Parking Brake',
+            values: { 'M/T': 'Hand Brake', 'Trendy': 'Hand Brake', 'Motion': 'Hand Brake', 'Signature': 'Electronic Parking Brake (EPB)' }
           }
         ]
       },
       {
         id: 'dimensions',
-        title: 'Dimensi & Kapasitas (Dimensions)',
+        title: 'Dimensions',
         items: [
           {
-            name: 'Panjang x Lebar x Tinggi (mm)',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '4,540 x 1,800 x 1,700',
-              '1.5 MPI Trendy 7-Seater': '4,540 x 1,800 x 1,700',
-              '1.4 Turbo Motion 6-Seater': '4,540 x 1,800 x 1,700'
-            }
+            name: 'Length / Width / Height (mm)',
+            values: { 'M/T': '4.550 / 1.800 / 1.708', 'Trendy': '4.550 / 1.800 / 1.708', 'Motion': '4.550 / 1.800 / 1.708', 'Signature': '4.550 / 1.800 / 1.708' }
           },
           {
-            name: 'Jarak Sumbu Roda (Wheelbase)',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '2,780 mm',
-              '1.5 MPI Trendy 7-Seater': '2,780 mm',
-              '1.4 Turbo Motion 6-Seater': '2,780 mm'
-            }
+            name: 'Wheelbase (mm)',
+            values: { 'M/T': '2.780', 'Trendy': '2.780', 'Motion': '2.780', 'Signature': '2.780' }
           },
           {
-            name: 'Ground Clearance',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '195 mm',
-              '1.5 MPI Trendy 7-Seater': '195 mm',
-              '1.4 Turbo Motion 6-Seater': '195 mm'
-            }
+            name: 'Front / Rear Tread (mm)',
+            values: { 'M/T': '1.563 / 1.587', 'Trendy': '1.563 / 1.587', 'Motion': '1.563 / 1.587', 'Signature': '1.563 / 1.587' }
           },
           {
-            name: 'Kapasitas Tempat Duduk',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '7-Seater (Bench 2nd Row)',
-              '1.5 MPI Trendy 7-Seater': '7-Seater (Bench 2nd Row)',
-              '1.4 Turbo Motion 6-Seater': '6-Seater (Captain Seats 2nd Row)'
-            }
+            name: 'Front / Rear Overhang (mm)',
+            values: { 'M/T': '830 / 940', 'Trendy': '830 / 940', 'Motion': '830 / 940', 'Signature': '830 / 940' }
+          },
+          {
+            name: 'Ground Clearance (mm)',
+            values: { 'M/T': '205', 'Trendy': '205', 'Motion': '205', 'Signature': '205' }
+          },
+          {
+            name: 'Cargo Capacity (L)',
+            values: { 'M/T': '216', 'Trendy': '216', 'Motion': '216', 'Signature': '216' }
           }
         ]
       },
       {
-        id: 'chassis',
-        title: 'Sasis & Kemudi (Steering, Suspension & Brakes)',
+        id: 'wheels',
+        title: 'Wheels & Tires',
         items: [
           {
-            name: 'Sistem Kemudi',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Motor Driven Power Steering (MDPS)',
-              '1.5 MPI Trendy 7-Seater': 'Motor Driven Power Steering (MDPS)',
-              '1.4 Turbo Motion 6-Seater': 'Motor Driven Power Steering (MDPS)'
-            }
+            name: 'Wheel Type',
+            values: { 'M/T': '15" Alloy Wheels', 'Trendy': '15" Alloy Wheels', 'Motion': '17" Diamond Cut Alloy Wheels', 'Signature': '17" Diamond Cut Alloy Wheels' }
           },
           {
-            name: 'Suspensi Depan',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'McPherson Strut with Coil Spring',
-              '1.5 MPI Trendy 7-Seater': 'McPherson Strut with Coil Spring',
-              '1.4 Turbo Motion 6-Seater': 'McPherson Strut with Coil Spring'
-            }
-          },
-          {
-            name: 'Suspensi Belakang',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Coupled Torsion Beam Axle (CTBA)',
-              '1.5 MPI Trendy 7-Seater': 'Coupled Torsion Beam Axle (CTBA)',
-              '1.4 Turbo Motion 6-Seater': 'Coupled Torsion Beam Axle (CTBA)'
-            }
-          },
-          {
-            name: 'Sistem Rem (Depan / Belakang)',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Ventilated Disc / Solid Disc',
-              '1.5 MPI Trendy 7-Seater': 'Ventilated Disc / Solid Disc',
-              '1.4 Turbo Motion 6-Seater': 'Ventilated Disc / Solid Disc'
-            }
-          },
-          {
-            name: 'Ukuran Ban & Velg',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '205/65 R16 Dual Tone Alloy',
-              '1.5 MPI Trendy 7-Seater': '205/65 R16 Dual Tone Alloy',
-              '1.4 Turbo Motion 6-Seater': '215/60 R17 Crystal Cut Dual Tone Alloy'
-            }
+            name: 'Tire Size',
+            values: { 'M/T': '195/65 R15', 'Trendy': '195/65 R15', 'Motion': '215/55 R17', 'Signature': '215/55 R17' }
           }
         ]
       },
       {
         id: 'exterior',
-        title: 'Fitur Eksterior (Exterior)',
+        title: 'Exterior',
         items: [
           {
-            name: 'Lampu Utama (Headlamps)',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Crown Jewel Multi Reflector LED',
-              '1.5 MPI Trendy 7-Seater': 'Crown Jewel Multi Reflector LED',
-              '1.4 Turbo Motion 6-Seater': 'Crown Jewel Multi Reflector LED'
-            }
+            name: 'Head Lamp',
+            values: { 'M/T': 'Projector Halogen', 'Trendy': 'Projector Halogen', 'Motion': 'Multi Reflector LED', 'Signature': 'Multi Reflector LED' }
           },
           {
-            name: 'Daytime Running Light (DRL)',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Star Map LED DRL',
-              '1.5 MPI Trendy 7-Seater': 'Star Map LED DRL',
-              '1.4 Turbo Motion 6-Seater': 'Star Map LED DRL'
-            }
+            name: 'Star Map LED DRL with Integrated Turn Signals',
+            values: { 'M/T': 'Bulb', 'Trendy': 'Bulb', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Sunroof',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Manual Tilt & Slide',
-              '1.5 MPI Trendy 7-Seater': 'Sky Light Electric Sunroof',
-              '1.4 Turbo Motion 6-Seater': 'Sky Light Electric Sunroof'
-            }
+            name: 'Rear Star Map LED Connected',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Roof Rail & Chrome Garnish',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Tersedia',
-              '1.5 MPI Trendy 7-Seater': 'Tersedia',
-              '1.4 Turbo Motion 6-Seater': 'Tersedia'
-            }
+            name: 'Rear Upper Spoiler with High Mount Stop Lamp',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Electric Folding Mirror',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'SunRoof',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           }
         ]
       },
       {
         id: 'interior',
-        title: 'Interior & Kenyamanan (Interior & Comfort)',
+        title: 'Interior',
         items: [
           {
-            name: 'Material Upholstery Jok',
+            name: '26.6" Dual Panoramic Display with 12.3" Digital LCD Cluster',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Supervision with 4.2" TFT LCD Cluster',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '-', 'Signature': '-' }
+          },
+          {
+            name: 'Power Window',
             values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'High-Grade Leatherette',
-              '1.5 MPI Trendy 7-Seater': 'High-Grade Leatherette',
-              '1.4 Turbo Motion 6-Seater': 'Premium Leatherette with Indigo Accents'
+              'M/T': 'Auto Up & Down Driver Side with Safety',
+              'Trendy': 'Auto Up & Down Driver Side with Safety',
+              'Motion': 'Auto Up & Down Driver Side with Safety',
+              'Signature': 'Auto Up & Down Driver Side with Safety'
             }
           },
           {
-            name: 'Ventilated Front Seats',
+            name: 'Seat Material',
             values: {
-              '1.5 MPI Premiere M/T 7-Seater': '-',
-              '1.5 MPI Trendy 7-Seater': 'Tersedia (Pengemudi & Penumpang Depan)',
-              '1.4 Turbo Motion 6-Seater': 'Tersedia (Pengemudi & Penumpang Depan)'
+              'M/T': 'Artificial Leather & Cloth',
+              'Trendy': 'Artificial Leather & Cloth',
+              'Motion': 'Artificial Leather & Cloth',
+              'Signature': 'Artificial Leather & Cloth'
             }
           },
           {
-            name: 'Captain Seats Baris ke-2',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '-',
-              '1.5 MPI Trendy 7-Seater': '-',
-              '1.4 Turbo Motion 6-Seater': 'Tersedia (Sliding, Reclining & Armrest)'
-            }
+            name: 'Front Manual Adjustable Seat with Height Adjustment',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Ambient Mood Lighting',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '64 Colors Ambient Lighting',
-              '1.5 MPI Trendy 7-Seater': '64 Colors Ambient Lighting',
-              '1.4 Turbo Motion 6-Seater': '64 Colors Ambient Lighting'
-            }
+            name: '2nd Row Captain Seat with Sliding, Reclining, & Arm Rest',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Wireless Smartphone Charger',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '-',
-              '1.5 MPI Trendy 7-Seater': 'Tersedia dengan Cooling Pad',
-              '1.4 Turbo Motion 6-Seater': 'Tersedia dengan Cooling Pad'
-            }
+            name: '2nd Row 60:40 Split Double Folding & Reclining',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '-', 'Signature': '-' }
+          },
+          {
+            name: 'Front Console with Two Cup Holder',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Automatic Climate Control',
+            values: { 'M/T': 'Manual', 'Trendy': 'Manual', 'Motion': 'Auto', 'Signature': 'Auto' }
+          },
+          {
+            name: 'Rear Air Conditioner',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          }
+        ]
+      },
+      {
+        id: 'comfort',
+        title: 'Comfort & Convenience',
+        items: [
+          {
+            name: 'Push Start Stop Button',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Remote Start Engine',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Drive Mode Select',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Wireless Charging',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: '1st, 2nd, 3rd Row USB Charging Ports',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: '12V Power Outlet',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Seatback Table',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           }
         ]
       },
       {
         id: 'infotainment',
-        title: 'Infotainment & Audio (Infotainment)',
+        title: 'Infotainment',
         items: [
           {
-            name: 'Head Unit Display',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '10.25" HD Touchscreen Display Navigasi',
-              '1.5 MPI Trendy 7-Seater': '10.25" HD Touchscreen Display Navigasi',
-              '1.4 Turbo Motion 6-Seater': '10.25" HD Touchscreen Display Navigasi'
-            }
+            name: '12.3" Infotainment Display with Android Auto & Apple CarPlay',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Sound System',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Bose Premium Sound System 8-Speaker',
-              '1.5 MPI Trendy 7-Seater': 'Bose Premium Sound System 8-Speaker',
-              '1.4 Turbo Motion 6-Seater': 'Bose Premium Sound System 8-Speaker'
-            }
+            name: '8" Infotainment Display with Android Auto & Apple CarPlay',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '-', 'Signature': '-' }
           },
           {
-            name: 'Apple CarPlay & Android Auto',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Wireless CarPlay & Wireless Android Auto',
-              '1.5 MPI Trendy 7-Seater': 'Wireless CarPlay & Wireless Android Auto',
-              '1.4 Turbo Motion 6-Seater': 'Wireless CarPlay & Wireless Android Auto'
-            }
-          },
-          {
-            name: 'Digital Instrument Cluster',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '12.5" Full Digital TFT Cluster',
-              '1.5 MPI Trendy 7-Seater': '12.5" Full Digital TFT Cluster',
-              '1.4 Turbo Motion 6-Seater': '12.5" Full Digital TFT Cluster'
-            }
+            name: 'Audio Speaker',
+            values: { 'M/T': '6-speakers', 'Trendy': '6-speakers', 'Motion': 'BOSE 8-speakers', 'Signature': 'BOSE 8-speakers' }
           }
         ]
       },
       {
         id: 'safety',
-        title: 'Keselamatan & Keamanan (Safety)',
+        title: 'Safety',
         items: [
           {
-            name: 'Jumlah Airbag',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': '6 Airbags (Dual Depan, Samping & Tirai)',
-              '1.5 MPI Trendy 7-Seater': '6 Airbags (Dual Depan, Samping & Tirai)',
-              '1.4 Turbo Motion 6-Seater': '6 Airbags (Dual Depan, Samping & Tirai)'
-            }
+            name: 'Airbags',
+            values: { 'M/T': '2 Air Bags', 'Trendy': '2 Air Bags', 'Motion': '6 Air Bags', 'Signature': '6 Air Bags' }
           },
           {
-            name: 'Sistem Rem ABS, EBD, BA',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Tersedia',
-              '1.5 MPI Trendy 7-Seater': 'Tersedia',
-              '1.4 Turbo Motion 6-Seater': 'Tersedia'
-            }
+            name: 'Tire Pressure Monitoring System (TPMS)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Electronic Stability Control (ESC)',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Tersedia',
-              '1.5 MPI Trendy 7-Seater': 'Tersedia',
-              '1.4 Turbo Motion 6-Seater': 'Tersedia'
-            }
+            name: 'Parking Distance Warning (PDW)',
+            values: { 'M/T': 'Reverse', 'Trendy': 'Reverse', 'Motion': 'Forward & Reverse', 'Signature': 'Forward & Reverse' }
           },
           {
-            name: 'Hill-Start Assist (HAC) & DBC',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Tersedia',
-              '1.5 MPI Trendy 7-Seater': 'Tersedia',
-              '1.4 Turbo Motion 6-Seater': 'Tersedia'
-            }
+            name: 'Surround View Monitor',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Tyre Pressure Monitoring System (TPMS)',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Tersedia Highline System',
-              '1.5 MPI Trendy 7-Seater': 'Tersedia Highline System',
-              '1.4 Turbo Motion 6-Seater': 'Tersedia Highline System'
-            }
-          },
-          {
-            name: 'All-Wheel Disc Brakes',
-            values: {
-              '1.5 MPI Premiere M/T 7-Seater': 'Tersedia (4 Rem Cakram)',
-              '1.5 MPI Trendy 7-Seater': 'Tersedia (4 Rem Cakram)',
-              '1.4 Turbo Motion 6-Seater': 'Tersedia (4 Rem Cakram)'
-            }
-          }
-        ]
-      }
-    ]
-  },
-  'kia-sonet': {
-    carId: 'kia-sonet',
-    carName: 'KIA Sonet',
-    tagline: 'Compact SUV dengan Fitur Canggih Klasik & Dynamic Style',
-    variants: ['Smart 1.5 M/T', 'Premiere 1.5 IVT', 'GT Line 1.4 Turbo'],
-    dimensionDiagram: {
-      length: '4,120 mm',
-      width: '1,790 mm',
-      height: '1,642 mm',
-      wheelbase: '2,500 mm',
-      groundClearance: '205 mm'
-    },
-    categories: [
-      {
-        id: 'powertrain',
-        title: 'Mesin & Performa',
-        items: [
-          {
-            name: 'Tipe Mesin',
-            values: {
-              'Smart 1.5 M/T': '1.5L Smartstream Gamma II',
-              'Premiere 1.5 IVT': '1.5L Smartstream Gamma II',
-              'GT Line 1.4 Turbo': '1.4L Turbocharged Gasoline'
-            }
-          },
-          {
-            name: 'Daya Maksimum',
-            values: {
-              'Smart 1.5 M/T': '115 PS / 6,300 rpm',
-              'Premiere 1.5 IVT': '115 PS / 6,300 rpm',
-              'GT Line 1.4 Turbo': '140 PS / 6,000 rpm'
-            }
-          },
-          {
-            name: 'Transmisi',
-            values: {
-              'Smart 1.5 M/T': 'Manual 6-Speed',
-              'Premiere 1.5 IVT': 'IVT (Intelligent Variable Transmission)',
-              'GT Line 1.4 Turbo': '7-Speed Dual Clutch Transmission'
-            }
+            name: 'Rear View Monitor',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '-', 'Signature': '-' }
           }
         ]
       },
       {
-        id: 'dimensions',
-        title: 'Dimensi & Kapasitas',
+        id: 'adas',
+        title: 'ADAS (Advanced Driver Assistance Systems)',
         items: [
           {
-            name: 'Panjang x Lebar x Tinggi',
-            values: {
-              'Smart 1.5 M/T': '4,120 x 1,790 x 1,642 mm',
-              'Premiere 1.5 IVT': '4,120 x 1,790 x 1,642 mm',
-              'GT Line 1.4 Turbo': '4,120 x 1,790 x 1,642 mm'
-            }
+            name: 'Smart Cruise Control (SCC) with Stop & Go',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Ground Clearance',
-            values: {
-              'Smart 1.5 M/T': '205 mm',
-              'Premiere 1.5 IVT': '205 mm',
-              'GT Line 1.4 Turbo': '205 mm'
-            }
-          }
-        ]
-      }
-    ]
-  },
-  'kia-seltos': {
-    carId: 'kia-seltos',
-    carName: 'KIA All-New Seltos',
-    tagline: 'Bold & Intelligent Compact SUV',
-    variants: ['1.5L IVT', '1.4 Turbo Premiere', '1.4 Turbo GT Line'],
-    dimensionDiagram: {
-      length: '4,315 mm',
-      width: '1,800 mm',
-      height: '1,645 mm',
-      wheelbase: '2,610 mm',
-      groundClearance: '190 mm'
-    },
-    categories: [
-      {
-        id: 'powertrain',
-        title: 'Mesin & Performa',
-        items: [
-          {
-            name: 'Tipe Mesin',
-            values: {
-              '1.5L IVT': 'Smartstream 1.5L MPI',
-              '1.4 Turbo Premiere': '1.4L Turbo GDI',
-              '1.4 Turbo GT Line': '1.4L Turbo GDI'
-            }
+            name: 'Forward Collision-avoidance Assist (FCA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Daya Maksimum',
-            values: {
-              '1.5L IVT': '115 PS / 6,300 rpm',
-              '1.4 Turbo Premiere': '140 PS / 6,000 rpm',
-              '1.4 Turbo GT Line': '140 PS / 6,000 rpm'
-            }
-          }
-        ]
-      }
-    ]
-  },
-  'kia-ev9': {
-    carId: 'kia-ev9',
-    carName: 'KIA EV9',
-    tagline: 'The Ultimate All-Electric 6-Seater SUV',
-    variants: ['GT Line AWD Dual Motor'],
-    dimensionDiagram: {
-      length: '5,010 mm',
-      width: '1,980 mm',
-      height: '1,780 mm',
-      wheelbase: '3,100 mm',
-      groundClearance: '177 mm'
-    },
-    categories: [
-      {
-        id: 'powertrain',
-        title: 'Baterai & Motor Listrik',
-        items: [
-          {
-            name: 'Kapasitas Baterai',
-            values: {
-              'GT Line AWD Dual Motor': '99.8 kWh Lithium-ion'
-            }
+            name: 'Lane Following Assist (LFA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Jarak Tempuh (WLTP)',
-            values: {
-              'GT Line AWD Dual Motor': 'Hingga 497 km'
-            }
+            name: 'Lane Keeping Assist (LKA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Tenaga Maksimum',
-            values: {
-              'GT Line AWD Dual Motor': '385 PS / 700 Nm'
-            }
-          }
-        ]
-      }
-    ]
-  },
-  'kia-ev6': {
-    carId: 'kia-ev6',
-    carName: 'KIA EV6',
-    tagline: 'Inspiring Movement All-Electric Crossover',
-    variants: ['GT-Line AWD'],
-    dimensionDiagram: {
-      length: '4,695 mm',
-      width: '1,890 mm',
-      height: '1,550 mm',
-      wheelbase: '2,900 mm',
-      groundClearance: '160 mm'
-    },
-    categories: [
-      {
-        id: 'powertrain',
-        title: 'Baterai & Motor Listrik',
-        items: [
-          {
-            name: 'Kapasitas Baterai',
-            values: {
-              'GT-Line AWD': '77.4 kWh Lithium-ion'
-            }
+            name: 'Blind-spot View Monitor (BVM)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Jarak Tempuh (WLTP)',
-            values: {
-              'GT-Line AWD': 'Hingga 506 km'
-            }
-          }
-        ]
-      }
-    ]
-  },
-  'kia-carnival': {
-    carId: 'kia-carnival',
-    carName: 'KIA Carnival',
-    tagline: 'Grand Utility Vehicle for Luxury Family Journeys',
-    variants: ['2.2 CRDi Dynamic', '2.2 CRDi Premiere 7-Seater', '1.6 Turbo Hybrid Premiere'],
-    dimensionDiagram: {
-      length: '5,155 mm',
-      width: '1,995 mm',
-      height: '1,775 mm',
-      wheelbase: '3,090 mm',
-      groundClearance: '172 mm'
-    },
-    categories: [
-      {
-        id: 'powertrain',
-        title: 'Mesin & Performa',
-        items: [
+            name: 'Blind-spot Collision-avoidance Assist (BCA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+          },
           {
-            name: 'Tipe Mesin',
-            values: {
-              '2.2 CRDi Dynamic': 'Smartstream D2.2 CRDi VGT',
-              '2.2 CRDi Premiere 7-Seater': 'Smartstream D2.2 CRDi VGT',
-              '1.6 Turbo Hybrid Premiere': 'Smartstream G1.6 Turbo Hybrid'
-            }
+            name: 'Manual Speed Limit Assist (MSLA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'High Beam Assist (HBA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
           }
         ]
       }

@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useParams, useRouter } from 'next/navigation';
-import { ArrowLeft, ChevronRight, Download, Check, Minus, Search, ShieldCheck, Sparkles, PhoneCall } from 'lucide-react';
+import { useParams } from 'next/navigation';
+import { ArrowLeft, ChevronRight, Search, CheckCircle2, Minus, PhoneCall, Sparkles, SlidersHorizontal, FileText } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CARS_DATA } from '@/data/cars';
@@ -13,7 +13,6 @@ import { TestDriveModal } from '@/components/TestDriveModal';
 
 export default function CarSpecificationPage() {
   const params = useParams();
-  const router = useRouter();
   const carId = (params?.id as string) || 'kia-all-new-carens';
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -23,7 +22,7 @@ export default function CarSpecificationPage() {
   const specData = CAR_SPECIFICATIONS[carId] || CAR_SPECIFICATIONS['kia-all-new-carens'];
 
   const categories = specData.categories || [];
-  const variants = specData.variants || [car.trim || 'Standard'];
+  const variants = specData.variants || ['M/T', 'Trendy', 'Motion', 'Signature'];
 
   const filteredCategories = categories.map((cat) => {
     if (!searchQuery.trim()) return cat;
@@ -35,15 +34,12 @@ export default function CarSpecificationPage() {
   }).filter((cat) => (activeCategory === 'all' || cat.id === activeCategory) && cat.items.length > 0);
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-900 font-sans flex flex-col justify-between">
+    <main className="min-h-screen bg-[#F5F6F8] text-gray-900 font-sans flex flex-col justify-between">
       {/* Header Navigation */}
       <Navbar onOpenTestDrive={() => setIsTestDriveOpen(true)} />
 
-      {/* Top Breadcrumb & Hero Banner */}
-      <section className="bg-neutral-900 text-white pt-8 pb-12 px-4 sm:px-8 lg:px-12 relative overflow-hidden">
-        {/* Subtle Background Glow */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-950/20 rounded-full blur-3xl pointer-events-none" />
-
+      {/* Top Header & Breadcrumb */}
+      <section className="bg-black text-white pt-8 pb-12 px-4 sm:px-8 lg:px-12 relative overflow-hidden border-b border-neutral-800">
         <div className="max-w-[1728px] mx-auto relative z-10">
           {/* Breadcrumb */}
           <nav className="flex items-center text-xs text-gray-400 gap-2 mb-6 font-medium">
@@ -53,119 +49,103 @@ export default function CarSpecificationPage() {
             <ChevronRight className="w-3 h-3 text-gray-600" />
             <Link href={`/katalog/${car.id}`} className="hover:text-white transition-colors">{car.name}</Link>
             <ChevronRight className="w-3 h-3 text-gray-600" />
-            <span className="text-white font-bold">Spesifikasi</span>
+            <span className="text-white font-bold">Spesifikasi Form</span>
           </nav>
 
-          {/* Hero Header Content */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div className="space-y-3 max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-xs font-bold uppercase tracking-wider text-gray-300 backdrop-blur-sm">
-                <Sparkles className="w-3.5 h-3.5 text-rose-400" />
-                <span>Spesifikasi Lengkap Dealer Resmi</span>
+          {/* Title & Actions */}
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div className="space-y-2 max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-xs font-bold uppercase tracking-wider text-gray-300">
+                <FileText className="w-3.5 h-3.5 text-rose-400" />
+                <span>Lembar Spesifikasi Resmi</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-                {car.name} <span className="text-gray-400 font-normal">Spesifikasi</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
+                {car.name} <span className="font-normal text-gray-400">Specifications</span>
               </h1>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                {specData.tagline || car.tagline}
+              <p className="text-gray-400 text-sm sm:text-base">
+                Form tabel komparasi detail seluruh varian resmi KIA Masati Semarang.
               </p>
             </div>
 
-            {/* Quick Action Buttons */}
             <div className="flex flex-wrap items-center gap-3">
               <button
+                onClick={() => window.print()}
+                className="px-5 py-3 bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-sm rounded-xl border border-neutral-700 transition-all flex items-center gap-2"
+              >
+                <SlidersHorizontal className="w-4 h-4" />
+                <span>Cetak / Simpan Spec</span>
+              </button>
+              <button
                 onClick={() => setIsTestDriveOpen(true)}
-                className="px-6 py-3.5 bg-white text-black hover:bg-gray-100 font-extrabold text-sm rounded-xl shadow-lg transition-all active:scale-95 flex items-center gap-2"
+                className="px-6 py-3 bg-white text-black hover:bg-gray-100 font-extrabold text-sm rounded-xl shadow-lg transition-all flex items-center gap-2"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>Jadwalkan Test Drive</span>
               </button>
               <Link
                 href={`/katalog/${car.id}`}
-                className="px-5 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-sm rounded-xl backdrop-blur-sm border border-white/10 transition-all flex items-center gap-2"
+                className="px-5 py-3 bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-sm rounded-xl border border-neutral-700 transition-all flex items-center gap-2"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span>Kembali ke Detail</span>
+                <span>Kembali</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Specification Body */}
-      <section className="max-w-[1728px] mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-14 w-full flex-grow">
+      {/* Main Form & Table Container */}
+      <section className="max-w-[1728px] mx-auto px-4 sm:px-8 lg:px-12 py-10 w-full flex-grow">
         
-        {/* Dimensions Showcase Diagram Section */}
+        {/* Car Dimensions & Quick Specs Summary Card */}
         {specData.dimensionDiagram && (
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-xl shadow-black/5 mb-12">
-            <div className="flex flex-col lg:flex-row items-center gap-10">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm mb-8">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
               
-              {/* Car Image Preview */}
-              <div className="w-full lg:w-1/2 relative aspect-[16/10] rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+              <div className="w-full lg:w-1/3 relative aspect-[16/10] bg-gray-50 rounded-xl overflow-hidden p-2 flex items-center justify-center">
                 <Image
                   src={car.image}
-                  alt={`${car.name} Dimensions`}
+                  alt={car.name}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-contain"
                   priority
                 />
               </div>
 
-              {/* Dimension Metrics Grid */}
-              <div className="w-full lg:w-1/2 space-y-6">
-                <div>
-                  <h3 className="text-2xl font-black text-gray-900 tracking-tight">
-                    Dimensi Utama & Proporsi
-                  </h3>
-                  <p className="text-gray-500 text-sm mt-1">
-                    Desain aerodinamis dengan proporsi kabin lapang dan stabilitas tinggi.
-                  </p>
+              <div className="w-full lg:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div className="bg-[#F8F9FA] p-4 rounded-xl border border-gray-200/80">
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">Length / Width / Height</span>
+                  <span className="text-base sm:text-lg font-black text-gray-900 mt-1 block">{specData.dimensionDiagram.lengthWidthHeight}</span>
                 </div>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block">Panjang</span>
-                    <span className="text-xl font-extrabold text-gray-900 mt-1 block">{specData.dimensionDiagram.length}</span>
-                  </div>
-
-                  <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block">Lebar</span>
-                    <span className="text-xl font-extrabold text-gray-900 mt-1 block">{specData.dimensionDiagram.width}</span>
-                  </div>
-
-                  <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block">Tinggi</span>
-                    <span className="text-xl font-extrabold text-gray-900 mt-1 block">{specData.dimensionDiagram.height}</span>
-                  </div>
-
-                  <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block">Wheelbase</span>
-                    <span className="text-xl font-extrabold text-gray-900 mt-1 block">{specData.dimensionDiagram.wheelbase}</span>
-                  </div>
-
-                  <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100 col-span-2 sm:col-span-2">
-                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block">Ground Clearance</span>
-                    <span className="text-xl font-extrabold text-gray-900 mt-1 block">{specData.dimensionDiagram.groundClearance}</span>
-                  </div>
+                <div className="bg-[#F8F9FA] p-4 rounded-xl border border-gray-200/80">
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">Wheelbase</span>
+                  <span className="text-base sm:text-lg font-black text-gray-900 mt-1 block">{specData.dimensionDiagram.wheelbase}</span>
                 </div>
-
-                {specData.wheelSpec && (
-                  <div className="p-4 bg-neutral-900 text-white rounded-2xl flex items-center gap-4">
-                    <ShieldCheck className="w-8 h-8 text-rose-400 shrink-0" />
-                    <div>
-                      <h4 className="text-sm font-bold">{specData.wheelSpec.type}</h4>
-                      <p className="text-xs text-gray-300 mt-0.5">{specData.wheelSpec.description}</p>
-                    </div>
-                  </div>
-                )}
+                <div className="bg-[#F8F9FA] p-4 rounded-xl border border-gray-200/80">
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">Front/Rear Tread</span>
+                  <span className="text-base sm:text-lg font-black text-gray-900 mt-1 block">{specData.dimensionDiagram.tread}</span>
+                </div>
+                <div className="bg-[#F8F9FA] p-4 rounded-xl border border-gray-200/80">
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">Front/Rear Overhang</span>
+                  <span className="text-base sm:text-lg font-black text-gray-900 mt-1 block">{specData.dimensionDiagram.overhang}</span>
+                </div>
+                <div className="bg-[#F8F9FA] p-4 rounded-xl border border-gray-200/80">
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">Ground Clearance</span>
+                  <span className="text-base sm:text-lg font-black text-gray-900 mt-1 block">{specData.dimensionDiagram.groundClearance}</span>
+                </div>
+                <div className="bg-[#F8F9FA] p-4 rounded-xl border border-gray-200/80">
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block">Cargo Capacity</span>
+                  <span className="text-base sm:text-lg font-black text-gray-900 mt-1 block">{specData.dimensionDiagram.cargoCapacity}</span>
+                </div>
               </div>
+
             </div>
           </div>
         )}
 
         {/* Filter Navigation & Search Bar */}
-        <div className="sticky top-20 z-30 bg-white/90 backdrop-blur-md p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-gray-200/80 shadow-lg shadow-black/5 mb-8 space-y-4">
+        <div className="sticky top-20 z-30 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-gray-200 shadow-sm mb-8 space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             
             {/* Search Input */}
@@ -173,20 +153,20 @@ export default function CarSpecificationPage() {
               <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
-                placeholder="Cari spesifikasi (mis. Sunroof, Bose)..."
+                placeholder="Cari fitur spesifikasi..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-gray-100 border-none rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-black focus:outline-none transition-all"
+                className="w-full pl-10 pr-4 py-2 bg-gray-100 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-black focus:outline-none transition-all"
               />
             </div>
 
-            {/* Category Filter Pills */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+            {/* Category Filter Buttons */}
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
               <button
                 onClick={() => setActiveCategory('all')}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
                   activeCategory === 'all'
-                    ? 'bg-black text-white shadow-sm'
+                    ? 'bg-black text-white'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-black'
                 }`}
               >
@@ -197,78 +177,84 @@ export default function CarSpecificationPage() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
                     activeCategory === cat.id
-                      ? 'bg-black text-white shadow-sm'
+                      ? 'bg-black text-white'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-black'
                   }`}
                 >
-                  {cat.title.split('(')[0].trim()}
+                  {cat.title}
                 </button>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Specification Comparison Table View */}
-        <div className="space-y-10">
+        {/* Specification Form Tables */}
+        <div className="space-y-8">
           {filteredCategories.length > 0 ? (
             filteredCategories.map((cat) => (
-              <div key={cat.id} className="bg-white rounded-3xl border border-gray-100 shadow-lg shadow-black/5 overflow-hidden">
+              <div key={cat.id} className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
                 
-                {/* Category Header */}
-                <div className="bg-gray-900 text-white px-6 sm:px-8 py-5 flex items-center justify-between">
-                  <h3 className="text-lg sm:text-xl font-extrabold tracking-tight">
+                {/* Form Category Header */}
+                <div className="bg-[#1A1A1A] text-white px-6 py-4 flex items-center justify-between border-b border-gray-800">
+                  <h3 className="text-base sm:text-lg font-black tracking-wide uppercase">
                     {cat.title}
                   </h3>
-                  <span className="text-xs font-medium text-gray-400 bg-white/10 px-3 py-1 rounded-full">
-                    {cat.items.length} Fitur
+                  <span className="text-xs font-bold text-gray-400">
+                    {cat.items.length} Items
                   </span>
                 </div>
 
-                {/* Table Data */}
+                {/* Form Table Grid */}
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left border-collapse min-w-[700px]">
+                  <table className="w-full text-left border-collapse min-w-[800px]">
                     <thead>
-                      <tr className="bg-gray-50/80 border-b border-gray-100">
-                        <th className="py-4 px-6 text-xs font-bold text-gray-500 uppercase tracking-wider w-1/3">
-                          Spesifikasi / Fitur
+                      <tr className="bg-[#F8F9FA] border-b border-gray-200 text-xs font-black text-gray-700 uppercase">
+                        <th className="py-3.5 px-6 border-r border-gray-200 w-1/3 sticky left-0 bg-[#F8F9FA] z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+                          Specification Item
                         </th>
                         {variants.map((vName, idx) => (
-                          <th key={idx} className="py-4 px-6 text-xs font-extrabold text-gray-900 uppercase tracking-wider text-center">
-                            {vName}
+                          <th key={idx} className="py-3.5 px-6 border-r border-gray-200 text-center w-1/6 last:border-r-0">
+                            <span className="inline-block px-3 py-1 bg-black text-white text-xs font-black rounded-md">
+                              {vName}
+                            </span>
                           </th>
                         ))}
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-100 text-sm">
+                    <tbody className="divide-y divide-gray-200 text-xs sm:text-sm">
                       {cat.items.map((item, itemIdx) => (
-                        <tr key={itemIdx} className="hover:bg-gray-50/60 transition-colors">
-                          <td className="py-4 px-6 font-semibold text-gray-900 align-middle">
+                        <tr key={itemIdx} className="hover:bg-gray-50/80 transition-colors">
+                          
+                          {/* Specification Name Column */}
+                          <td className="py-3.5 px-6 font-bold text-gray-900 border-r border-gray-200 sticky left-0 bg-white z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                             {item.name}
                           </td>
+
+                          {/* Variant Data Columns */}
                           {variants.map((vName, vIdx) => {
-                            const val = item.values[vName] || item.values[Object.keys(item.values)[vIdx]] || '-';
-                            const isAvailable = val.toLowerCase() === 'tersedia' || val.toLowerCase() === 'ya';
-                            const isNotAvailable = val === '-';
+                            const val = item.values[vName] || '-';
+                            const isBullet = val === '●';
+                            const isDash = val === '-';
 
                             return (
-                              <td key={vIdx} className="py-4 px-6 text-center align-middle">
-                                {isAvailable ? (
-                                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-700 font-bold text-xs rounded-full">
-                                    <Check className="w-3.5 h-3.5" />
-                                    <span>Tersedia</span>
-                                  </div>
-                                ) : isNotAvailable ? (
+                              <td key={vIdx} className="py-3.5 px-6 text-center align-middle border-r border-gray-200 last:border-r-0">
+                                {isBullet ? (
+                                  <span className="inline-flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-black text-xs mx-auto shadow-sm">
+                                    ●
+                                  </span>
+                                ) : isDash ? (
                                   <Minus className="w-4 h-4 text-gray-300 mx-auto" />
                                 ) : (
-                                  <span className="font-medium text-gray-700 text-xs sm:text-sm">
+                                  <span className="font-semibold text-gray-800 text-xs sm:text-sm leading-snug">
                                     {val}
                                   </span>
                                 )}
                               </td>
                             );
                           })}
+
                         </tr>
                       ))}
                     </tbody>
@@ -278,13 +264,13 @@ export default function CarSpecificationPage() {
               </div>
             ))
           ) : (
-            <div className="bg-white rounded-3xl p-12 text-center border border-gray-100 shadow-md">
-              <Search className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-              <h3 className="text-xl font-bold text-gray-800">Tidak ada spesifikasi yang cocok</h3>
-              <p className="text-gray-500 text-sm mt-1">Coba gunakan kata kunci pencarian lain atau pilih kategori lain.</p>
+            <div className="bg-white rounded-2xl p-12 text-center border border-gray-200 shadow-sm">
+              <Search className="w-10 h-10 text-gray-300 mx-auto mb-3" />
+              <h3 className="text-lg font-bold text-gray-800">Spesifikasi Tidak Ditemukan</h3>
+              <p className="text-gray-500 text-xs mt-1">Gunakan kata kunci pencarian lain.</p>
               <button
                 onClick={() => { setSearchQuery(''); setActiveCategory('all'); }}
-                className="mt-4 px-5 py-2.5 bg-black text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition-all"
+                className="mt-4 px-4 py-2 bg-black text-white text-xs font-bold rounded-xl"
               >
                 Reset Filter
               </button>
@@ -292,31 +278,30 @@ export default function CarSpecificationPage() {
           )}
         </div>
 
-        {/* Bottom CTA Banner */}
-        <div className="mt-14 bg-gradient-to-r from-neutral-900 via-black to-neutral-900 rounded-3xl p-8 sm:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
-          <div className="space-y-2 max-w-2xl relative z-10 text-center lg:text-left">
-            <h3 className="text-2xl sm:text-3xl font-black tracking-tight">
-              Tertarik Mencoba {car.name} Secara Langsung?
+        {/* Sales Contact Banner */}
+        <div className="mt-12 bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="text-xl font-black text-gray-900">
+              Butuh Informasi Simulasi Kredit atau Promo OTR Semarang?
             </h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Dapatkan konsultasi gratis, simulasi kredit dengan DP ringan, dan jadwalkan Test Drive langsung ke rumah atau lokasi Anda di Semarang.
+            <p className="text-gray-500 text-sm mt-1">
+              Hubungi Sales Executive resmi KIA Masati Semarang untuk penawaran harga terbaik & test drive.
             </p>
           </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 relative z-10">
+          <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={() => setIsTestDriveOpen(true)}
-              className="px-8 py-4 bg-white text-black hover:bg-gray-100 font-extrabold text-sm rounded-2xl shadow-xl transition-all active:scale-95"
+              className="px-6 py-3 bg-black hover:bg-neutral-800 text-white font-bold text-xs rounded-xl shadow-md transition-all"
             >
-              Booking Test Drive Gratis
+              Booking Test Drive
             </button>
             <a
-              href="https://wa.me/6281325456655?text=Halo%20KIA%20Semarang,%20saya%20ingin%20tanya%20spesifikasi%20dan%20promo%20lengkap"
+              href="https://wa.me/6281325456655?text=Halo%20KIA%20Semarang,%20saya%20ingin%20tanya%20spesifikasi%20dan%20promo%20terbaru"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-2xl shadow-lg transition-all"
+              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-md transition-all"
             >
-              Konsultasi WhatsApp
+              WhatsApp Sales
             </a>
           </div>
         </div>
