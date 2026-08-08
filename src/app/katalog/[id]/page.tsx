@@ -135,36 +135,53 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
   ],
   'kia-carnival': [
     {
-      name: 'Premiere',
+      name: 'Premiere 7-Seater',
       trim: '2.2 CRDi Premiere 7-Seater',
       price: 'Rp 1.039.000.000',
       image: '/images/katalog unit/kia carnival/kia-carnival.jpg',
       badge: 'READY STOCK',
-      engine: '2.2L Turbo Diesel',
+      engine: '2.2L CRDi Diesel (194 PS / 441 Nm)',
       transmission: '8-Speed Automatic',
       seats: 7,
       fuelType: 'Diesel',
       features: [
-        'Relaxation Captain Seats with Heating/Cooling',
-        'Dual Sunroof & BOSE 12-Speaker Sound System',
-        'Dual 12.3" Curved Display',
-        '360 Camera & Blind Spot Monitor'
+        'Premium Relaxation Seats with Leg Support',
+        'Wide Dual Sunroof & BOSE 12-Speaker Sound System',
+        '12.3" Curved Premium Cluster & Touchscreen',
+        'Drive Wise ADAS & Surround View Monitor'
       ]
     },
     {
-      name: 'Hybrid',
+      name: 'Premiere 11-Seater',
+      trim: '2.2 CRDi Premiere 11-Seater',
+      price: 'Rp 938.000.000',
+      image: '/images/katalog unit/kia carnival/kia-carnival.jpg',
+      badge: 'READY STOCK',
+      engine: '2.2L CRDi Diesel (194 PS / 441 Nm)',
+      transmission: '8-Speed Automatic',
+      seats: 11,
+      fuelType: 'Diesel',
+      features: [
+        'Flexible 11-Seater Spacious Cabin',
+        'Wide Dual Sunroof & BOSE 12-Speaker System',
+        'Smart Power Tailgate with Auto Close',
+        'Drive Wise ADAS & Surround View Monitor'
+      ]
+    },
+    {
+      name: 'Hybrid 7-Seater',
       trim: '1.6 Turbo Hybrid 7-Seater',
       price: 'Rp 1.398.000.000',
       image: '/images/katalog unit/kia carnival/kia-carnival.jpg',
       badge: 'HYBRID',
-      engine: '1.6L Turbo Hybrid',
+      engine: '1.6L Turbo Hybrid (245 PS / 367 Nm)',
       transmission: '6-Speed Automatic',
       seats: 7,
       fuelType: 'Hybrid',
       features: [
         'Smartstream 1.6L Turbo Hybrid Engine',
-        'Relaxation Captain Seats with Heating/Cooling',
-        'Dual 12.3" Curved Panoramic Display',
+        'Premium Relaxation Seats & 19" Alloy Wheels',
+        'Dual 12.3" Curved Display',
         'BOSE Premium 12-Speaker Sound System'
       ]
     }

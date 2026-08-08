@@ -1019,9 +1019,9 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
     carId: 'kia-carnival',
     carName: 'KIA Carnival',
     tagline: 'Grand Utility Vehicle for Luxury Family Journeys',
-    variants: ['2.2 CRDi Dynamic', '2.2 CRDi Premiere 7-Seater', '1.6 Turbo Hybrid Premiere'],
+    variants: ['Premiere 7-Seater', 'Premiere 11-Seater', 'Hybrid 7-Seater'],
     dimensionDiagram: {
-      lengthWidthHeight: '5.155 / 1.995 / 1.775 mm',
+      lengthWidthHeight: '5.155 / 1.995 / 1.775 - 1.785 mm',
       wheelbase: '3.090 mm',
       tread: '1.740 / 1.741 mm',
       overhang: '935 / 1.130 mm',
@@ -1036,18 +1036,364 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
           {
             name: 'Engine Type',
             values: {
-              '2.2 CRDi Dynamic': 'Smartstream D2.2 CRDi VGT',
-              '2.2 CRDi Premiere 7-Seater': 'Smartstream D2.2 CRDi VGT',
-              '1.6 Turbo Hybrid Premiere': 'Smartstream G1.6 Turbocharged Hybrid'
+              'Premiere 7-Seater': 'Smartstream Engine, D 2.2L, CRDI, DOHC, 16V',
+              'Premiere 11-Seater': 'Smartstream Engine, D 2.2L, CRDI, DOHC, 16V',
+              'Hybrid 7-Seater': 'Smartstream Gamma II, 1.6 T-GDi'
             }
+          },
+          {
+            name: 'Displacement (cc)',
+            values: { 'Premiere 7-Seater': '2,151', 'Premiere 11-Seater': '2,151', 'Hybrid 7-Seater': '1,598' }
+          },
+          {
+            name: 'Maximum Power (PS/rpm)',
+            values: { 'Premiere 7-Seater': '194', 'Premiere 11-Seater': '194', 'Hybrid 7-Seater': '245' }
+          },
+          {
+            name: 'Maximum Torque (Nm/rpm)',
+            values: { 'Premiere 7-Seater': '441', 'Premiere 11-Seater': '441', 'Hybrid 7-Seater': '367' }
+          },
+          {
+            name: 'Transmission Type',
+            values: { 'Premiere 7-Seater': '8-Speed AT', 'Premiere 11-Seater': '8-Speed AT', 'Hybrid 7-Seater': '6-speed AT' }
+          }
+        ]
+      },
+      {
+        id: 'steering',
+        title: 'Sistem Kemudi',
+        items: [
+          {
+            name: 'Type',
+            values: { 'Premiere 7-Seater': 'Rack & Pinion', 'Premiere 11-Seater': 'Rack & Pinion', 'Hybrid 7-Seater': 'Rack & Pinion' }
+          },
+          {
+            name: 'Power Steering',
+            values: { 'Premiere 7-Seater': 'MDPS', 'Premiere 11-Seater': 'MDPS', 'Hybrid 7-Seater': 'MDPS' }
+          }
+        ]
+      },
+      {
+        id: 'brakes',
+        title: 'Rem',
+        items: [
+          {
+            name: 'System',
+            values: { 'Premiere 7-Seater': 'ABS, EBD, BA', 'Premiere 11-Seater': 'ABS, EBD, BA', 'Hybrid 7-Seater': 'ABS, EBD, BA' }
+          },
+          {
+            name: 'Type (Front / Rear / Parking)',
+            values: {
+              'Premiere 7-Seater': 'Ventilated Disc / Disc / Electronic Parking Brake',
+              'Premiere 11-Seater': 'Ventilated Disc / Disc / Electronic Parking Brake',
+              'Hybrid 7-Seater': 'Ventilated Disc / Disc / Electronic Parking Brake'
+            }
+          }
+        ]
+      },
+      {
+        id: 'dimensions',
+        title: 'Dimensi',
+        items: [
+          {
+            name: 'Length / Width / Height (mm)',
+            values: {
+              'Premiere 7-Seater': '5,155 / 1,995 / 1,775',
+              'Premiere 11-Seater': '5,155 / 1,995 / 1,775',
+              'Hybrid 7-Seater': '5,155 / 1,995 / 1,785'
+            }
+          },
+          {
+            name: 'Wheel Base (mm)',
+            values: { 'Premiere 7-Seater': '3090', 'Premiere 11-Seater': '3090', 'Hybrid 7-Seater': '3090' }
+          },
+          {
+            name: 'Wheel & Tire',
+            values: {
+              'Premiere 7-Seater': 'Alloy Wheel 235/ 60 R18',
+              'Premiere 11-Seater': 'Alloy Wheel 235/ 60 R18',
+              'Hybrid 7-Seater': 'Alloy Wheel 235/55 R19'
+            }
+          },
+          {
+            name: 'Fuel Tank Capacity (L)',
+            values: { 'Premiere 7-Seater': '80', 'Premiere 11-Seater': '80', 'Hybrid 7-Seater': '72' }
+          }
+        ]
+      },
+      {
+        id: 'suspension',
+        title: 'Suspensi',
+        items: [
+          {
+            name: 'Front',
+            values: { 'Premiere 7-Seater': 'Mc Pherson Strut', 'Premiere 11-Seater': 'Mc Pherson Strut', 'Hybrid 7-Seater': 'Mc Pherson Strut' }
+          },
+          {
+            name: 'Rear',
+            values: { 'Premiere 7-Seater': 'Multi Link', 'Premiere 11-Seater': 'Multi Link', 'Hybrid 7-Seater': 'Multi Link' }
+          }
+        ]
+      },
+      {
+        id: 'exterior',
+        title: 'Eksterior',
+        items: [
+          {
+            name: 'Sun Roof',
+            values: {
+              'Premiere 7-Seater': 'Wide Dual Sunroof, power sliding & Tilting (F), Power sliding (R)',
+              'Premiere 11-Seater': 'Wide Dual Sunroof, power sliding & Tilting (F), Power sliding (R)',
+              'Hybrid 7-Seater': 'Wide Dual Sunroof, power sliding & Tilting (F), Power sliding (R)'
+            }
+          },
+          {
+            name: 'Radiator Grill',
+            values: { 'Premiere 7-Seater': 'Chrome Coating', 'Premiere 11-Seater': 'Chrome Coating', 'Hybrid 7-Seater': 'Chrome Coating' }
+          },
+          {
+            name: 'Rear Spoiler',
+            values: {
+              'Premiere 7-Seater': 'Integrated with HMSL (High Mounted Stop Lamp)',
+              'Premiere 11-Seater': 'Integrated with HMSL (High Mounted Stop Lamp)',
+              'Hybrid 7-Seater': 'Integrated with HMSL (High Mounted Stop Lamp)'
+            }
+          },
+          {
+            name: 'Outside Mirror',
+            values: {
+              'Premiere 7-Seater': 'Body Color w/ Electric Mirror, Heated and Power Folding',
+              'Premiere 11-Seater': 'Body Color w/ Electric Mirror, Heated and Power Folding',
+              'Hybrid 7-Seater': 'Body Color w/ Electric Mirror, Heated and Power Folding'
+            }
+          },
+          {
+            name: 'Head Lamp',
+            values: {
+              'Premiere 7-Seater': 'LED Projector, Auto Light and Leveling',
+              'Premiere 11-Seater': 'LED Projector, Auto Light and Leveling',
+              'Hybrid 7-Seater': 'LED Projector, Auto Light and Leveling'
+            }
+          },
+          {
+            name: 'Day Time Running Light',
+            values: {
+              'Premiere 7-Seater': 'LED and Positioning Lamp',
+              'Premiere 11-Seater': 'LED and Positioning Lamp',
+              'Hybrid 7-Seater': 'LED and Positioning Lamp'
+            }
+          },
+          {
+            name: 'Fog Lamp',
+            values: { 'Premiere 7-Seater': 'LED Type', 'Premiere 11-Seater': 'LED Type', 'Hybrid 7-Seater': 'LED Type' }
+          },
+          {
+            name: 'Front Wiper',
+            values: {
+              'Premiere 7-Seater': 'Auto Wiper w/ Rain Sensor',
+              'Premiere 11-Seater': 'Auto Wiper w/ Rain Sensor',
+              'Hybrid 7-Seater': 'Auto Wiper w/ Rain Sensor'
+            }
+          },
+          {
+            name: 'Rear Combination Lamp',
+            values: { 'Premiere 7-Seater': 'LED', 'Premiere 11-Seater': 'LED', 'Hybrid 7-Seater': 'LED' }
+          },
+          {
+            name: 'Rear Back Door',
+            values: {
+              'Premiere 7-Seater': 'Smart Power Tailgate with Auto Close',
+              'Premiere 11-Seater': 'Smart Power Tailgate with Auto Close',
+              'Hybrid 7-Seater': 'Smart Power Tailgate with Auto Close'
+            }
+          }
+        ]
+      },
+      {
+        id: 'interior',
+        title: 'Interior',
+        items: [
+          {
+            name: 'Steering Wheel',
+            values: {
+              'Premiere 7-Seater': 'Leather, 4 Spoke Sport with Tilt & Audio Control & Paddle Shift',
+              'Premiere 11-Seater': 'Leather, 4 Spoke Sport with Tilt & Audio Control & Paddle Shift',
+              'Hybrid 7-Seater': 'Leather, 4 Spoke Sport with Tilt & Audio Control & Paddle Shift'
+            }
+          },
+          {
+            name: 'Power Window',
+            values: {
+              'Premiere 7-Seater': 'All Window Auto up & Down with Safety',
+              'Premiere 11-Seater': 'All Window Auto up & Down with Safety',
+              'Hybrid 7-Seater': 'All Window Auto up & Down with Safety'
+            }
+          },
+          {
+            name: 'Front Console',
+            values: { 'Premiere 7-Seater': 'with Two Cup Holder', 'Premiere 11-Seater': 'with Two Cup Holder', 'Hybrid 7-Seater': 'with Two Cup Holder' }
+          },
+          {
+            name: 'Interior Lamp',
+            values: { 'Premiere 7-Seater': 'LED', 'Premiere 11-Seater': 'LED', 'Hybrid 7-Seater': 'LED' }
+          },
+          {
+            name: 'Meter Cluster',
+            values: {
+              'Premiere 7-Seater': '12.3" Curved Premium Cluster',
+              'Premiere 11-Seater': '12.3" Curved Premium Cluster',
+              'Hybrid 7-Seater': '12.3" Curved Premium Cluster'
+            }
+          },
+          {
+            name: 'Front Seat',
+            values: {
+              'Premiere 7-Seater': '4-way Power Seat with Memory (Driver), 4-way Power Seat (Passenger)',
+              'Premiere 11-Seater': '4-way Power Seat with Memory (Driver), 4-way Power Seat (Passenger)',
+              'Hybrid 7-Seater': '4-way Power Seat with Memory (Driver), 4-way Power Seat (Passenger)'
+            }
+          },
+          {
+            name: 'Rear Seat',
+            values: {
+              'Premiere 7-Seater': 'Premium Relaxation Seats w/ Electric Adjustable and Leg Support',
+              'Premiere 11-Seater': 'Sliding and Reclining',
+              'Hybrid 7-Seater': 'Premium Relaxation Seats w/ Electric Adjustable and Leg Support'
+            }
+          },
+          {
+            name: 'Heated Seat',
+            values: { 'Premiere 7-Seater': '1st & 2nd Row', 'Premiere 11-Seater': '1st Row', 'Hybrid 7-Seater': '1st & 2nd Row' }
+          },
+          {
+            name: 'Ventilated Seat',
+            values: { 'Premiere 7-Seater': '1st & 2nd Row', 'Premiere 11-Seater': '1st Row', 'Hybrid 7-Seater': '1st & 2nd Row' }
+          }
+        ]
+      },
+      {
+        id: 'safety',
+        title: 'Fitur Keamanan',
+        items: [
+          {
+            name: 'Body Structure',
+            values: {
+              'Premiere 7-Seater': 'Advanced High Strength Steel & Press Hot Stamping',
+              'Premiere 11-Seater': 'Advanced High Strength Steel & Press Hot Stamping',
+              'Hybrid 7-Seater': 'Advanced High Strength Steel & Press Hot Stamping'
+            }
+          },
+          {
+            name: 'Airbags',
+            values: {
+              'Premiere 7-Seater': '8 Airbags, Driver, Knee, Passenger, Center, Side and Curtain Airbags',
+              'Premiere 11-Seater': '8 Airbags, Driver, Knee, Passenger, Center, Side and Curtain Airbags',
+              'Hybrid 7-Seater': '8 Airbags, Driver, Knee, Passenger, Center, Side and Curtain Airbags'
+            }
+          },
+          {
+            name: '1st Row Safety Belt',
+            values: { 'Premiere 7-Seater': '3 Point ELR', 'Premiere 11-Seater': '3 Point ELR', 'Hybrid 7-Seater': '3 Point ELR' }
+          },
+          {
+            name: 'Rear Safety Belt',
+            values: {
+              'Premiere 7-Seater': '3 Point ELR (Side) 2 point (Center)',
+              'Premiere 11-Seater': '3 Point ELR (Side) 2 point (Center)',
+              'Hybrid 7-Seater': '3 Point ELR (Side) 2 point (Center)'
+            }
+          },
+          {
+            name: 'Parking Assist',
+            values: {
+              'Premiere 7-Seater': '8 Sensor and Dynamic Parking Guideline',
+              'Premiere 11-Seater': '8 Sensor and Dynamic Parking Guideline',
+              'Hybrid 7-Seater': '8 Sensor and Dynamic Parking Guideline'
+            }
+          },
+          {
+            name: 'Electronic Brake Control',
+            values: {
+              'Premiere 7-Seater': 'ABS, ESC, Hill Start Assist',
+              'Premiere 11-Seater': 'ABS, ESC, Hill Start Assist',
+              'Hybrid 7-Seater': 'ABS, ESC, Hill Start Assist'
+            }
+          },
+          {
+            name: 'ADAS System',
+            values: {
+              'Premiere 7-Seater': 'SCC, LFA, LKA, FCA & JX, BCA & BVM',
+              'Premiere 11-Seater': 'SCC, LFA, LKA, FCA & JX, BCA & BVM',
+              'Hybrid 7-Seater': 'SCC, LFA, LKA, FCA & JX, BCA & BVM'
+            }
+          },
+          {
+            name: 'Camera',
+            values: {
+              'Premiere 7-Seater': 'Surround View Monitor',
+              'Premiere 11-Seater': 'Surround View Monitor',
+              'Hybrid 7-Seater': 'Surround View Monitor'
+            }
+          }
+        ]
+      },
+      {
+        id: 'audio',
+        title: 'Audio & Speaker',
+        items: [
+          {
+            name: 'Head Unit',
+            values: {
+              'Premiere 7-Seater': '12.3" Infotainment with Wireless Connection (Apple CarPlay & Android Auto)',
+              'Premiere 11-Seater': '12.3" Infotainment with Wireless Connection (Apple CarPlay & Android Auto)',
+              'Hybrid 7-Seater': '12.3" Infotainment with Wireless Connection (Apple CarPlay & Android Auto)'
+            }
+          },
+          {
+            name: 'Speakers',
+            values: {
+              'Premiere 7-Seater': 'BOSE Premium Sound System 12-Speakers high performance',
+              'Premiere 11-Seater': 'BOSE Premium Sound System 12-Speakers high performance',
+              'Hybrid 7-Seater': 'BOSE Premium Sound System 12-Speakers high performance'
+            }
+          }
+        ]
+      },
+      {
+        id: 'comfort',
+        title: 'Fitur Kenyamanan',
+        items: [
+          {
+            name: 'Air Conditioning',
+            values: {
+              'Premiere 7-Seater': 'Auto Climate Control (3 zone)',
+              'Premiere 11-Seater': 'Auto Climate Control (3 zone)',
+              'Hybrid 7-Seater': 'Auto Climate Control (3 zone)'
+            }
+          },
+          {
+            name: 'Start Stop and Keyless Entry',
+            values: { 'Premiere 7-Seater': '●', 'Premiere 11-Seater': '●', 'Hybrid 7-Seater': '●' }
+          },
+          {
+            name: 'Remote Engine Start',
+            values: { 'Premiere 7-Seater': '●', 'Premiere 11-Seater': '●', 'Hybrid 7-Seater': '●' }
+          },
+          {
+            name: 'Drive Mode',
+            values: { 'Premiere 7-Seater': '4 Driving Mode', 'Premiere 11-Seater': '4 Driving Mode', 'Hybrid 7-Seater': '4 Driving Mode' }
           },
           {
             name: 'Transmission',
             values: {
-              '2.2 CRDi Dynamic': '8-Speed Automatic',
-              '2.2 CRDi Premiere 7-Seater': '8-Speed Automatic',
-              '1.6 Turbo Hybrid Premiere': '6-Speed Automatic'
+              'Premiere 7-Seater': 'e-Shift with Paddle Shift',
+              'Premiere 11-Seater': 'e-Shift with Paddle Shift',
+              'Hybrid 7-Seater': 'e-Shift with Paddle Shift'
             }
+          },
+          {
+            name: 'Wireless Charging',
+            values: { 'Premiere 7-Seater': '●', 'Premiere 11-Seater': '●', 'Hybrid 7-Seater': '●' }
           }
         ]
       }
