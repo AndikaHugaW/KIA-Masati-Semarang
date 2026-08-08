@@ -98,8 +98,25 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
   ],
   'kia-ev9': [
     {
-      name: 'GT-Line',
-      trim: 'EV9 GT-Line 99.8 kWh',
+      name: 'Earth',
+      trim: 'EV9 Earth RWD 76.1 kWh',
+      price: 'Rp 1.585.000.000',
+      image: '/images/katalog unit/kia ev9/kia-ev9-gt-line.webp',
+      badge: 'READY STOCK',
+      engine: 'Single Motor 76.1 kWh',
+      transmission: 'Single Speed',
+      seats: 7,
+      fuelType: 'Listrik',
+      features: [
+        'Rear Wheel Drive PMSM (217 PS / 350 Nm)',
+        '12.3" Driver Cluster & Touchscreen Navigation',
+        'Advanced ADAS Safety Suite',
+        'Vehicle-to-Load (V2L) Power Station'
+      ]
+    },
+    {
+      name: 'GT Line',
+      trim: 'EV9 GT Line AWD 99.8 kWh',
       price: 'Rp 1.985.000.000',
       image: '/images/katalog unit/kia ev9/kia-ev9-gt-line.webp',
       badge: 'PROMO',
@@ -109,9 +126,9 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       fuelType: 'Listrik',
       features: [
         'Dual Motor AWD 99.8 kWh (385 PS / 700 Nm)',
-        'Relaxation Swivel Seats with Massage',
+        'Relaxation Comfort Seats & Dynamic Body Care',
         'Meridian 14-Speaker Sound System',
-        'Remote Smart Parking Assist 2 (RSPA2)',
+        'Dual Panoramic Sunroof & 12" Head-Up Display',
         'Vehicle-to-Load (V2L) Power Station'
       ]
     }

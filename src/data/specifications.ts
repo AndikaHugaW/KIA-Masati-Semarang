@@ -675,50 +675,341 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
   'kia-ev9': {
     carId: 'kia-ev9',
     carName: 'KIA EV9',
-    tagline: 'The Ultimate All-Electric 6-Seater SUV',
-    variants: ['GT Line AWD Dual Motor'],
+    tagline: 'The Ultimate All-Electric 6/7-Seater Luxury SUV',
+    variants: ['Earth', 'GT Line'],
     dimensionDiagram: {
-      lengthWidthHeight: '5.010 / 1.980 / 1.780 mm',
+      lengthWidthHeight: '5.010 - 5.015 / 1.980 / 1.755 - 1.780 mm',
       wheelbase: '3.100 mm',
-      tread: '1.692 / 1.704 mm',
-      overhang: '885 / 1.025 mm',
+      tread: '870-875 / 1.040 mm',
+      overhang: '870-875 / 1.040 mm',
       groundClearance: '177 mm',
       cargoCapacity: '333 L (up to 2.318 L)'
     },
     categories: [
       {
         id: 'powertrain',
-        title: 'Baterai & Motor Listrik',
+        title: 'Power Train',
         items: [
           {
             name: 'Motor Type',
-            values: { 'GT Line AWD Dual Motor': 'Dual Electric Motor AWD' }
+            values: { 'Earth': 'Permanent Magnet Synchronous Motor (PMSM)', 'GT Line': 'Permanent Magnet Synchronous Motor (PMSM)' }
           },
           {
-            name: 'Battery Capacity',
-            values: { 'GT Line AWD Dual Motor': '99.8 kWh Lithium-ion' }
+            name: 'Configuration',
+            values: { 'Earth': 'Rear Wheel Drive (Rear Motor)', 'GT Line': 'All Wheel Drive (Front & Rear Motor)' }
           },
           {
-            name: 'Max Power & Torque',
-            values: { 'GT Line AWD Dual Motor': '385 PS / 700 Nm' }
+            name: 'Maximum Power (PS)',
+            values: { 'Earth': '217', 'GT Line': '385' }
           },
           {
-            name: 'Driving Range (WLTP)',
-            values: { 'GT Line AWD Dual Motor': 'Hingga 497 km' }
+            name: 'Maximum Torque (Nm)',
+            values: { 'Earth': '350', 'GT Line': '700' }
+          },
+          {
+            name: 'Battery Type',
+            values: { 'Earth': 'Liquid Cooled Lithium-Ion', 'GT Line': 'Liquid Cooled Lithium-Ion' }
+          },
+          {
+            name: 'Capacity (kWh)',
+            values: { 'Earth': '76.1', 'GT Line': '99,8' }
+          },
+          {
+            name: 'Battery Range (km)',
+            values: { 'Earth': '412', 'GT Line': '497' }
+          }
+        ]
+      },
+      {
+        id: 'charging',
+        title: 'Waktu Mengisi Baterai',
+        items: [
+          {
+            name: 'AC Charging Time (Wall Box) (11kW)',
+            values: { 'Earth': 'Approx. 7 Hours', 'GT Line': 'Approx. 9 Hours' }
+          },
+          {
+            name: 'DC Fast Charging Time (50kW)',
+            values: { 'Earth': 'Approx. 63 Minutes (10 - 80%)', 'GT Line': 'Approx. 83 Minutes (10 - 80%)' }
+          },
+          {
+            name: 'DC Fast Charging Time (350kW)',
+            values: { 'Earth': 'Approx. 20 Minutes (10 - 80%)', 'GT Line': 'Approx. 24 Minutes (10 - 80%)' }
+          }
+        ]
+      },
+      {
+        id: 'steering',
+        title: 'Sistem Kemudi',
+        items: [
+          {
+            name: 'Type',
+            values: { 'Earth': 'Rack & Pinion', 'GT Line': 'Rack & Pinion' }
+          },
+          {
+            name: 'Adjustable',
+            values: { 'Earth': 'Tilt & Telescopic', 'GT Line': 'Tilt & Telescopic' }
+          },
+          {
+            name: 'Power Steering',
+            values: { 'Earth': 'R-MDPS', 'GT Line': 'R-MDPS' }
+          }
+        ]
+      },
+      {
+        id: 'brakes',
+        title: 'Rem',
+        items: [
+          {
+            name: 'System',
+            values: { 'Earth': 'ABS + ESC + HAC + DBC + MCB', 'GT Line': 'ABS + ESC + HAC + DBC + MCB' }
+          },
+          {
+            name: 'Front',
+            values: { 'Earth': 'Ventilated Disc', 'GT Line': 'Ventilated Disc' }
+          },
+          {
+            name: 'Rear',
+            values: { 'Earth': 'Disc', 'GT Line': 'Disc' }
+          },
+          {
+            name: 'Parking Brake',
+            values: { 'Earth': 'EPB (Electric Parking Brake) with Autohold', 'GT Line': 'EPB (Electric Parking Brake) with Autohold' }
+          }
+        ]
+      },
+      {
+        id: 'suspension',
+        title: 'Suspensi',
+        items: [
+          {
+            name: 'Front',
+            values: { 'Earth': 'MacPherson Strut with Double Ball Joint', 'GT Line': 'MacPherson Strut with Double Ball Joint' }
+          },
+          {
+            name: 'Rear',
+            values: { 'Earth': 'Multi-Link (5-Link)', 'GT Line': 'Multi-Link (5-Link)' }
+          }
+        ]
+      },
+      {
+        id: 'dimensions',
+        title: 'Dimensi (mm)',
+        items: [
+          {
+            name: 'Length / Width / Height (mm)',
+            values: { 'Earth': '5.010 / 1.980 / 1.755', 'GT Line': '5.015 / 1.980 / 1.780' }
+          },
+          {
+            name: 'Wheelbase (mm)',
+            values: { 'Earth': '3.100', 'GT Line': '3.100' }
+          },
+          {
+            name: 'Front / Rear Tread (mm)',
+            values: { 'Earth': '870 / 1.040', 'GT Line': '875 / 1.040' }
+          },
+          {
+            name: 'Wheel & Tire',
+            values: { 'Earth': 'Alloy Wheel 255 / 60 R19', 'GT Line': 'Alloy Wheel 285 / 45 R21' }
+          }
+        ]
+      },
+      {
+        id: 'exterior',
+        title: 'Eksterior',
+        items: [
+          {
+            name: 'Sun Roof',
+            values: { 'Earth': '-', 'GT Line': 'Dual Panoramic Sunroof (Front Tilt & Sliding, Rear Sliding Only)' }
+          },
+          {
+            name: 'Roof Rack',
+            values: { 'Earth': 'Silver Roof Rack', 'GT Line': 'Black Bridge Type' }
+          },
+          {
+            name: 'Outside Mirror',
+            values: { 'Earth': 'Electric & Auto Folding Mirror', 'GT Line': 'Electric & Auto Folding Mirror' }
+          },
+          {
+            name: 'Head Lamp',
+            values: {
+              'Earth': 'Auto, Thin Lens Projection LED Headlamp & DRL LED',
+              'GT Line': 'Auto, Small Cube Projection LED Headlamp w/ Intelligent Front Lighting System (IFS) & DRL LED'
+            }
+          },
+          {
+            name: 'Rear Combination Lamp',
+            values: { 'Earth': 'Star Map LED', 'GT Line': 'Star Map LED' }
+          },
+          {
+            name: 'Rear Spoiler',
+            values: {
+              'Earth': 'Roof Integrated Rear Spoiler with LED High Mounted Rear Stop Light',
+              'GT Line': 'Roof Integrated Rear Spoiler with LED High Mounted Rear Stop Light'
+            }
+          },
+          {
+            name: 'Tailgate',
+            values: { 'Earth': 'Smart Power Tailgate with Height Adjustable', 'GT Line': 'Smart Power Tailgate with Height Adjustable' }
           }
         ]
       },
       {
         id: 'interior',
-        title: 'Interior & Luxury',
+        title: 'Interior',
         items: [
           {
-            name: 'Seating Configuration',
-            values: { 'GT Line AWD Dual Motor': '6-Seater with Relaxation Swivel Seats' }
+            name: 'Steering Wheel',
+            values: {
+              'Earth': '4-spoke Premium Steering Wheel with Leather, Audio & ADAS Control',
+              'GT Line': '4-spoke Premium Steering Wheel with Leather, Audio & ADAS Control'
+            }
           },
           {
-            name: 'Sound System',
-            values: { 'GT Line AWD Dual Motor': 'Meridian 14-Speaker Surround Sound' }
+            name: 'Paddle Shift',
+            values: { 'Earth': 'Smart Regenerative Braking with i-Pedal', 'GT Line': 'Smart Regenerative Braking with i-Pedal' }
+          },
+          {
+            name: 'Power Window',
+            values: {
+              'Earth': 'All Auto Up / Down Windows with Safety Function (Front & Rear)',
+              'GT Line': 'All Auto Up / Down Windows with Safety Function (Front & Rear)'
+            }
+          },
+          {
+            name: 'Meter Cluster',
+            values: { 'Earth': '12.3" Digital Driver Cluster + 5" Climate Monitor', 'GT Line': '12.3" Digital Driver Cluster + 5" Climate Monitor' }
+          },
+          {
+            name: 'Head Up Display',
+            values: { 'Earth': '-', 'GT Line': '12"' }
+          },
+          {
+            name: 'Vanity Mirror',
+            values: { 'Earth': 'with Mirror & Illumination (Driver & Passenger)', 'GT Line': 'with Mirror & Illumination (Driver & Passenger)' }
+          },
+          {
+            name: 'Rear Centre Mirror',
+            values: { 'Earth': 'Electrochromic Mirror (ECM)', 'GT Line': 'Digital Centre Mirror (DCM)' }
+          },
+          {
+            name: 'Front Seat (1st Row)',
+            values: {
+              'Earth': 'Electric Adjustment Seat with Memory, Ventilated & Heated',
+              'GT Line': 'Leather, Electric Adjustment Seat with Memory and Lumbar Support, Relaxation Comfort Seat, Ventilated & Heated'
+            }
+          },
+          {
+            name: 'Rear Seat (2nd Row)',
+            values: {
+              'Earth': 'Leather, 6:4 Split Back Folding with Sliding, Center Arm Rest',
+              'GT Line': 'Pilot Seat, Leather, Electric Adjustment with Relaxation Comfort Seat, Ventilated & Heated, Dynamic Body Care'
+            }
+          },
+          {
+            name: 'Rear Seat (3rd Row)',
+            values: { 'Earth': 'Leather', 'GT Line': 'Leather, Electric Adjustment Seat' }
+          }
+        ]
+      },
+      {
+        id: 'safety',
+        title: 'Fitur Keamanan & ADAS',
+        items: [
+          {
+            name: 'Body Structure',
+            values: { 'Earth': 'Advanced High Strength Steel & Press Hot Stamping', 'GT Line': 'Advanced High Strength Steel & Press Hot Stamping' }
+          },
+          {
+            name: 'Airbags',
+            values: {
+              'Earth': '10 Airbags (Driver & Front Passenger SRS Airbags, Centre Side Airbags 1st Row, Side SRS Airbags 1st & 2nd Row, Curtain SRS Airbags All Rows)',
+              'GT Line': '10 Airbags (Driver & Front Passenger SRS Airbags, Centre Side Airbags 1st Row, Side SRS Airbags 1st & 2nd Row, Curtain SRS Airbags All Rows)'
+            }
+          },
+          {
+            name: 'Tire Pressure Monitoring System',
+            values: { 'Earth': 'High Line TPMS', 'GT Line': 'High Line TPMS' }
+          },
+          {
+            name: 'Safety Belt',
+            values: {
+              'Earth': '3 Point ELR High Adjustment (All Positions) with Pretensioner & Load Limiters (1st & 2nd Row)',
+              'GT Line': '3 Point ELR High Adjustment (All Positions) with Pretensioner & Load Limiters (1st & 2nd Row)'
+            }
+          },
+          {
+            name: 'Parking Sensor',
+            values: { 'Earth': 'Parking Distance Warning (Forward, Reverse)', 'GT Line': 'Parking Distance Warning (Forward, Side, Reverse)' }
+          },
+          {
+            name: 'Camera Parking',
+            values: { 'Earth': 'Rear View Monitor w/ Switch', 'GT Line': 'Surround View Monitor' }
+          },
+          {
+            name: 'ADAS Features',
+            values: {
+              'Earth': 'SCC, LFA, LKA, BCA, BVM, SEW, SEA, DAW, HBA, RCCA, PCA, FCA (for Car, Pedestrian, Cyclist & Junction)',
+              'GT Line': 'SCC, LFA, LKA, BCA, BVM, SEW, SEA, DAW, HBA, RCCA, PCA, FCA (for Car, Pedestrian, Cyclist & Junction)'
+            }
+          }
+        ]
+      },
+      {
+        id: 'audio',
+        title: 'Audio & Speaker',
+        items: [
+          {
+            name: 'Head Unit',
+            values: {
+              'Earth': '12.3" TFT Touchscreen Navigation, Bluetooth Multi Connection, Wired Apple Carplay & Android Auto',
+              'GT Line': '12.3" TFT Touchscreen Navigation, Bluetooth Multi Connection, Wired Apple Carplay & Android Auto'
+            }
+          },
+          {
+            name: 'Speakers',
+            values: { 'Earth': 'Standard Speaker', 'GT Line': 'Meridian 14 Premium Speaker with Active Sound Design' }
+          }
+        ]
+      },
+      {
+        id: 'comfort',
+        title: 'Fitur Kenyamanan',
+        items: [
+          {
+            name: 'Air Conditioning',
+            values: { 'Earth': 'Auto Climate Triple Zone', 'GT Line': 'Auto Climate Triple Zone' }
+          },
+          {
+            name: 'Start Stop Button & Keyless Entry',
+            values: { 'Earth': 'S', 'GT Line': 'S' }
+          },
+          {
+            name: 'Drive Mode & Terrain Mode',
+            values: { 'Earth': 'Eco, Normal, Sport & Mud, Sand, Snow', 'GT Line': 'Eco, Normal, Sport & Mud, Sand, Snow' }
+          },
+          {
+            name: 'Cruise Control',
+            values: { 'Earth': 'Smart Cruise Control with Auto Stop & Go', 'GT Line': 'Smart Cruise Control with Auto Stop & Go' }
+          },
+          {
+            name: 'Wireless Charging',
+            values: { 'Earth': 'with Cooler', 'GT Line': 'with Cooler' }
+          },
+          {
+            name: 'USB Port',
+            values: {
+              'Earth': '1st Row (2x USB Type-C), 2nd Row (2x USB Type-C at Front Seat), 3rd Row (2x USB Type-C)',
+              'GT Line': '1st Row (2x USB Type-C), 2nd Row (2x USB Type-C at Front Seat), 3rd Row (2x USB Type-C)'
+            }
+          },
+          {
+            name: 'Power Socket 12V',
+            values: { 'Earth': 'Front (Center Console), Rear (Luggage)', 'GT Line': 'Front (Center Console), Rear (Luggage)' }
+          },
+          {
+            name: 'V2L (Vehicle To Load)',
+            values: { 'Earth': 'Max 3.6 kW', 'GT Line': 'Max 3.6 kW' }
           }
         ]
       }
