@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { CARS_DATA } from '@/data/cars';
+import { CAR_SPECIFICATIONS } from '@/data/specifications';
 
 export async function GET(
   request: NextRequest,
@@ -21,9 +22,15 @@ export async function GET(
       );
     }
 
+    const specifications = CAR_SPECIFICATIONS[id.toLowerCase()] || null;
+
     return NextResponse.json({
       status: 'success',
-      data: car
+      dealer: 'KIA Official Dealer Masati Semarang',
+      data: {
+        ...car,
+        specifications
+      }
     });
   } catch (error) {
     return NextResponse.json(
