@@ -349,15 +349,15 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
   'kia-sonet': {
     carId: 'kia-sonet',
     carName: 'KIA Sonet',
-    tagline: 'Compact SUV dengan Fitur Canggih Klasik & Dynamic Style',
-    variants: ['Smart 1.5 M/T', 'Premiere 1.5 IVT', 'GT Line 1.4 Turbo'],
+    tagline: 'Compact SUV dengan Fitur Canggih & Dynamic Style',
+    variants: ['Trendy', 'Motion', 'Signature'],
     dimensionDiagram: {
-      lengthWidthHeight: '4.120 / 1.790 / 1.642 mm',
+      lengthWidthHeight: '4.110 / 1.790 / 1.625 - 1.642 mm',
       wheelbase: '2.500 mm',
       tread: '1.559 / 1.571 mm',
       overhang: '795 / 825 mm',
       groundClearance: '205 mm',
-      cargoCapacity: '392 L'
+      cargoCapacity: '385 L'
     },
     categories: [
       {
@@ -367,22 +367,30 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
           {
             name: 'Engine Type',
             values: {
-              'Smart 1.5 M/T': 'Smartstream Gamma II 1.5L MPI',
-              'Premiere 1.5 IVT': 'Smartstream Gamma II 1.5L MPI',
-              'GT Line 1.4 Turbo': 'Kappa 1.4L Turbocharged GDI'
+              'Trendy': 'Smartstream, Gamma II, DOHC, Dual CVVT',
+              'Motion': 'Smartstream, Gamma II, DOHC, Dual CVVT',
+              'Signature': 'Smartstream, Gamma II, DOHC, Dual CVVT'
             }
           },
           {
             name: 'Displacement (cc)',
-            values: { 'Smart 1.5 M/T': '1.497', 'Premiere 1.5 IVT': '1.497', 'GT Line 1.4 Turbo': '1.353' }
+            values: { 'Trendy': '1.497', 'Motion': '1.497', 'Signature': '1.497' }
           },
           {
             name: 'Maximum Power (PS/rpm)',
-            values: { 'Smart 1.5 M/T': '115 / 6.300', 'Premiere 1.5 IVT': '115 / 6.300', 'GT Line 1.4 Turbo': '140 / 6.000' }
+            values: { 'Trendy': '115 / 6.300', 'Motion': '115 / 6.300', 'Signature': '115 / 6.300' }
           },
           {
             name: 'Maximum Torque (Nm/rpm)',
-            values: { 'Smart 1.5 M/T': '144 / 4.500', 'Premiere 1.5 IVT': '144 / 4.500', 'GT Line 1.4 Turbo': '242 / 1.500-3.200' }
+            values: { 'Trendy': '144 / 4.500', 'Motion': '144 / 4.500', 'Signature': '144 / 4.500' }
+          },
+          {
+            name: 'Emission',
+            values: { 'Trendy': 'Euro 4', 'Motion': 'Euro 4', 'Signature': 'Euro 4' }
+          },
+          {
+            name: 'Fuel Tank Capacity (L)',
+            values: { 'Trendy': '45', 'Motion': '45', 'Signature': '45' }
           }
         ]
       },
@@ -392,7 +400,107 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         items: [
           {
             name: 'Type',
-            values: { 'Smart 1.5 M/T': 'Manual 6-Speed', 'Premiere 1.5 IVT': 'Intelligent VT', 'GT Line 1.4 Turbo': '7-Speed DCT' }
+            values: { 'Trendy': 'Intelligent VT', 'Motion': 'Intelligent VT', 'Signature': 'Intelligent VT' }
+          },
+          {
+            name: 'Gear Ratio Forward',
+            values: { 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
+          },
+          {
+            name: 'Gear Ratio Reverse',
+            values: { 'Trendy': '2.822 - 1.822', 'Motion': '2.822 - 1.822', 'Signature': '2.822 - 1.822' }
+          },
+          {
+            name: 'Gear Ratio Final',
+            values: { 'Trendy': '6.483', 'Motion': '6.483', 'Signature': '6.483' }
+          }
+        ]
+      },
+      {
+        id: 'steering',
+        title: 'Steering',
+        items: [
+          {
+            name: 'Type',
+            values: { 'Trendy': 'Rack & Pinion Electric', 'Motion': 'Rack & Pinion Electric', 'Signature': 'Rack & Pinion Electric' }
+          },
+          {
+            name: 'Adjustable',
+            values: { 'Trendy': 'Tilt', 'Motion': 'Tilt', 'Signature': 'Tilt' }
+          },
+          {
+            name: 'Power Steering',
+            values: { 'Trendy': 'Motor Driven Power Steering (MDPS)', 'Motion': 'Motor Driven Power Steering (MDPS)', 'Signature': 'Motor Driven Power Steering (MDPS)' }
+          }
+        ]
+      },
+      {
+        id: 'suspension',
+        title: 'Suspension',
+        items: [
+          {
+            name: 'Front Suspension',
+            values: { 'Trendy': 'MacPherson Strut', 'Motion': 'MacPherson Strut', 'Signature': 'MacPherson Strut' }
+          },
+          {
+            name: 'Rear Suspension',
+            values: { 'Trendy': 'Coupled Torsion Beam Axle', 'Motion': 'Coupled Torsion Beam Axle', 'Signature': 'Coupled Torsion Beam Axle' }
+          }
+        ]
+      },
+      {
+        id: 'brakes',
+        title: 'Brakes',
+        items: [
+          {
+            name: 'ABS, EBD, Brake Assist',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'ESC & HAC',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Front Brakes',
+            values: { 'Trendy': 'Ventilated Disc', 'Motion': 'Ventilated Disc', 'Signature': 'Ventilated Disc' }
+          },
+          {
+            name: 'Rear Brakes',
+            values: { 'Trendy': 'Drum', 'Motion': 'Disc', 'Signature': 'Disc' }
+          },
+          {
+            name: 'Parking Brake',
+            values: { 'Trendy': 'Hand Brake', 'Motion': 'Hand Brake', 'Signature': 'Hand Brake' }
+          }
+        ]
+      },
+      {
+        id: 'dimensions',
+        title: 'Dimensions',
+        items: [
+          {
+            name: 'Length (mm)',
+            values: { 'Trendy': '4.110', 'Motion': '4.110', 'Signature': '4.110' }
+          },
+          {
+            name: 'Width (mm)',
+            values: { 'Trendy': '1.790', 'Motion': '1.790', 'Signature': '1.790' }
+          },
+          {
+            name: 'Height (mm)',
+            values: { 'Trendy': '1.625', 'Motion': '1.642', 'Signature': '1.642' }
+          },
+          {
+            name: 'Wheelbase (mm)',
+            values: { 'Trendy': '2.500', 'Motion': '2.500', 'Signature': '2.500' }
+          },
+          {
+            name: 'Ground Clearance (mm)',
+            values: { 'Trendy': '205', 'Motion': '205', 'Signature': '205' }
+          },
+          {
+            name: 'Cargo Capacity (L)',
+            values: { 'Trendy': '385', 'Motion': '385', 'Signature': '385' }
           }
         ]
       },
@@ -401,8 +509,102 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         title: 'Wheels & Tires',
         items: [
           {
-            name: 'Wheel Spec',
-            values: { 'Smart 1.5 M/T': '16" Alloy 215/60 R16', 'Premiere 1.5 IVT': '16" Alloy 215/60 R16', 'GT Line 1.4 Turbo': '16" Crystal Cut Dual Tone' }
+            name: 'Wheel Type',
+            values: { 'Trendy': '16" Alloy Wheels', 'Motion': '16" Alloy Wheels', 'Signature': '16" Alloy Wheels' }
+          },
+          {
+            name: 'Tire Size',
+            values: { 'Trendy': '205 / 60 R16', 'Motion': '205 / 60 R16', 'Signature': '205 / 60 R16' }
+          }
+        ]
+      },
+      {
+        id: 'exterior',
+        title: 'Exterior',
+        items: [
+          {
+            name: 'Front Headlamp',
+            values: { 'Trendy': 'Halogen', 'Motion': 'Multireflector LED', 'Signature': 'Multireflector LED' }
+          },
+          {
+            name: 'Front Daytime Running Light (DRL)',
+            values: { 'Trendy': 'Bulb', 'Motion': 'Star Map LED', 'Signature': 'Star Map LED' }
+          },
+          {
+            name: 'Front Turn Signal',
+            values: { 'Trendy': 'Bulb', 'Motion': 'LED', 'Signature': 'LED' }
+          },
+          {
+            name: 'Front Foglamp',
+            values: { 'Trendy': '-', 'Motion': 'LED', 'Signature': 'LED' }
+          },
+          {
+            name: 'Rear Combination Lamp',
+            values: { 'Trendy': 'Bulb', 'Motion': 'LED', 'Signature': 'LED' }
+          },
+          {
+            name: 'Electric Folding Mirror',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Sunroof',
+            values: { 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          }
+        ]
+      },
+      {
+        id: 'interior',
+        title: 'Interior',
+        items: [
+          {
+            name: '10.25" Full Digital Cluster',
+            values: { 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: '4.2" TFT LCD Cluster',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Power Window',
+            values: {
+              'Trendy': 'Auto Up & Down Driver Side with Safety',
+              'Motion': 'Auto Up & Down Driver Side with Safety',
+              'Signature': 'Auto Up & Down Driver Side with Safety'
+            }
+          },
+          {
+            name: 'Seat Material',
+            values: {
+              'Trendy': 'Artificial Leather & Cloth',
+              'Motion': 'Artificial Leather & Cloth',
+              'Signature': 'Artificial Leather & Cloth'
+            }
+          },
+          {
+            name: 'Front Manual Adjustable Seat with Height Adjustment',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Automatic Climate Control',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          }
+        ]
+      },
+      {
+        id: 'comfort',
+        title: 'Comfort & Convenience',
+        items: [
+          {
+            name: 'Push Start Stop Button',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Remote Start Engine',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Wireless Charging',
+            values: { 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
           }
         ]
       },
@@ -411,8 +613,12 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         title: 'Infotainment',
         items: [
           {
-            name: 'Audio System',
-            values: { 'Smart 1.5 M/T': '8" Touchscreen Display', 'Premiere 1.5 IVT': 'Bose Premium 7-Speaker', 'GT Line 1.4 Turbo': 'Bose Premium 7-Speaker' }
+            name: '8" Infotainment Display with Android Auto & Apple CarPlay',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Audio Speaker',
+            values: { 'Trendy': '6-speakers', 'Motion': '6-speakers', 'Signature': 'BOSE 7-speakers' }
           }
         ]
       },
@@ -422,7 +628,45 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         items: [
           {
             name: 'Airbags',
-            values: { 'Smart 1.5 M/T': '2 Airbags', 'Premiere 1.5 IVT': '6 Airbags', 'GT Line 1.4 Turbo': '6 Airbags' }
+            values: { 'Trendy': '2 Airbags', 'Motion': '6 Airbags', 'Signature': '6 Airbags' }
+          },
+          {
+            name: 'Tire Pressure Monitoring System (TPMS)',
+            values: { 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Parking Distance Warning (PDW)',
+            values: { 'Trendy': 'Reverse', 'Motion': 'Reverse', 'Signature': 'Forward & Reverse' }
+          },
+          {
+            name: 'Rear View Monitor',
+            values: { 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          }
+        ]
+      },
+      {
+        id: 'adas',
+        title: 'ADAS',
+        items: [
+          {
+            name: 'Forward Collision-avoidance Assist (FCA)',
+            values: { 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Lane Following Assist (LFA)',
+            values: { 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Lane Keeping Assist (LKA)',
+            values: { 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Manual Speed Limit Assist (MSLA)',
+            values: { 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Cruise Control',
+            values: { 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
           }
         ]
       }
