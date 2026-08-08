@@ -81,39 +81,39 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         title: 'Transmission',
         items: [
           {
-            name: 'Transmission Type',
+            name: 'Type',
             values: { 'M/T': 'M/T 6-Speed', 'Trendy': 'Intelligent VT', 'Motion': 'Intelligent VT', 'Signature': 'Intelligent VT' }
           },
           {
-            name: 'Gear Ratio 1ST',
+            name: '1ST',
             values: { 'M/T': '3.833', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
           },
           {
-            name: 'Gear Ratio 2ND',
+            name: '2ND',
             values: { 'M/T': '2.143', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
           },
           {
-            name: 'Gear Ratio 3RD',
+            name: '3RD',
             values: { 'M/T': '1.370', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
           },
           {
-            name: 'Gear Ratio 4TH',
+            name: '4TH',
             values: { 'M/T': '1.036', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
           },
           {
-            name: 'Gear Ratio 5TH',
+            name: '5TH',
             values: { 'M/T': '0.794', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
           },
           {
-            name: 'Gear Ratio 6TH',
+            name: '6TH',
             values: { 'M/T': '0.667', 'Trendy': '2.680 - 0.385', 'Motion': '2.680 - 0.385', 'Signature': '2.680 - 0.385' }
           },
           {
-            name: 'Reverse Ratio',
+            name: 'Reverse',
             values: { 'M/T': '3.700', 'Trendy': '2.822 - 1.822', 'Motion': '2.822 - 1.822', 'Signature': '2.822 - 1.822' }
           },
           {
-            name: 'Final Ratio',
+            name: 'Final',
             values: { 'M/T': '4.882', 'Trendy': '6.483', 'Motion': '6.483', 'Signature': '6.483' }
           }
         ]
@@ -132,7 +132,12 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
           },
           {
             name: 'Power Steering',
-            values: { 'M/T': 'MDPS', 'Trendy': 'MDPS', 'Motion': 'MDPS', 'Signature': 'MDPS' }
+            values: {
+              'M/T': 'Motor Driven Power Steering (MDPS)',
+              'Trendy': 'Motor Driven Power Steering (MDPS)',
+              'Motion': 'Motor Driven Power Steering (MDPS)',
+              'Signature': 'Motor Driven Power Steering (MDPS)'
+            }
           }
         ]
       },
@@ -141,12 +146,17 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         title: 'Suspension',
         items: [
           {
-            name: 'Front Suspension',
+            name: 'Front',
             values: { 'M/T': 'MacPherson Strut', 'Trendy': 'MacPherson Strut', 'Motion': 'MacPherson Strut', 'Signature': 'MacPherson Strut' }
           },
           {
-            name: 'Rear Suspension',
-            values: { 'M/T': 'Coupled Torsion Beam Axle', 'Trendy': 'Coupled Torsion Beam Axle', 'Motion': 'Coupled Torsion Beam Axle', 'Signature': 'Coupled Torsion Beam Axle' }
+            name: 'Rear',
+            values: {
+              'M/T': 'Coupled Torsion Beam Axle',
+              'Trendy': 'Coupled Torsion Beam Axle',
+              'Motion': 'Coupled Torsion Beam Axle',
+              'Signature': 'Coupled Torsion Beam Axle'
+            }
           }
         ]
       },
@@ -156,7 +166,12 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         items: [
           {
             name: 'System',
-            values: { 'M/T': 'ABS, EBD, BA', 'Trendy': 'ABS, EBD, BA', 'Motion': 'ABS, EBD, BA', 'Signature': 'ABS, EBD, BA' }
+            values: {
+              'M/T': 'Anti-lock Brake System (ABS), Electronic Brakeforce Distribution (EBD), Brake Assist (BA)',
+              'Trendy': 'Anti-lock Brake System (ABS), Electronic Brakeforce Distribution (EBD), Brake Assist (BA)',
+              'Motion': 'Anti-lock Brake System (ABS), Electronic Brakeforce Distribution (EBD), Brake Assist (BA)',
+              'Signature': 'Anti-lock Brake System (ABS), Electronic Brakeforce Distribution (EBD), Brake Assist (BA)'
+            }
           },
           {
             name: 'Electronic Stability Control (ESC)',
@@ -171,11 +186,11 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
             values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
           },
           {
-            name: 'Front Brakes',
+            name: 'Front',
             values: { 'M/T': 'Ventilated Disc', 'Trendy': 'Ventilated Disc', 'Motion': 'Ventilated Disc', 'Signature': 'Ventilated Disc' }
           },
           {
-            name: 'Rear Brakes',
+            name: 'Rear',
             values: { 'M/T': 'Disc', 'Trendy': 'Disc', 'Motion': 'Disc', 'Signature': 'Disc' }
           },
           {
@@ -190,7 +205,12 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         items: [
           {
             name: 'Length / Width / Height (mm)',
-            values: { 'M/T': '4.550 / 1.800 / 1.708', 'Trendy': '4.550 / 1.800 / 1.708', 'Motion': '4.550 / 1.800 / 1.708', 'Signature': '4.550 / 1.800 / 1.708' }
+            values: {
+              'M/T': '4.550 / 1.800 / 1.708',
+              'Trendy': '4.550 / 1.800 / 1.708',
+              'Motion': '4.550 / 1.800 / 1.708',
+              'Signature': '4.550 / 1.800 / 1.708'
+            }
           },
           {
             name: 'Wheelbase (mm)',
@@ -201,8 +221,12 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
             values: { 'M/T': '1.563 / 1.587', 'Trendy': '1.563 / 1.587', 'Motion': '1.563 / 1.587', 'Signature': '1.563 / 1.587' }
           },
           {
+            name: 'Front / Rear Overhang (mm)',
+            values: { 'M/T': '830 / 940', 'Trendy': '830 / 940', 'Motion': '830 / 940', 'Signature': '830 / 940' }
+          },
+          {
             name: 'Ground Clearance (mm)',
-            values: { 'M/T': '205', 'Trendy': '205', 'Motion': '205', 'Signature': '205' }
+            values: { 'M/T': '108', 'Trendy': '205', 'Motion': '205', 'Signature': '205' }
           },
           {
             name: 'Cargo Capacity (L)',
@@ -215,12 +239,17 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         title: 'Wheels & Tires',
         items: [
           {
-            name: 'Wheel Type',
-            values: { 'M/T': '15" Alloy Wheels', 'Trendy': '15" Alloy Wheels', 'Motion': '17" Diamond Cut Alloy', 'Signature': '17" Diamond Cut Alloy' }
+            name: 'Type',
+            values: {
+              'M/T': '15" Alloy Wheels',
+              'Trendy': '17" Diamond Cut Alloy Wheels',
+              'Motion': '17" Diamond Cut Alloy Wheels',
+              'Signature': '17" Diamond Cut Alloy Wheels'
+            }
           },
           {
             name: 'Tire Size',
-            values: { 'M/T': '195/65 R15', 'Trendy': '195/65 R15', 'Motion': '215/55 R17', 'Signature': '215/55 R17' }
+            values: { 'M/T': '195/65 R15', 'Trendy': '215/55 R17', 'Motion': '215/55 R17', 'Signature': '215/55 R17' }
           }
         ]
       },
@@ -230,19 +259,32 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         items: [
           {
             name: 'Head Lamp',
-            values: { 'M/T': 'Projector Halogen', 'Trendy': 'Projector Halogen', 'Motion': 'Multi Reflector LED', 'Signature': 'Multi Reflector LED' }
+            values: {
+              'M/T': 'Projector Halogen Bulb',
+              'Trendy': 'Multi Reflector LED',
+              'Motion': 'Multi Reflector LED',
+              'Signature': 'Multi Reflector LED'
+            }
           },
           {
-            name: 'Star Map LED DRL with Turn Signals',
-            values: { 'M/T': 'Bulb', 'Trendy': 'Bulb', 'Motion': '●', 'Signature': '●' }
+            name: 'Star Map LED DRL with Integrated Turn Signals',
+            values: { 'M/T': 'Bulb', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
             name: 'Rear Star Map LED Connected',
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Rear Upper Spoiler with High Mount Stop Lamp',
             values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'SunRoof',
-            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+            name: 'Electric Folding Mirror',
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Sunroof',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
           }
         ]
       },
@@ -251,24 +293,54 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         title: 'Interior',
         items: [
           {
-            name: '26.6" Dual Panoramic Display with 12.3" Cluster',
-            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+            name: '26.6" Dual Panoramic Display with 12.3" Digital LCD Cluster',
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Supervision 4.2" TFT LCD Cluster',
-            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '-', 'Signature': '-' }
+            name: 'Supervision with 4.2" TFT LCD Cluster',
+            values: { 'M/T': '●', 'Trendy': '-', 'Motion': '-', 'Signature': '-' }
+          },
+          {
+            name: 'Power Window',
+            values: {
+              'M/T': 'Auto Up & Down Driver Side with Safety',
+              'Trendy': 'Auto Up & Down Driver Side with Safety',
+              'Motion': 'Auto Up & Down Driver Side with Safety',
+              'Signature': 'Auto Up & Down Driver Side with Safety'
+            }
           },
           {
             name: 'Seat Material',
-            values: { 'M/T': 'Leatherette & Cloth', 'Trendy': 'Leatherette & Cloth', 'Motion': 'Leatherette & Cloth', 'Signature': 'Leatherette & Cloth' }
+            values: {
+              'M/T': 'Artificial Leather & Cloth',
+              'Trendy': 'Artificial Leather & Cloth',
+              'Motion': 'Artificial Leather & Cloth',
+              'Signature': 'Artificial Leather & Cloth'
+            }
           },
           {
-            name: '2nd Row Captain Seat',
-            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+            name: 'Front Manual Adjustable Seat with Height Adjustment',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: '2nd Row Captain Seat with Sliding, Reclining, & Arm Rest',
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: '2nd Row 60:40 Split Double Folding & Reclining',
+            values: { 'M/T': '●', 'Trendy': '-', 'Motion': '-', 'Signature': '-' }
+          },
+          {
+            name: 'Front Console with Two Cup Holder',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
             name: 'Automatic Climate Control',
-            values: { 'M/T': 'Manual', 'Trendy': 'Manual', 'Motion': 'Auto', 'Signature': 'Auto' }
+            values: { 'M/T': 'Manual', 'Trendy': 'Auto', 'Motion': 'Auto', 'Signature': 'Auto' }
+          },
+          {
+            name: 'Rear Air Conditioner',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           }
         ]
       },
@@ -278,19 +350,31 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         items: [
           {
             name: 'Push Start Stop Button',
-            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
             name: 'Remote Start Engine',
-            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
             name: 'Drive Mode Select',
-            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
             name: 'Wireless Charging',
-            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: '1st, 2nd, 3rd Row USB Charging Ports',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: '12V Power Outlet',
+            values: { 'M/T': '●', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Seatback Table',
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           }
         ]
       },
@@ -299,12 +383,16 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         title: 'Infotainment',
         items: [
           {
-            name: 'Infotainment Display Size',
-            values: { 'M/T': '8" Touchscreen', 'Trendy': '8" Touchscreen', 'Motion': '12.3" Display', 'Signature': '12.3" Display' }
+            name: '12.3" Infotainment Display with Android Auto & Apple CarPlay',
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: '8" Infotainment Display with Android Auto & Apple CarPlay',
+            values: { 'M/T': '●', 'Trendy': '-', 'Motion': '-', 'Signature': '-' }
           },
           {
             name: 'Audio Speaker',
-            values: { 'M/T': '6-speakers', 'Trendy': '6-speakers', 'Motion': 'BOSE 8-speakers', 'Signature': 'BOSE 8-speakers' }
+            values: { 'M/T': '6-speakers', 'Trendy': 'BOSE 8-speakers', 'Motion': 'BOSE 8-speakers', 'Signature': 'BOSE 8-speakers' }
           }
         ]
       },
@@ -314,15 +402,23 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         items: [
           {
             name: 'Airbags',
-            values: { 'M/T': '2 Air Bags', 'Trendy': '2 Air Bags', 'Motion': '6 Air Bags', 'Signature': '6 Air Bags' }
+            values: { 'M/T': '2 Air Bags', 'Trendy': '6 Air Bags', 'Motion': '6 Air Bags', 'Signature': '6 Air Bags' }
           },
           {
-            name: 'TPMS',
-            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+            name: 'Tire Pressure Monitoring System (TPMS)',
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
           },
           {
-            name: 'Parking Distance Warning',
-            values: { 'M/T': 'Reverse', 'Trendy': 'Reverse', 'Motion': 'Forward & Reverse', 'Signature': 'Forward & Reverse' }
+            name: 'Parking Distance Warning (PDW)',
+            values: { 'M/T': 'Reverse', 'Trendy': 'Forward & Reverse', 'Motion': 'Forward & Reverse', 'Signature': 'Forward & Reverse' }
+          },
+          {
+            name: 'Surround View Monitor',
+            values: { 'M/T': '-', 'Trendy': '●', 'Motion': '●', 'Signature': '●' }
+          },
+          {
+            name: 'Rear View Monitor',
+            values: { 'M/T': '●', 'Trendy': '-', 'Motion': '-', 'Signature': '-' }
           }
         ]
       },
@@ -331,16 +427,36 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
         title: 'ADAS',
         items: [
           {
-            name: 'Smart Cruise Control (SCC)',
-            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+            name: 'Smart Cruise Control (SCC) with Stop & Go',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
           },
           {
             name: 'Forward Collision-avoidance Assist (FCA)',
-            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Lane Following Assist (LFA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
           },
           {
             name: 'Lane Keeping Assist (LKA)',
-            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '●', 'Signature': '●' }
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Blind-spot View Monitor (BVM)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Blind-spot Collision-avoidance Assist (BCA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'Manual Speed Limited Assist (MSLA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
+          },
+          {
+            name: 'High Beam Assist (HBA)',
+            values: { 'M/T': '-', 'Trendy': '-', 'Motion': '-', 'Signature': '●' }
           }
         ]
       }
@@ -1848,3 +1964,7 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
     ]
   }
 };
+
+CAR_SPECIFICATIONS['kia-carens'] = CAR_SPECIFICATIONS['kia-all-new-carens'];
+CAR_SPECIFICATIONS['kia-carens-all-new'] = CAR_SPECIFICATIONS['kia-all-new-carens'];
+

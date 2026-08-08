@@ -239,6 +239,80 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       ]
     }
   ],
+  'kia-all-new-carens': [
+    {
+      name: 'M/T',
+      trim: '1.5 MPI Premiere M/T 7-Seater',
+      price: 'Rp 269.000.000',
+      image: '/images/katalog unit/kia all new carens/carens1.webp',
+      badge: 'READY STOCK',
+      engine: 'Smartstream 1.5L Gamma II',
+      transmission: 'Manual 6-Speed',
+      seats: 7,
+      fuelType: 'Bensin',
+      features: [
+        'Smartstream Gamma II 1.5L Engine',
+        '8" Infotainment Display with Apple CarPlay & Android Auto',
+        'Supervision 4.2" TFT LCD Cluster',
+        '2 Airbags & ABS, EBD, BA, ESC, HAC',
+        'Hand Brake & 15" Alloy Wheels'
+      ]
+    },
+    {
+      name: 'Trendy',
+      trim: '1.5 IVT Trendy 7-Seater',
+      price: 'Rp 299.000.000',
+      image: '/images/katalog unit/kia all new carens/carens2.webp',
+      badge: 'READY STOCK',
+      engine: 'Smartstream 1.5L Gamma II',
+      transmission: 'Intelligent VT',
+      seats: 7,
+      fuelType: 'Bensin',
+      features: [
+        'Smartstream Gamma II 1.5L with IVT',
+        '26.6" Dual Panoramic Display with 12.3" Digital LCD Cluster',
+        '12.3" Infotainment Display with CarPlay & Android Auto',
+        'BOSE Premium 8-Speaker Sound System',
+        '6 Airbags & PDW Forward & Reverse'
+      ]
+    },
+    {
+      name: 'Motion',
+      trim: '1.5 IVT Motion 6-Seater',
+      price: 'Rp 339.000.000',
+      image: '/images/katalog unit/kia all new carens/carens3.webp',
+      badge: 'READY STOCK',
+      engine: 'Smartstream 1.5L Gamma II',
+      transmission: 'Intelligent VT',
+      seats: 6,
+      fuelType: 'Bensin',
+      features: [
+        'Smartstream Gamma II 1.5L with IVT',
+        '2nd Row Captain Seats with Arm Rest',
+        'Wireless Smartphone Charging & Remote Engine Start',
+        'Drive Mode Select & TPMS',
+        '17" Diamond Cut Alloy Wheels'
+      ]
+    },
+    {
+      name: 'Signature',
+      trim: '1.5 IVT Signature ADAS 6-Seater',
+      price: 'Rp 369.000.000',
+      image: '/images/katalog unit/kia all new carens/carens3.webp',
+      badge: 'READY STOCK',
+      engine: 'Smartstream 1.5L Gamma II',
+      transmission: 'Intelligent VT',
+      seats: 6,
+      fuelType: 'Bensin',
+      features: [
+        'Drive Wise ADAS (SCC, FCA, LFA, LKA, BVM, BCA, MSLA, HBA)',
+        'Sunroof Electric with One-Touch',
+        'Electronic Parking Brake (EPB) with Auto Hold',
+        'Downhill Brake Control (DBC)',
+        'BOSE Premium 8-Speaker & 6 Airbags'
+      ]
+    }
+  ],
   'kia-ev6': [
     {
       name: 'M/T',
@@ -246,49 +320,66 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       price: 'Rp 269.000.000',
       image: '/images/katalog unit/kia all new carens/carens1.webp',
       badge: 'READY STOCK',
-      engine: 'Smartstream 1.5L MPI',
+      engine: 'Smartstream 1.5L Gamma II',
       transmission: 'Manual 6-Speed',
       seats: 7,
       fuelType: 'Bensin',
       features: [
-        'Smartstream 1.5L Engine',
-        '10.25" HD Touchscreen Display',
-        'Bose Premium 8-Speaker Sound System',
-        'Ambient Light 64 Colors'
+        'Smartstream Gamma II 1.5L Engine',
+        '8" Infotainment Display with Apple CarPlay & Android Auto',
+        'Supervision 4.2" TFT LCD Cluster',
+        '2 Airbags & ABS, EBD, BA, ESC, HAC'
       ]
     },
     {
       name: 'Trendy',
-      trim: '1.5 MPI Trendy 7-Seater',
+      trim: '1.5 IVT Trendy 7-Seater',
       price: 'Rp 299.000.000',
       image: '/images/katalog unit/kia all new carens/carens2.webp',
       badge: 'READY STOCK',
-      engine: 'Smartstream 1.5L MPI',
-      transmission: 'IVT Automatic',
+      engine: 'Smartstream 1.5L Gamma II',
+      transmission: 'Intelligent VT',
       seats: 7,
       fuelType: 'Bensin',
       features: [
-        'Smartstream 1.5L Gasoline Engine',
-        'Ventilated Front Seats',
-        'Wireless Phone Charger & Sunroof',
-        'Drive Mode Select & TPMS'
+        '26.6" Dual Panoramic Display with 12.3" Cluster',
+        '12.3" Infotainment Display',
+        'BOSE Premium 8-Speaker',
+        '6 Airbags & PDW Forward & Reverse'
       ]
     },
     {
       name: 'Motion',
-      trim: '1.4 Turbo Motion 6-Seater',
+      trim: '1.5 IVT Motion 6-Seater',
       price: 'Rp 339.000.000',
       image: '/images/katalog unit/kia all new carens/carens3.webp',
       badge: 'READY STOCK',
-      engine: '1.4L Turbo GDI',
-      transmission: '7-DCT Dual Clutch',
+      engine: 'Smartstream 1.5L Gamma II',
+      transmission: 'Intelligent VT',
       seats: 6,
       fuelType: 'Bensin',
       features: [
-        '1.4L Turbo Gasoline Engine 140 PS',
-        'Captain Seat 2nd Row with Cooling',
-        'Augmented Reality Head-Up Display',
-        'Dual 10.25" Curved Display'
+        '2nd Row Captain Seats with Arm Rest',
+        'Wireless Charging & Remote Engine Start',
+        'Drive Mode Select & TPMS',
+        '17" Diamond Cut Alloy Wheels'
+      ]
+    },
+    {
+      name: 'Signature',
+      trim: '1.5 IVT Signature ADAS 6-Seater',
+      price: 'Rp 369.000.000',
+      image: '/images/katalog unit/kia all new carens/carens3.webp',
+      badge: 'READY STOCK',
+      engine: 'Smartstream 1.5L Gamma II',
+      transmission: 'Intelligent VT',
+      seats: 6,
+      fuelType: 'Bensin',
+      features: [
+        'Drive Wise ADAS (SCC, FCA, LFA, LKA, BVM, BCA, MSLA, HBA)',
+        'Sunroof Electric with One-Touch',
+        'Electronic Parking Brake (EPB) with Auto Hold',
+        'Downhill Brake Control (DBC)'
       ]
     }
   ]
