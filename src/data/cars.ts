@@ -230,7 +230,7 @@ export const CARS_DATA: Car[] = [
     }
   },
   {
-    id: 'kia-ev6',
+    id: 'kia-all-new-carens',
     name: 'KIA All New Carens',
     trim: '1.5 MPI / 1.4 Turbo',
     model: 'All New Carens',

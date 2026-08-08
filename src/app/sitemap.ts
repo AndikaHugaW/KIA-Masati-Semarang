@@ -21,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'kia-sonet',
     'kia-seltos',
     'kia-carens',
+    'kia-all-new-carens',
     'kia-ev6',
     'kia-ev9',
     'kia-carnival',

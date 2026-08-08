@@ -1967,4 +1967,5 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
 
 CAR_SPECIFICATIONS['kia-carens'] = CAR_SPECIFICATIONS['kia-all-new-carens'];
 CAR_SPECIFICATIONS['kia-carens-all-new'] = CAR_SPECIFICATIONS['kia-all-new-carens'];
+CAR_SPECIFICATIONS['kia-ev6'] = CAR_SPECIFICATIONS['kia-all-new-carens'];
 
