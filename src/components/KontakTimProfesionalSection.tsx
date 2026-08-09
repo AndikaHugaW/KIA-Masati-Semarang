@@ -7,7 +7,7 @@ import { Mail } from 'lucide-react';
 export const KontakTimProfesionalSection: React.FC = () => {
   const handleContactManager = () => {
     window.open(
-      'https://wa.me/6281325456655?text=Halo%20Bapak%20Budi%20Santoso,%20saya%20ingin%20berkonsultasi%20mengenai%20unit%20KIA',
+      'https://wa.me/6281325456655?text=Halo%20Bapak%20Ari%20Cahyo,%20saya%20ingin%20berkonsultasi%20mengenai%20unit%20KIA',
       '_blank'
     );
   };
@@ -29,13 +29,13 @@ export const KontakTimProfesionalSection: React.FC = () => {
         {/* 2-Card Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Card 1: Budi Santoso (Branch Manager - Horizontal Split Layout) */}
+          {/* Card 1: Ari Cahyo (Branch Manager - Horizontal Split Layout) */}
           <div className="lg:col-span-7 bg-[#F5F6F8] rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
             {/* Avatar */}
             <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-md">
               <Image
                 src="/images/team/budi.webp"
-                alt="Budi Santoso - Branch Manager KIA Semarang"
+                alt="Ari Cahyo - Branch Manager KIA Semarang"
                 fill
                 sizes="144px"
                 className="object-cover object-top"
@@ -46,7 +46,7 @@ export const KontakTimProfesionalSection: React.FC = () => {
             <div className="flex-1 text-center sm:text-left space-y-3">
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight">
-                  Budi Santoso
+                  Ari Cahyo
                 </h3>
                 <p className="text-xs font-bold uppercase tracking-widest text-[#B91C1C] mt-1">
                   BRANCH MANAGER
