@@ -18,7 +18,7 @@ export const KatalogGridSection: React.FC<KatalogGridSectionProps> = ({ onOpenTe
   const [maxPrice, setMaxPrice] = useState<string>('all');
   const [selectedBodyType, setSelectedBodyType] = useState<string>('Semua');
   const [selectedTransmission, setSelectedTransmission] = useState<string>('Semua');
-  const [sortBy, setSortBy] = useState<string>('newest');
+  const [sortBy, setSortBy] = useState<string>('price-low');
 
   // Active highlighted card ID
   const [activeCardId, setActiveCardId] = useState<string>('kia-ev9');
@@ -91,10 +91,10 @@ export const KatalogGridSection: React.FC<KatalogGridSectionProps> = ({ onOpenTe
     setMaxPrice('all');
     setSelectedBodyType('Semua');
     setSelectedTransmission('Semua');
-    setSortBy('newest');
+    setSortBy('price-low');
 
     // Trigger fresh fetch
-    fetch('/api/cars')
+    fetch('/api/cars?sort=price-low')
       .then((res) => res.json())
       .then((json) => {
         if (json.status === 'success') {

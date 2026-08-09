@@ -95,13 +95,16 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Sorting
-    if (sortParam === 'price-low') {
-      filteredCars.sort((a, b) => a.rawPrice - b.rawPrice);
-    } else if (sortParam === 'price-high') {
+    // Sorting (Default: price-low -> termurah ke termahal)
+    if (sortParam === 'price-high') {
       filteredCars.sort((a, b) => b.rawPrice - a.rawPrice);
     } else if (sortParam === 'name-asc') {
       filteredCars.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortParam === 'newest') {
+      // Keep natural order in cars.ts
+    } else {
+      // Default: price-low (Harga Terendah)
+      filteredCars.sort((a, b) => a.rawPrice - b.rawPrice);
     }
 
     return NextResponse.json({
