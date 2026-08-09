@@ -174,7 +174,7 @@ export const Footer: React.FC<FooterProps> = () => {
 
         {/* Bottom Bar: Copyright & Policy */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 gap-4">
-          <p>© 2024 Masati Semarang. All rights reserved.</p>
+          <p>© 2026 Masati Semarang. All rights reserved.</p>
           <div className="flex items-center gap-6 font-medium text-gray-600">
             <Link href="/kontak" className="hover:text-black transition-colors">
               Privacy Policy

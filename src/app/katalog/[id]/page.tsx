@@ -572,7 +572,7 @@ export default function CarDetailPage() {
                   {/* Description */}
                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mt-4 font-medium">
                     {car.description ||
-                      `${car.name} ${car.year || '2024'} SUV premium dengan ruang kabin yang luas dan nyaman. Cocok untuk keluarga dengan fitur keselamatan dan teknologi terkini.`}
+                      `${car.name} ${car.year || '2026'} SUV premium dengan ruang kabin yang luas dan nyaman. Cocok untuk keluarga dengan fitur keselamatan dan teknologi terkini.`}
                   </p>
                 </div>
 
@@ -591,7 +591,7 @@ export default function CarDetailPage() {
                   <div className="grid grid-cols-2 gap-y-3.5 gap-x-6 text-xs sm:text-sm">
                     <div className="flex items-center justify-between border-b border-gray-200/60 pb-2.5">
                       <span className="text-gray-500 font-semibold">Tahun</span>
-                      <span className="font-extrabold text-gray-900">{car.year || '2024'}</span>
+                      <span className="font-extrabold text-gray-900">{car.year || '2026'}</span>
                     </div>
 
                     <div className="flex items-center justify-between border-b border-gray-200/60 pb-2.5">
