@@ -24,7 +24,7 @@ const heroCars = [
     id: 'seltos',
     title: 'KIA All New Seltos',
     tagline: 'Compact SUV Dynamic',
-    promoPrice: 'Rp 399 Juta',
+    promoPrice: 'Rp 373 Juta',
     image: '/images/katalog unit/all new seltos.webp',
   },
   {
@@ -38,7 +38,7 @@ const heroCars = [
     id: 'sonet',
     title: 'KIA Sonet',
     tagline: 'Smart Urban SUV',
-    promoPrice: 'Rp 240 Juta',
+    promoPrice: 'Rp 272 Juta',
     image: '/images/katalog unit/kia sonet.webp',
   },
 ];

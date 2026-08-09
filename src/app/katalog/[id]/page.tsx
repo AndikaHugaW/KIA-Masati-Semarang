@@ -38,7 +38,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Trendy',
       trim: '1.5L IVT Trendy',
-      price: 'Rp 263.000.000',
+      price: 'Rp 272.000.000',
       image: '/images/katalog unit/kia sonet/kia-sonet-trendy.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L',
@@ -56,9 +56,29 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       ]
     },
     {
+      name: 'Black Edition',
+      trim: '1.5L IVT Black Edition',
+      price: 'Rp 279.000.000',
+      image: '/images/katalog unit/kia sonet/kia-sonet-motion.webp',
+      badge: 'READY STOCK',
+      engine: 'Smartstream 1.5L',
+      transmission: 'IVT Automatic',
+      seats: 5,
+      fuelType: 'Bensin',
+      features: [
+        'Smartstream Gamma II 1.5L with IVT',
+        '16" Alloy Wheel Dual Tone Color',
+        'Multireflector LED with Star Map LED DRL',
+        'Exclusive Black Edition Styling',
+        '8" LCD Infotainment Screen with Android Auto & Apple CarPlay',
+        'Rear Parking Camera with Reverse Parking Distance Warning',
+        'Remote Engine Start'
+      ]
+    },
+    {
       name: 'Motion',
       trim: '1.5L IVT Motion',
-      price: 'Rp 288.000.000',
+      price: 'Rp 297.000.000',
       image: '/images/katalog unit/kia sonet/kia-sonet-motion.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L',
@@ -78,7 +98,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Signature',
       trim: '1.5L IVT Signature',
-      price: 'Rp 313.000.000',
+      price: 'Rp 323.000.000',
       image: '/images/katalog unit/kia sonet/kia-sonet-signature.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L',
@@ -190,7 +210,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Trendy',
       trim: '1.5L IVT Trendy',
-      price: 'Rp 359.000.000',
+      price: 'Rp 373.000.000',
       image: '/images/katalog unit/kia seltos/kia-seltos-1.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L Gamma II (115 PS)',
@@ -207,7 +227,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Prestige+ ADAS',
       trim: '1.5L IVT Prestige+ ADAS',
-      price: 'Rp 417.000.000',
+      price: 'Rp 432.000.000',
       image: '/images/katalog unit/kia seltos/kia-seltos-1.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L Gamma II (115 PS)',
@@ -224,7 +244,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'GT Line',
       trim: '1.5L IVT GT Line',
-      price: 'Rp 469.000.000',
+      price: 'Rp 485.000.000',
       image: '/images/katalog unit/kia seltos/kia-seltos-gtline.webp',
       badge: 'PROMO',
       engine: 'Smartstream 1.5L Gamma II (115 PS)',
@@ -241,27 +261,9 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
   ],
   'kia-all-new-carens': [
     {
-      name: 'M/T',
-      trim: '1.5 MPI Premiere M/T 7-Seater',
-      price: 'Rp 269.000.000',
-      image: '/images/katalog unit/kia all new carens/carens1.webp',
-      badge: 'READY STOCK',
-      engine: 'Smartstream 1.5L Gamma II',
-      transmission: 'Manual 6-Speed',
-      seats: 7,
-      fuelType: 'Bensin',
-      features: [
-        'Smartstream Gamma II 1.5L Engine',
-        '8" Infotainment Display with Apple CarPlay & Android Auto',
-        'Supervision 4.2" TFT LCD Cluster',
-        '2 Airbags & ABS, EBD, BA, ESC, HAC',
-        'Hand Brake & 15" Alloy Wheels'
-      ]
-    },
-    {
       name: 'Trendy',
       trim: '1.5 IVT Trendy 7-Seater',
-      price: 'Rp 299.000.000',
+      price: 'Rp 310.000.000',
       image: '/images/katalog unit/kia all new carens/carens2.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L Gamma II',
@@ -279,7 +281,7 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     {
       name: 'Motion',
       trim: '1.5 IVT Motion 6-Seater',
-      price: 'Rp 339.000.000',
+      price: 'Rp 349.000.000',
       image: '/images/katalog unit/kia all new carens/carens3.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L Gamma II',
@@ -295,9 +297,27 @@ const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
       ]
     },
     {
+      name: 'Black Edition',
+      trim: '1.5 IVT Black Edition 6-Seater',
+      price: 'Rp 349.000.000',
+      image: '/images/katalog unit/kia all new carens/carens3.webp',
+      badge: 'READY STOCK',
+      engine: 'Smartstream 1.5L Gamma II',
+      transmission: 'Intelligent VT',
+      seats: 6,
+      fuelType: 'Bensin',
+      features: [
+        'Exclusive Black Edition Styling',
+        '2nd Row Captain Seats with Arm Rest',
+        'Wireless Smartphone Charging & Remote Engine Start',
+        'Drive Mode Select & TPMS',
+        '17" Diamond Cut Alloy Wheels'
+      ]
+    },
+    {
       name: 'Signature',
       trim: '1.5 IVT Signature ADAS 6-Seater',
-      price: 'Rp 369.000.000',
+      price: 'Rp 390.000.000',
       image: '/images/katalog unit/kia all new carens/carens3.webp',
       badge: 'READY STOCK',
       engine: 'Smartstream 1.5L Gamma II',

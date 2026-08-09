@@ -15,7 +15,7 @@ export const FeaturedUnitsSection: React.FC<FeaturedUnitsSectionProps> = ({ onOp
       id: 'kia-sonet',
       name: 'KIA Sonet',
       categoryBadge: 'SUV',
-      price: 'Mulai Rp 263.000.000',
+      price: 'Mulai Rp 272.000.000',
       image: '/images/katalog unit/kia sonet.webp',
       specs: [
         { icon: Fuel, label: '1.5L Engine' },

@@ -56,9 +56,9 @@ export const CARS_DATA: Car[] = [
     tagline: 'Compact SUV dengan Fitur Canggih Klasik & Dynamic Style',
     category: 'SUV',
     bodyType: 'SUV',
-    priceStarting: 'Rp 446 Jt',
-    formattedPrice: 'Rp 446.000.000',
-    rawPrice: 446000000,
+    priceStarting: 'Rp 272 Jt',
+    formattedPrice: 'Rp 272.000.000',
+    rawPrice: 272000000,
     engine: '1.4L Turbo',
     power: '140 PS / 242 Nm',
     transmissionType: 'Automatic',
@@ -85,7 +85,7 @@ export const CARS_DATA: Car[] = [
     ],
     specs: {
       driveType: 'Front-Wheel Drive (FWD)',
-      warranty: '5 Tahun / 150.000 km Garansi Resmi'
+      warranty: '7 Tahun / 200.000 km Garansi Resmi'
     }
   },
   {
@@ -180,7 +180,7 @@ export const CARS_DATA: Car[] = [
     ],
     specs: {
       driveType: 'Front-Wheel Drive (FWD)',
-      warranty: '5 Tahun / 150.000 km Garansi Resmi'
+      warranty: '7 Tahun / 200.000 km Garansi Resmi'
     }
   },
   {
@@ -197,9 +197,9 @@ export const CARS_DATA: Car[] = [
     tagline: 'Bold & Intelligent Compact SUV',
     category: 'SUV',
     bodyType: 'SUV',
-    priceStarting: 'Rp 359 Jt',
-    formattedPrice: 'Rp 359.000.000',
-    rawPrice: 359000000,
+    priceStarting: 'Rp 373 Jt',
+    formattedPrice: 'Rp 373.000.000',
+    rawPrice: 373000000,
     engine: '1.4L Turbo Gasoline Direct Injection',
     power: '140 PS / 242 Nm',
     transmissionType: 'Automatic',
@@ -226,7 +226,7 @@ export const CARS_DATA: Car[] = [
     specs: {
       acceleration: '0-100 km/h: 8.9 sec',
       driveType: 'Front-Wheel Drive (FWD)',
-      warranty: '5 Tahun / 150.000 km Garansi Resmi'
+      warranty: '7 Tahun / 200.000 km Garansi Resmi'
     }
   },
   {
@@ -243,9 +243,9 @@ export const CARS_DATA: Car[] = [
     tagline: 'Stylish & Versatile Family MPV',
     category: 'MPV',
     bodyType: 'MPV',
-    priceStarting: 'Rp 269 Jt',
-    formattedPrice: 'Rp 269.000.000',
-    rawPrice: 269000000,
+    priceStarting: 'Rp 310 Jt',
+    formattedPrice: 'Rp 310.000.000',
+    rawPrice: 310000000,
     engine: 'Smartstream 1.5L / 1.4L Turbo',
     power: '115 PS / 144 Nm',
     transmissionType: 'Automatic',
@@ -272,7 +272,7 @@ export const CARS_DATA: Car[] = [
     ],
     specs: {
       driveType: 'Front-Wheel Drive (FWD)',
-      warranty: '5 Tahun / 150.000 km Garansi Resmi'
+      warranty: '7 Tahun / 200.000 km Garansi Resmi'
     }
   }
 ];
