@@ -8,7 +8,7 @@ import { MapPin, Phone } from 'lucide-react';
 const socialLinks = [
   {
     name: 'Instagram',
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/kia.masati.semarang?igsh=Ymg5ZmxpcjEzYTc0',
     defaultIcon: '/images/medsos/default/icon 1.svg',
     hoverIcon: '/images/medsos/hover/icon 1.svg',
   },
@@ -26,7 +26,7 @@ const socialLinks = [
   },
   {
     name: 'TikTok',
-    href: 'https://tiktok.com',
+    href: 'https://www.tiktok.com/@kia.masati.srg?_r=1&_t=ZS-98jOj1ATGKN',
     defaultIcon: '/images/medsos/default/icon 4.svg',
     hoverIcon: '/images/medsos/hover/icon 4.svg',
   },
