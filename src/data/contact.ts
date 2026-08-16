@@ -17,6 +17,17 @@ export const CONTACT_INFO = {
 
 export const TEAM_MEMBERS = [
   {
+    id: 'marketing-manager',
+    name: 'Ari Cahyo',
+    role: 'MARKETING MANAGER',
+    phone: '082322283081',
+    phoneFormatted: '0823-2228-3081',
+    waNumber: '6282322283081',
+    waUrl: 'https://wa.me/6282322283081',
+    description: 'Memimpin strategi pemasaran dan promosi digital untuk memberikan penawaran terbaik dan kemudahan informasi bagi pelanggan KIA Semarang.',
+    image: '/images/team/budi.webp',
+  },
+  {
     id: 'branch-manager',
     name: 'Timoty Yoewana',
     role: 'BRANCH MANAGER',
