@@ -47,7 +47,7 @@ export const TEAM_MEMBERS = [
     waNumber: '6281390936281',
     waUrl: 'https://wa.me/6281390936281',
     description: 'Spesialis pembiayaan dan fleet management.',
-    image: '/images/team/siska.webp',
+    image: '/images/team/budi.webp',
   },
 ];
 
