@@ -168,7 +168,7 @@ export const BengkelJadwalServisSection: React.FC = () => {
                       Pilih Jenis Servis
                     </option>
                     <option value="Periodic Maintenance">Periodic Maintenance (Servis Berkala)</option>
-                    <option value="Body & Paint">Body & Paint (Perbaikan Bodi & Cat)</option>
+                    <option value="Body & Paint">Body & Paint (Segera Hadir / Coming Soon)</option>
                     <option value="Perbaikan Mesin">Perbaikan Mesin / General Repair</option>
                     <option value="Pemeriksaan EV">Pemeriksaan Baterai & Sistem EV</option>
                     <option value="Spooring Balancing">Spooring & Balancing</option>
