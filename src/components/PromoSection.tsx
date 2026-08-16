@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Promo } from '@/data/promos';
+import { CONTACT_INFO } from '@/data/contact';
 import { Sparkles, CheckCircle2, MessageSquare, Clock } from 'lucide-react';
 
 interface PromoSectionProps {
@@ -14,7 +15,7 @@ export const PromoSection: React.FC<PromoSectionProps> = ({ promos, onOpenTestDr
     const message = encodeURIComponent(
       `Halo Sales Executive KIA Semarang, saya ingin bertanya tentang promo: ${title}`
     );
-    window.open(`https://wa.me/6281325456655?text=${message}`, '_blank');
+    window.open(`https://wa.me/${CONTACT_INFO.waNumber}?text=${message}`, '_blank');
   };
 
   return (

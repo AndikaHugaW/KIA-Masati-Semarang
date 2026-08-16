@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ArrowRight, MapPin, Clock, Navigation, CheckCircle2 } from 'lucide-react';
+import { CONTACT_INFO } from '@/data/contact';
 
 export const KontakInquireSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -19,7 +20,7 @@ export const KontakInquireSection: React.FC = () => {
 
   const handleWhatsAppRedirect = () => {
     const text = `Halo KIA Semarang, saya ingin mengirimkan pertanyaan:\nNama: ${formData.name}\nTelepon: ${formData.phone}\nMinat: ${formData.interest}\nPesan: ${formData.message}`;
-    window.open(`https://wa.me/6281325456655?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/${CONTACT_INFO.waNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   const handleDirection = () => {
@@ -97,7 +98,7 @@ export const KontakInquireSection: React.FC = () => {
                     <input
                       type="tel"
                       required
-                      placeholder="0813-2545-6655"
+                      placeholder="0823-2228-3081"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-[#F3F4F6] border-none rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all"
@@ -222,7 +223,7 @@ export const KontakInquireSection: React.FC = () => {
                   
                   <div className="flex justify-between items-center pb-2.5 border-b border-gray-100">
                     <span className="text-gray-600 font-medium">Sabtu</span>
-                    <span className="font-bold text-gray-900">08:00 - 15:00</span>
+                    <span className="font-bold text-gray-900">{CONTACT_INFO.operatingHours.saturday}</span>
                   </div>
                   
                   <div className="flex justify-between items-center">

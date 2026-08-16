@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Phone } from 'lucide-react';
+import { CONTACT_INFO } from '@/data/contact';
 
 const socialLinks = [
   {
@@ -20,7 +21,7 @@ const socialLinks = [
   },
   {
     name: 'WhatsApp',
-    href: 'https://wa.me/6281325456655',
+    href: CONTACT_INFO.waUrl,
     defaultIcon: '/images/medsos/default/icon 3.svg',
     hoverIcon: '/images/medsos/hover/icon 3.svg',
   },
@@ -165,7 +166,7 @@ export const Footer: React.FC<FooterProps> = () => {
               </a>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-gray-700 shrink-0" />
-                <span>0813-2545-6655</span>
+                <span>{CONTACT_INFO.phoneFormatted}</span>
               </div>
             </div>
           </div>

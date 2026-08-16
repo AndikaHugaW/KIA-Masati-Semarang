@@ -9,12 +9,14 @@ const KontakTimProfesionalSection = dynamic(() => import('@/components/KontakTim
 const KontakInquireSection = dynamic(() => import('@/components/KontakInquireSection').then(mod => mod.KontakInquireSection));
 const Footer = dynamic(() => import('@/components/Footer').then(mod => mod.Footer));
 
+import { CONTACT_INFO } from '@/data/contact';
+
 export default function KontakPage() {
 
   const whatsappUrl =
-    'https://wa.me/6281325456655?text=Halo%20KIA%20Semarang,%20saya%20butuh%20informasi%20mengenai%20unit,%20harga,%20dan%20promo';
+    `https://wa.me/${CONTACT_INFO.waNumber}?text=Halo%20KIA%20Semarang,%20saya%20butuh%20informasi%20mengenai%20unit,%20harga,%20dan%20promo`;
   const mapsUrl =
-    'https://maps.app.goo.gl/LtEd1xDa1nDk8CQz5';
+    CONTACT_INFO.gmapsUrl;
 
   return (
     <main className="min-h-screen bg-[#F8F9FA] text-gray-900 font-sans flex flex-col justify-between">

@@ -24,6 +24,7 @@ import { Footer } from '@/components/Footer';
 import { CARS_DATA } from '@/data/cars';
 import { CAR_SPECIFICATIONS, CarSpecification } from '@/data/specifications';
 import { TestDriveModal } from '@/components/TestDriveModal';
+import { CONTACT_INFO } from '@/data/contact';
 
 function SpecificationContent() {
   const params = useParams();
@@ -543,7 +544,7 @@ function SpecificationContent() {
               Booking Test Drive
             </button>
             <a
-              href={`https://wa.me/6281325456655?text=${encodeURIComponent(`Halo KIA Semarang, saya ingin tanyakan spesifikasi dan promo untuk ${car.name}`)}`}
+              href={`https://wa.me/${CONTACT_INFO.waNumber}?text=${encodeURIComponent(`Halo KIA Semarang, saya ingin tanyakan spesifikasi dan promo untuk ${car.name}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 sm:flex-none px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-md transition-all text-center"

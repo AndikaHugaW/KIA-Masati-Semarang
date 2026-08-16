@@ -90,7 +90,7 @@ export async function GET(request: NextRequest) {
       total: allSpecs.length,
       dealer: 'KIA Official Dealer Masati Semarang',
       address: 'Jalan Dokter Cipto No. 136, Sarirejo, Kec. Semarang Timur, Kota Semarang, Jawa Tengah 50124',
-      contact: '0813-2545-6655',
+      contact: '0823-2228-3081',
       data: allSpecs
     });
   } catch (error) {

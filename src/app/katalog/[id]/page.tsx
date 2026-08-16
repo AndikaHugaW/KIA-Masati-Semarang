@@ -7,6 +7,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Car } from '@/data/cars';
+import { CONTACT_INFO } from '@/data/contact';
 import {
   Check,
   ArrowLeft,
@@ -444,7 +445,7 @@ export default function CarDetailPage() {
 
   const handleWhatsAppContact = () => {
     if (!car) return;
-    const phone = '6281325456655';
+    const phone = CONTACT_INFO.waNumber;
     const text = encodeURIComponent(
       `Halo KIA Semarang, saya tertarik dengan unit ${car.name} (${car.trim}) - ${car.formattedPrice}. Bisa tanyakan informasi promo & simulasi kreditnya?`
     );

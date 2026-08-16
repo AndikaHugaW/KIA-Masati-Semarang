@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ArrowRight, Headphones, CheckCircle2 } from 'lucide-react';
+import { CONTACT_INFO } from '@/data/contact';
 
 export const BengkelJadwalServisSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -21,7 +22,7 @@ export const BengkelJadwalServisSection: React.FC = () => {
 
   const handleWhatsAppRedirect = () => {
     const text = `Halo KIA Semarang, saya ingin konfirmasi booking servis:\nNama: ${formData.name}\nTelepon: ${formData.phone}\nModel: ${formData.carModel || '-'}\nLayanan: ${formData.serviceType || '-'}\nTanggal: ${formData.arrivalDate || '-'}`;
-    window.open(`https://wa.me/6281325456655?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/${CONTACT_INFO.waNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
