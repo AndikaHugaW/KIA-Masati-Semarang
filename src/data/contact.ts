@@ -25,7 +25,7 @@ export const TEAM_MEMBERS = [
     waNumber: '6282322283081',
     waUrl: 'https://wa.me/6282322283081',
     description: 'Memimpin strategi pemasaran dan promosi digital untuk memberikan penawaran terbaik dan kemudahan informasi bagi pelanggan KIA Semarang.',
-    image: '/images/team/budi.webp',
+    image: '/images/kontak/aricahyo.png',
   },
   {
     id: 'branch-manager',
@@ -36,7 +36,7 @@ export const TEAM_MEMBERS = [
     waNumber: '6282137775491',
     waUrl: 'https://wa.me/6282137775491',
     description: 'Memimpin tim dengan visi integritas dan pelayanan premium. Memastikan setiap interaksi di KIA Semarang memberikan pengalaman standar global.',
-    image: '/images/team/budi.webp',
+    image: '/images/kontak/timothy.png',
   },
   {
     id: 'senior-consultant',
@@ -47,7 +47,7 @@ export const TEAM_MEMBERS = [
     waNumber: '6281390936281',
     waUrl: 'https://wa.me/6281390936281',
     description: 'Spesialis pembiayaan dan fleet management.',
-    image: '/images/team/budi.webp',
+    image: '/images/kontak/kevin.png',
   },
 ];
 
