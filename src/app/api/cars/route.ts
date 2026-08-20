@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { CARS_DATA } from '@/data/cars';
+import { CONTACT_INFO } from '@/data/contact';
 
 export async function GET(request: NextRequest) {
   try {
@@ -111,7 +112,7 @@ export async function GET(request: NextRequest) {
       status: 'success',
       total: filteredCars.length,
       dealer: 'KIA Official Dealer Semarang',
-      address: 'Jalan Dokter Cipto No.136, Sarirejo, Kec. Semarang Timur, Kota Semarang, Jawa Tengah 50124',
+      address: CONTACT_INFO.address,
       contact: '0823-2228-3081',
       data: filteredCars
     });

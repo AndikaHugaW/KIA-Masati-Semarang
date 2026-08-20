@@ -191,10 +191,10 @@ export const KontakInquireSection: React.FC = () => {
                   KIA Semarang Masati
                 </p>
                 <p className="text-gray-600 text-xs sm:text-sm">
-                  Jl. Dr. Cipto No. 136, Sarirejo
+                  JL. Dr Cipto 136 B dan C Rejosari
                 </p>
                 <p className="text-gray-600 text-xs sm:text-sm">
-                  Kec. Semarang Timur, Kota Semarang 50124
+                  Semarang Timur, Kota Semarang, Jawa Tengah 50125
                 </p>
               </div>
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { CAR_SPECIFICATIONS } from '@/data/specifications';
 import { CARS_DATA } from '@/data/cars';
+import { CONTACT_INFO } from '@/data/contact';
 
 // Global memory cache for dynamic specification updates
 let SPECIFICATIONS_DB = { ...CAR_SPECIFICATIONS };
@@ -89,7 +90,7 @@ export async function GET(request: NextRequest) {
       status: 'success',
       total: allSpecs.length,
       dealer: 'KIA Official Dealer Masati Semarang',
-      address: 'Jalan Dokter Cipto No. 136, Sarirejo, Kec. Semarang Timur, Kota Semarang, Jawa Tengah 50124',
+      address: CONTACT_INFO.address,
       contact: '0823-2228-3081',
       data: allSpecs
     });

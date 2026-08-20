@@ -161,7 +161,7 @@ export const Footer: React.FC<FooterProps> = () => {
               >
                 <MapPin className="w-5 h-5 text-gray-700 group-hover:text-black shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
-                  Jl. Dr. Cipto No. 136, Sarirejo, Semarang Timur, Kota Semarang 50124
+                  {CONTACT_INFO.address}
                 </span>
               </a>
               <div className="flex items-center gap-3">
