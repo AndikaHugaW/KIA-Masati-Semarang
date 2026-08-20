@@ -794,7 +794,7 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
     tagline: 'Bold & Intelligent Compact SUV',
     variants: ['Trendy', 'Prestige+ ADAS', 'GT Line'],
     dimensionDiagram: {
-      lengthWidthHeight: '4.460 / 1.830 / 1.630 - 1.635 mm',
+      lengthWidthHeight: '4.460 / 1.830 / 1.635 mm',
       wheelbase: '2.690 mm',
       tread: '1.590 - 1.592 / 1.600 - 1.602 mm',
       overhang: '895 / 875 mm',
@@ -954,7 +954,7 @@ export const CAR_SPECIFICATIONS: Record<string, CarSpecification> = {
           },
           {
             name: 'Height (mm)',
-            values: { 'Trendy': '1.630', 'Prestige+ ADAS': '1.630', 'GT Line': '1.635' }
+            values: { 'Trendy': '1.635', 'Prestige+ ADAS': '1.635', 'GT Line': '1.635' }
           },
           {
             name: 'Wheelbase (mm)',
