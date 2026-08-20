@@ -11,7 +11,6 @@ const StatsSection = dynamic(() => import('@/components/StatsSection').then(mod 
 const Ev9SpecSection = dynamic(() => import('@/components/Ev9SpecSection').then(mod => mod.Ev9SpecSection));
 const FeaturedUnitsSection = dynamic(() => import('@/components/FeaturedUnitsSection').then(mod => mod.FeaturedUnitsSection));
 const TestDriveAdrenalineSection = dynamic(() => import('@/components/TestDriveAdrenalineSection').then(mod => mod.TestDriveAdrenalineSection));
-const TestimonialsSection = dynamic(() => import('@/components/TestimonialsSection').then(mod => mod.TestimonialsSection));
 const BengkelComingSoonSection = dynamic(() => import('@/components/BengkelComingSoonSection').then(mod => mod.BengkelComingSoonSection));
 const Footer = dynamic(() => import('@/components/Footer').then(mod => mod.Footer));
 const TestDriveModal = dynamic(() => import('@/components/TestDriveModal').then(mod => mod.TestDriveModal), { ssr: false });
@@ -43,8 +42,6 @@ export default function Home() {
       {/* Section 5: Experience the Adrenaline Test Drive CTA */}
       <TestDriveAdrenalineSection onOpenTestDrive={handleOpenTestDrive} />
 
-      {/* Section 6: Apa Kata Klien Kami (Testimonials) */}
-      <TestimonialsSection />
 
       {/* Section 7: Layanan Bengkel Resmi KIA (Coming Soon) */}
       <BengkelComingSoonSection />
