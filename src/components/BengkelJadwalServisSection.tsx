@@ -147,8 +147,6 @@ export const BengkelJadwalServisSection: React.FC = () => {
                     <option value="KIA Seltos">KIA Seltos</option>
                     <option value="KIA Carens">KIA Carens</option>
                     <option value="KIA EV6">KIA EV6</option>
-                    <option value="KIA EV9">KIA EV9</option>
-                    <option value="KIA Carnival">KIA Carnival</option>
                     <option value="Lainnya">Lainnya</option>
                   </select>
                 </div>

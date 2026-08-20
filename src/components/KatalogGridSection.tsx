@@ -21,7 +21,7 @@ export const KatalogGridSection: React.FC<KatalogGridSectionProps> = ({ onOpenTe
   const [sortBy, setSortBy] = useState<string>('price-low');
 
   // Active highlighted card ID
-  const [activeCardId, setActiveCardId] = useState<string>('kia-ev9');
+  const [activeCardId, setActiveCardId] = useState<string>('kia-sonet');
 
   // State for cars data & loading
   const [cars, setCars] = useState<Car[]>([]);
@@ -132,7 +132,7 @@ export const KatalogGridSection: React.FC<KatalogGridSectionProps> = ({ onOpenTe
           <div className="space-y-3">
             <h4 className="font-extrabold text-xs text-gray-900 uppercase tracking-wider">Model Vehicles</h4>
             <div className="space-y-2">
-              {['Sonet', 'Seltos', 'All New Carens', 'EV9', 'Carnival'].map((m) => {
+              {['Sonet', 'Seltos', 'All New Carens'].map((m) => {
                 const isChecked = selectedModels.includes(m);
                 return (
                   <label

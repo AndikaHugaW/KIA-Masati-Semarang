@@ -19,7 +19,7 @@ export const TestDriveModal: React.FC<TestDriveModalProps> = ({
     name: '',
     phone: '',
     email: '',
-    carId: preselectedCarId || 'kia-ev9',
+    carId: preselectedCarId || 'kia-sonet',
     preferredDate: '',
     location: 'Showroom KIA Semarang (Jl. Dr. Cipto)',
     notes: '',

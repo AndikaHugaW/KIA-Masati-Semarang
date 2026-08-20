@@ -17,7 +17,7 @@ export const PROMOS_DATA: Promo[] = [
     tag: 'LIMITED DEAL',
     discountValue: 'Free Wallbox Charger',
     validUntil: '31 Agustus 2026',
-    description: 'Dapatkan penawaran khusus pembelian KIA EV6 & EV9 di Dealer Resmi KIA Semarang. Bonus Wallbox Home Charger senilai Rp 20 Juta & Free Instalasi Listrik.',
+    description: 'Dapatkan penawaran khusus pembelian KIA EV6 di Dealer Resmi KIA Semarang. Bonus Wallbox Home Charger senilai Rp 20 Juta & Free Instalasi Listrik.',
     highlights: [
       'Gratis Home Charger + Instalasi PLN',
       'Bunga 0% tenor hingga 2 tahun',
@@ -41,13 +41,13 @@ export const PROMOS_DATA: Promo[] = [
     ]
   },
   {
-    id: 'promo-carnival-family',
-    title: 'Special Luxury Family Package',
-    subtitle: 'Grand Carnival Premier Special Financing',
+    id: 'promo-carens-family',
+    title: 'Special Family Package Carens',
+    subtitle: 'All New Carens Special Financing',
     tag: 'FAMILY FAVOURITE',
     discountValue: 'Free Asuransi All Risk 1 Thn',
     validUntil: '15 September 2026',
-    description: 'Nikmati perjalanan keluarga tingkat premium bersama KIA Grand Carnival. Dapatkan Asuransi All Risk gratis selama 1 tahun penuh.',
+    description: 'Nikmati perjalanan keluarga tingkat premium bersama KIA All New Carens. Dapatkan Asuransi All Risk gratis selama 1 tahun penuh.',
     highlights: [
       'Free Asuransi All Risk 1 Tahun',
       'Bunga Rendah Mulai 2.75%',

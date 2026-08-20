@@ -22,11 +22,11 @@ const bookingsStore: TestDriveBooking[] = [
     name: 'Budi Santoso',
     phone: '081299887766',
     email: 'budi@example.com',
-    carId: 'kia-ev9',
-    carName: 'KIA EV9 GT-Line',
+    carId: 'kia-sonet',
+    carName: 'KIA Sonet',
     preferredDate: '2026-08-10',
     location: 'Dealer KIA Semarang (Dr. Cipto)',
-    notes: 'Ingin mencoba fitur Relaxation Swivel Seat',
+    notes: 'Ingin mencoba sunroof dan fitur 1.5L IVT',
     createdAt: new Date().toISOString(),
     status: 'CONFIRMED'
   }

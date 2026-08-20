@@ -52,10 +52,10 @@ const ENDPOINTS: ApiEndpoint[] = [
         name: 'Ahmad Faisal',
         phone: '08123456789',
         email: 'ahmad@example.com',
-        carId: 'kia-ev9',
+        carId: 'kia-sonet',
         preferredDate: '2026-08-15',
         location: 'Showroom KIA Semarang',
-        notes: 'Uji coba akselerasi Dual Motor AWD'
+        notes: 'Uji coba performa 1.5L IVT'
       },
       null,
       2

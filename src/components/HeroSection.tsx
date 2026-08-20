@@ -14,25 +14,11 @@ interface HeroSectionProps {
 
 const heroCars = [
   {
-    id: 'ev9',
-    title: 'KIA EV9 GT-Line',
-    tagline: 'Electric SUV Premium',
-    promoPrice: 'Rp 1,98 M',
-    image: '/images/katalog unit/kia ev9.webp',
-  },
-  {
     id: 'seltos',
     title: 'KIA All New Seltos',
     tagline: 'Compact SUV Dynamic',
     promoPrice: 'Rp 373 Juta',
     image: '/images/katalog unit/all new seltos.webp',
-  },
-  {
-    id: 'carnival',
-    title: 'KIA New Carnival',
-    tagline: 'Luxury Grand MPV',
-    promoPrice: 'Rp 960 Juta',
-    image: '/images/katalog unit/kia carnival.webp',
   },
   {
     id: 'sonet',

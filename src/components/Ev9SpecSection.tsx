@@ -31,31 +31,6 @@ interface CarSpecData {
 
 const SPEC_CARS: CarSpecData[] = [
   {
-    id: 'kia-ev9',
-    name: 'KIA EV9',
-    badge: 'ALL-ELECTRIC 6-SEATER',
-    bgImage: '/images/landing%20page/section%203.webp',
-    dimensions: {
-      length: '113.2 IN',
-      width: '184.8 IN',
-      height: '72.8 IN',
-    },
-    performance: {
-      power: '208 KW',
-      torqueOrHp: '283 HP',
-    },
-    quickStats: {
-      stat1Label: 'BATTERY CAPACITY',
-      stat1Value: '99.8 KWH',
-      stat2Label: 'DUAL MOTOR',
-      stat2Value: 'AWD',
-      stat3Label: 'TOP SPEED',
-      stat3Value: '225 KM/H',
-      stat4Label: 'WEIGHT',
-      stat4Value: '4,030 LBS',
-    },
-  },
-  {
     id: 'kia-sonet',
     name: 'KIA SONET',
     badge: 'COMPACT SUV TURBO',
@@ -78,31 +53,6 @@ const SPEC_CARS: CarSpecData[] = [
       stat3Value: 'FWD',
       stat4Label: 'SEATING',
       stat4Value: '5 SEATER',
-    },
-  },
-  {
-    id: 'kia-carnival',
-    name: 'KIA CARNIVAL',
-    badge: 'GRAND UTILITY MPV',
-    bgImage: '/images/katalog%20unit/kia%20carnival.webp',
-    dimensions: {
-      length: '203.0 IN',
-      width: '78.5 IN',
-      height: '68.9 IN',
-    },
-    performance: {
-      power: '320 HP',
-      torqueOrHp: '506 KM RANGE',
-    },
-    quickStats: {
-      stat1Label: 'BATTERY CAPACITY',
-      stat1Value: '77.4 KWH',
-      stat2Label: 'DUAL MOTOR',
-      stat2Value: 'AWD',
-      stat3Label: 'TOP SPEED',
-      stat3Value: '210 KM/H',
-      stat4Label: 'SEATING',
-      stat4Value: '7 SEATER',
     },
   },
   {

@@ -23,8 +23,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'kia-carens',
     'kia-all-new-carens',
     'kia-ev6',
-    'kia-ev9',
-    'kia-carnival',
   ];
 
   const carRoutes = carIds.map((id) => ({
