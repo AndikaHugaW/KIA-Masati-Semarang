@@ -41,7 +41,7 @@ export const KontakTimProfesionalSection: React.FC = () => {
                     alt={`${member.name} - ${member.role} KIA Semarang`}
                     fill
                     sizes="128px"
-                    className="object-cover object-top"
+                    className={member.imagePosition || 'object-cover object-center'}
                   />
                 </div>
 
